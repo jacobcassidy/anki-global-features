@@ -27,7 +27,7 @@
 @font-face {
   font-family: 'Inconsolata';
   src: url('Inconsolata-Regular.woff2') format('woff2'),
-      url('Inconsolata-Regular.woff') format('woff');
+       url('Inconsolata-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -66,7 +66,7 @@ code {
   padding: 2px 4px;
 }
 pre {
-	background-color: #232323;
+  background-color: #232323;
   color: var(--pre-color);
   line-height: 1.333;
   padding: 20px;
@@ -74,24 +74,24 @@ pre {
   white-space: pre-wrap;
 }
 pre code {
-	background: transparent;
-	border: none;
+  background: transparent;
+  border: none;
   color: var(--pre-color);
-	padding: 0;
+  padding: 0;
 }
 input,
 textarea {
-	border: 1px solid var(--border-primary);
-	color: var(--color-secondary);
+  border: 1px solid var(--border-primary);
+  color: var(--color-secondary);
   font-size: 20px;
   line-height: 1.2;
   outline: none;
   padding: 20px;
-	max-width: 500px;
+  max-width: 500px;
   width: 100%;
 }
 textarea#typeans {
-	height: 150px;
+  height: 150px;
 }
 textarea#data-input {
   height: 100px;
@@ -103,28 +103,28 @@ table {
 }
 
 .card {
- 	font-family: var(--font-family-primary);
- 	font-size: 20px;
- 	line-height: 1.5;
- 	margin: 0;
-	padding: 0;
- 	text-align: center;
+  font-family: var(--font-family-primary);
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 .topic {
   background-color: var(--bg-tertiary);
-	color: var(--color-tertiary);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 40px;
+  color: var(--color-tertiary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
 }
 
 .card-inner {
   background-color: var(--bg-primary);
-	color: var(--color-primary);
+  color: var(--color-primary);
   min-height: calc(100vh - 40px);
-	margin: 0 auto;
+  margin: 0 auto;
   padding: 30px calc(50% - 390px);
 }
 .mobile .card-inner {
@@ -147,21 +147,21 @@ table {
 }
 
 .typing-hint {
-	color: var(--color-tertiary);
+  color: var(--color-tertiary);
   font-size: 12px;
-	font-style: italic;
+  font-style: italic;
 }
 
 .box-title,
 .box-title-inner,
 .input-title,
 .notes-title {
-	border-radius: 5px 5px 0 0;
-	color: var(--color-tertiary);
+  border-radius: 5px 5px 0 0;
+  color: var(--color-tertiary);
   font-size: 12px;
-	font-weight: bold;
-	margin: 20px auto 0;
-	text-transform: uppercase;
+  font-weight: bold;
+  margin: 20px auto 0;
+  text-transform: uppercase;
 }
 .box-title,
 .box-title-inner,
@@ -174,7 +174,7 @@ table {
   margin: 20px -20px;
 }
 .input-title {
-	max-width: 500px;
+  max-width: 500px;
 }
 .notes-title {
   background-color: var(--notes-bg);
@@ -184,16 +184,16 @@ table {
 }
 
 .box {
-	background-color: var(--bg-secondary);
+  background-color: var(--bg-secondary);
   border: 1px solid var(--bg-tertiary);
-	border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
   color: var(--color-secondary);
-	margin: 0 auto 30px;
-	padding: 20px;
+  margin: 0 auto 30px;
+  padding: 20px;
 }
 .box code {
-	background-color: var(--bg-tertiary);
-	border-color: var(--border-secondary);
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-secondary);
 }
 
 .notes {
@@ -201,9 +201,9 @@ table {
   border: 1px solid var(--bg-secondary);
   border-radius: 0 0 5px 5px;
   border-top: 0;
-	color: var(--color-tertiary);
-	font-size: 18px;
-	margin: 0;
+  color: var(--color-tertiary);
+  font-size: 18px;
+  margin: 0;
   padding: 10px 20px 20px;
 }
 .notes code {
@@ -222,7 +222,7 @@ table {
 }
 .has-title textarea {
   border-top: none;
-	border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
   padding: 15px 20px;
 }
 
@@ -278,14 +278,12 @@ table {
   font-family: var(--font-family-mono);
 }
 
-
-
 hr#answer {
-	border-color: var(--bg-secondary);
+  border-color: var(--bg-secondary);
   border-width: 2px;
   border-style: solid;
   border-top: 0;
-	margin: 20px 0;
+  margin: 20px 0;
 }
 
 /* ANSWER COMPARISON STYLES */
@@ -341,7 +339,7 @@ hr#answer {
 .nc,
 .nd,
 .s {
- color: #A9DC76;
+  color: #A9DC76;
 }
 
 /* ORANGE */
