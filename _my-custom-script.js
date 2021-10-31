@@ -22,16 +22,13 @@ printPersistentData();
 printNote();
 watchQA();
 
-//-----------------------------------------------------
-//--- WATCH FOR CHANGES AND RUN FUNCTIONS ON CHANGE ---
-//-----------------------------------------------------
 function watchQA() {
+  // Watch for changes in #qa and run functions when change
   const targetNode = document.getElementById('qa');
   const config = { childList: true };
   const callback = function(mutationsList, observer) {
     for (const mutation of mutationsList) {
       if (mutation.type === 'childList') {
-        console.log('A child node has been added or removed.');
         createTextarea();
         printTextareaAnswer();
         focusTextarea();
@@ -48,11 +45,8 @@ function watchQA() {
   observer.observe(targetNode, config);
 }
 
-//---------------------
-//--- MAIN TEXTAREA ---
-//---------------------
-// Changes Anki's default type input into a textarea element
 function createTextarea() {
+  // Changes Anki's default input into a textarea element on desktop
   defaultInput = document.getElementById('typeans');
   if (defaultInput && defaultInput.nodeName == "INPUT") {
     newTextarea = document.createElement('textarea');
@@ -69,6 +63,7 @@ function createTextarea() {
 }
 
 function printTextareaAnswer() {
+  // Replace default output with trimmed HTML
   textareaAnswer = document.getElementById('textarea-output');
   if (textareaAnswer) {
     typeans = document.getElementById('typeans');
@@ -80,60 +75,16 @@ function printTextareaAnswer() {
   }
 }
 
-//-------------------------------
-//--- TEXTAREA FOCUS ON FIRST ---
-//-------------------------------
-// If first textarea is not #typeans, focus textarea
 function focusTextarea() {
+  // If first textarea is not default #typeans, add focus to custom textarea
   let textarea = document.querySelector('textarea');
   if (textarea && textarea.id !== 'typeans') {
     textarea.focus();
   }
 }
 
-//-----------------------
-//--- PERSISTENT DATA ---
-//-----------------------
-// Persist data of custom input/textarea elements to back of card
-function persistData() {
-  dataInput = document.getElementById('data-input');
-  if (dataInput) {
-    dataInput.addEventListener('input', (event) => {
-      dataOutput = event.currentTarget.value;
-      if (!isAnkiPc21) { // AnkiDroid, AnkiMobile, AnkiWeb
-        try {
-          sessionStorage.setItem('dataOutput', JSON.stringify(dataOutput));
-        } catch (error) {
-          console.log(`${error.name}: ${error.message}`);
-        }
-      }
-    });
-    if (isAnkiPc21) {
-      dataInput.addEventListener('keydown', event => {
-        if (event.ctrlKey && event.key == 'Enter') pycmd("ans");
-      });
-    }
-  }
-}
-
-function printPersistentData() {
-  // Activate bonus box if persistent data will be printed to it
-  bonusOutputWrap = document.getElementById('bonus-output-wrap');
-  if (bonusOutputWrap && dataOutput) {
-    bonusOutputWrap.classList.add("active");
-  }
-  // Print persistent data
-  needsOutput = document.getElementById('data-output');
-  if (needsOutput) {
-    needsOutput.textContent = dataOutput;
-    dataOutput = '';
-  }
-}
-
-//----------------------
-//--- BONUS TEXTAREA ---
-//----------------------
 function activateBonus() {
+  // Activate front card bonus box if bonus question exists
   bonusInputWrap = document.getElementById('bonus-input-wrap');
   hasBonus = document.getElementById('hasBonus');
   if (bonusInputWrap && hasBonus.innerHTML) {
@@ -142,6 +93,7 @@ function activateBonus() {
 }
 
 function toggleBonusQuestion() {
+  // Hide bonus question when typing in bonus textarea
   let textarea = document.querySelector('#bonus-input-wrap textarea');
   let bonusQuestion = document.getElementById('hasBonus');
   if (textarea) {
@@ -155,56 +107,51 @@ function toggleBonusQuestion() {
   }
 }
 
-//-- REPLACED WITH persistData()
-// function returnBonus() {
-//   bonusInput = document.getElementById('bonus-input');
-//   if (bonusInput) {
-//     bonusInput.addEventListener('input', (event) => {
-//       bonusOutput = event.currentTarget.value;
-//       if (!isAnkiPc21) { // AnkiDroid, AnkiMobile, AnkiWeb
-//         try {
-//           sessionStorage.setItem('bonusOutput', JSON.stringify(bonusOutput));
-//         } catch (error) {
-//           console.log(`${error.name}: ${error.message}`);
-//         }
-//       }
-//     });
-//     if (isAnkiPc21) {
-//       bonusInput.addEventListener('keydown', event => {
-//         if (event.ctrlKey && event.key == 'Enter') pycmd("ans");
-//       });
-//     }
-//   }
-// }
+function persistData() {
+  dataInput = document.getElementById('data-input');
+  if (dataInput) {
+    // Persist data of custom textarea input for AnkiDroid, AnkiMobile, AnkiWeb
+    dataInput.addEventListener('input', (event) => {
+      dataOutput = event.currentTarget.value;
+      if (!isAnkiPc21) {
+        try {
+          sessionStorage.setItem('dataOutput', JSON.stringify(dataOutput));
+        } catch (error) {
+          console.log(`${error.name}: ${error.message}`);
+        }
+      }
+    });
+    // Return data on desktop
+    if (isAnkiPc21) {
+      dataInput.addEventListener('keydown', event => {
+        if (event.ctrlKey && event.key == 'Enter') pycmd("ans");
+      });
+    }
+  }
+}
 
-// REPLACED WITH printPersistentData()
-// function printBonus() {
-//   bonusOutputWrap = document.getElementById('bonus-output-wrap');
-//   if (bonusOutputWrap && bonusOutput) { // Anki 2.1(PC)
-//     bonusValue = bonusOutput;
-//     document.getElementById('bonus-output').textContent = bonusValue;
-//     bonusOutputWrap.classList.add("active");
-//     bonusOutput = '';
-//   } else { // AnkiDroid, AnkiMobile, AnkiWeb
-//     try {
-//       bonusOutputMobile = JSON.parse(sessionStorage.getItem('bonusOutput'));
-//       sessionStorage.removeItem('bonusOutput');
-//     } catch (error) {
-//       bonusOutputMobile = `${error.name}: ${error.message}`;
-//     }
-//   }
-// }
+function printPersistentData() {
+  // Activate back card bonus box if data will be printed to it
+  bonusOutputWrap = document.getElementById('bonus-output-wrap');
+  if (bonusOutputWrap && dataOutput) {
+    bonusOutputWrap.classList.add("active");
+  }
+  // Print data to back card output box
+  needsOutput = document.getElementById('data-output');
+  if (needsOutput) {
+    needsOutput.textContent = dataOutput;
+    dataOutput = '';
+  }
+}
 
-
-//-------------
-//--- NOTES ---
-//-------------
 function printNote() {
+  // Hide notes section if there are no notes added
   notesWrap = document.getElementById('notes-wrap');
   hasNote = document.getElementsByClassName('notes')[0];
   if (notesWrap && !hasNote.innerHTML) {
     notesWrap.classList.add("inactive");
   }
+  // Align text left if there are more than 200 characters in the notes
   if (hasNote && hasNote.innerText.length > 200) {
     hasNote.classList.add('long');
   }
