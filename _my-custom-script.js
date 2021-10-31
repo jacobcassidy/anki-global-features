@@ -23,7 +23,7 @@ printNote();
 watchQA();
 
 function watchQA() {
-  // Watch for changes in #qa and run functions when change
+  // Watch for changes in div#qa and run functions when change
   const targetNode = document.getElementById('qa');
   const config = { childList: true };
   const callback = function(mutationsList, observer) {
@@ -46,7 +46,7 @@ function watchQA() {
 }
 
 function createTextarea() {
-  // Changes Anki's default input into a textarea element on desktop
+  // Changes Anki's default input field into a textarea on desktop
   defaultInput = document.getElementById('typeans');
   if (defaultInput && defaultInput.nodeName == "INPUT") {
     newTextarea = document.createElement('textarea');
@@ -76,7 +76,7 @@ function printTextareaAnswer() {
 }
 
 function focusTextarea() {
-  // If first textarea is not default #typeans, add focus to custom textarea
+  // If textarea#typeans does not exist, add focus to new textarea element
   let textarea = document.querySelector('textarea');
   if (textarea && textarea.id !== 'typeans') {
     textarea.focus();
@@ -93,7 +93,7 @@ function activateBonus() {
 }
 
 function toggleBonusQuestion() {
-  // Hide bonus question when typing in bonus textarea
+  // Hide bonus question when typing into bonus textarea
   let textarea = document.querySelector('#bonus-input-wrap textarea');
   let bonusQuestion = document.getElementById('hasBonus');
   if (textarea) {
@@ -110,7 +110,7 @@ function toggleBonusQuestion() {
 function persistData() {
   dataInput = document.getElementById('data-input');
   if (dataInput) {
-    // Persist data of custom textarea input for AnkiDroid, AnkiMobile, AnkiWeb
+    // Persist input data of new textarea for AnkiDroid, AnkiMobile, AnkiWeb
     dataInput.addEventListener('input', (event) => {
       dataOutput = event.currentTarget.value;
       if (!isAnkiPc21) {
@@ -121,7 +121,7 @@ function persistData() {
         }
       }
     });
-    // Return data on desktop
+    // Return input data on desktop
     if (isAnkiPc21) {
       dataInput.addEventListener('keydown', event => {
         if (event.ctrlKey && event.key == 'Enter') pycmd("ans");
