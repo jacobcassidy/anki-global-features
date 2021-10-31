@@ -1,0 +1,9 @@
+/* General Editor CSS */
+/* This will affect the Editor UI and fields, but not their content. */
+
+/* Use class .nightMode or .night_mode for night mode specific CSS */
+/* Use the attribute selector mid for for note type specific CSS, e.g. [mid="1616909476324"] */
+
+body {
+  line-height: 1.5;
+}

@@ -1,0 +1,14 @@
+{
+  "buttons": {
+      "inlineCode": {
+          "action": "wrap",
+          "beginWrap": "<code>",
+          "endWrap": "</code>",
+          "style": {
+              "icon": "inline-code.png",
+              "keys": "shift+ctrl+c",
+              "tip": "Inline Code"
+          }
+      }
+  }
+}
