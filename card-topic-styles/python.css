@@ -18,7 +18,7 @@
 
   --color-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20% ));
   --color-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 15% ));
-  --color-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 20% ));
+  --color-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 17.5% ));
 
   --notes-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 50% ));
 
