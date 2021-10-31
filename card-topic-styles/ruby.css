@@ -1,0 +1,25 @@
+@import url("_my-custom-style.css");
+/* macOS source: ~/Library/Application Support/Anki2/user/collection.media/_my-custom-style.css */
+
+/* RUBY BRAND COLOR #cc342d */
+
+/* VARIABLES */
+:root {
+  --brand-color-h: 3;
+  --brand-color-s: 64%;
+  --brand-color-l: 49%;
+
+  --bg-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 45% ));
+  --bg-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 40% ));
+  --bg-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 35% ));
+
+  --border-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 35% ));
+  --border-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 30% ));
+
+  --color-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 35% ));
+  --color-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 25% ));
+  --color-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 20% ));
+
+  --notes-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 42.5% ));
+
+}

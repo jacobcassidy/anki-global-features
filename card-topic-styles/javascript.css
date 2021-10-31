@@ -1,0 +1,25 @@
+@import url("_my-custom-style.css");
+/* macOS source: ~/Library/Application Support/Anki2/user/collection.media/_my-custom-style.css */
+
+/* JAVASCRIPT BRAND COLOR #f0db4f */
+
+/* VARIABLES */
+:root {
+  --brand-color-h: 52;
+  --brand-color-s: 84%;
+  --brand-color-l: 63%;
+
+  --bg-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 30% ));
+  --bg-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 22.5% ));
+  --bg-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 15% ));
+
+  --border-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 7.5% ));
+  --border-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 0% ));
+
+  --color-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 45% ));
+  --color-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 37.5% ));
+  --color-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 22.5% ));
+
+  --notes-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 26.25% ));
+
+}
