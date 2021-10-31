@@ -1,0 +1,17 @@
+# EXCLUDE EVERYTHING EXCEPT MY CUSTOM ASSETS
+*
+
+# KEEP THE FOLLOWING ROOT COLLECTION.MEDIA FILES
+!_my-custom-script.js
+!_my-custom-style.css
+!_inconsolata-regular.*
+!readme.md
+!.gitignore
+
+# KEEP ALL DIRECTORY FILES
+!*/
+!*/**
+
+# IGNORE FILE TYPES
+*.DS_store
+
