@@ -1,0 +1,378 @@
+/* DEFAULT VARIABLES */
+:root {
+	--brand-color-h: 0;
+	--brand-color-s: 0%;
+	--brand-color-l: 50%;
+
+	--bg-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 50% ));
+	--bg-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 45% ));
+	--bg-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 40% ));
+
+	--border-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 40% ));
+	--border-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 35% ));
+
+	--color-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20% ));
+	--color-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 10% ));
+	--color-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 10% ));
+
+  --notes-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 47.5% ));
+
+  --font-family-primary: arial, sans-serif;
+  --font-family-mono: 'Inconsolata', monospace;
+
+  --cloze-color: blue;
+  --pre-color: #bebebe;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('Inconsolata-Regular.woff2') format('woff2'),
+      url('Inconsolata-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: underline;
+}
+
+center {
+  line-height: 0;
+}
+
+code,
+pre,
+input,
+textarea {
+  border-radius: 5px;
+  font-family: var(--font-family-mono);
+  line-height: 1.3;
+  margin: 0 auto;
+}
+code,
+pre {
+  font-style: normal;
+}
+code {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  color: var(--color-secondary);
+  padding: 2px 4px;
+}
+pre {
+	background-color: #232323;
+  color: var(--pre-color);
+  padding: 20px;
+	text-align: left !important;
+  white-space: pre-wrap;
+}
+pre code {
+	background: transparent;
+	border: none;
+  color: var(--pre-color);
+	padding: 0;
+}
+input,
+textarea {
+	border: 1px solid var(--border-primary);
+	color: var(--color-secondary);
+  font-size: 20px;
+  outline: none;
+  padding: 20px;
+	max-width: 500px;
+  width: 100%;
+}
+textarea#typeans {
+	height: 150px;
+}
+textarea#data-input {
+  height: 100px;
+}
+
+table {
+  max-width: 780px;
+  width: 100% !important;
+}
+
+.card {
+ 	font-family: var(--font-family-primary);
+ 	font-size: 20px;
+ 	line-height: 1.5;
+ 	margin: 0;
+	padding: 0;
+ 	text-align: center;
+}
+
+.topic {
+  background-color: var(--bg-tertiary);
+	color: var(--color-tertiary);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 40px;
+}
+
+.card-inner {
+  background-color: var(--bg-primary);
+	color: var(--color-primary);
+  min-height: calc(100vh - 40px);
+	margin: 0 auto;
+  padding: 30px calc(50% - 390px);
+}
+.mobile .card-inner {
+  min-height: calc(100vh - 275px);
+}
+@media only screen and (max-width: 820px) {
+  .card-inner {
+    padding: 30px 20px;
+  }
+}
+
+.question {
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.cloze {
+  color: var(--cloze-color);
+  font-weight: bold;
+}
+
+.typing-hint {
+	color: var(--color-tertiary);
+  font-size: 12px;
+	font-style: italic;
+}
+
+.box-title,
+.box-title-inner,
+.input-title,
+.notes-title {
+	border-radius: 5px 5px 0 0;
+	color: var(--color-tertiary);
+  font-size: 12px;
+	font-weight: bold;
+	margin: 20px auto 0;
+	text-transform: uppercase;
+}
+.box-title,
+.box-title-inner,
+.input-title {
+  background-color: var(--bg-tertiary);
+  padding: 4px;
+}
+.box-title-inner {
+  border-radius: 0;
+  margin: 20px -20px;
+}
+.input-title {
+	max-width: 500px;
+}
+.notes-title {
+  background-color: var(--notes-bg);
+  border: 1px solid var(--bg-secondary);
+  border-bottom: 0;
+  padding: 10px 0 0;
+}
+
+.box {
+	background-color: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+	border-radius: 0 0 5px 5px;
+  color: var(--color-secondary);
+	margin: 0 auto 30px;
+	padding: 20px;
+}
+.box code {
+	background-color: var(--bg-tertiary);
+	border-color: var(--border-secondary);
+}
+
+.notes {
+  background-color: var(--notes-bg);
+  border: 1px solid var(--bg-secondary);
+  border-radius: 0 0 5px 5px;
+  border-top: 0;
+	color: var(--color-tertiary);
+	font-size: 18px;
+	margin: 0;
+  padding: 10px 20px 20px;
+}
+.notes code {
+  color: var(--color-tertiary);
+}
+.notes.long {
+  text-align: left;
+}
+
+.replay-button {
+  margin: 10px;
+}
+
+.has-title #input-wrap {
+  margin-top: 0;
+}
+.has-title textarea {
+  border-top: none;
+	border-radius: 0 0 5px 5px;
+}
+
+.bonus-input-wrap__inner {
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  height: 100px;
+  margin: 0 auto;
+  max-width: 500px;
+  position: relative;
+  width: 100%;
+}
+.bonus-input-wrap__inner textarea {
+  position: absolute;
+  background: transparent;
+  left: 0;
+  z-index: 1;
+}
+#hasBonus {
+  color: var(--color-tertiary);
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  position: absolute;
+  padding: 20px;
+}
+#hasBonus code {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--bg-secondary);
+  color: var(--color-tertiary);
+}
+
+#input-wrap,
+#output-wrap {
+  margin: 20px auto 30px;
+}
+
+#bonus-input-wrap,
+#bonus-output-wrap,
+#hasBonus.hidden,
+#notes-wrap.inactive {
+  display: none;
+}
+#bonus-input-wrap.active,
+#bonus-output-wrap.active,
+#notes-wrap {
+  display: block;
+}
+
+#data-output {
+  font-family: var(--font-family-mono);
+}
+
+hr#answer {
+	border-color: var(--bg-secondary);
+  border-width: 2px;
+  border-style: solid;
+  border-top: 0;
+	margin: 20px 0;
+}
+
+/* ANSWER COMPARISON STYLES */
+#typearrow,
+.typeBad,
+.typeGood,
+.typeMissed {
+  display: inline-block;
+}
+#typearrow {
+  padding: 4px 0;
+}
+.typeBad,
+.typeGood,
+.typeMissed {
+  color: #666;
+}
+.typeBad {
+  background: #ff9999;
+}
+.typeGood {
+  background: #b2ffb2;
+}
+.typeMissed {
+  background: #d1d1d1;
+}
+
+/* CODE SYNTAX HIGHLIGHTING ADD-ON STYLES */
+
+/* OFF-WHITE */
+.p,
+.o,
+.ow,
+.x {
+  color: var(--pre-color);
+}
+
+/* BLUE */
+.nx,
+.kd,
+.kc,
+.n,
+.no {
+  color: #78DCE8;
+}
+
+/* GRAY */
+.c,
+.cm,
+.c1,
+.sd {
+  color: #646464;
+  font-style: italic;
+}
+
+/* GREEN */
+.kr,
+.na,
+.nc,
+.nd,
+.s {
+ color: #A9DC76;
+}
+
+/* ORANGE */
+.cp {
+  color: #FC9867;
+}
+
+/* PINK */
+.nb,
+.nv {
+  color: #F3B4C5;
+}
+
+/* PURPLE */
+.mi,
+.kt {
+  color: #AB9DF2;
+}
+
+/* RED */
+.k,
+.nt {
+  color: #FF6188;
+}
+
+/* RED ERROR */
+.err {
+  color: #f00;
+}
+
+/* YELLOW */
+.s1,
+.s2 {
+  color: #E6DB74;
+}
