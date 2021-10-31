@@ -2,14 +2,14 @@
 
 <div class="card-inner">
 
-	<div class="question">{{Question}}</div>
+  <div class="question">{{Question}}</div>
 
-	<div class="typing-hint">{{Type Hint}}</div>
+  <div class="typing-hint">{{Type Hint}}</div>
 
-	<div class="has-title">
-		<div class="input-title">Basic</div>
-		<textarea id="data-input" class="tappable" type="text"></textarea>
-	</div>
+  <div class="has-title">
+    <div class="input-title">Basic</div>
+    <textarea id="data-input" class="tappable" type="text"></textarea>
+  </div>
 
 </div>
 
@@ -26,7 +26,7 @@
   };
   (async () => {
     // Check if the function already exists in order to prevent duplicate loading
-		// macOS source location: ~/Library/Application Support/Anki2/user/collection.media/_my-custom-script.js
+    // macOS source location: ~/Library/Application Support/Anki2/user/collection.media/_my-custom-script.js
     if (typeof hasMyCustomScript === 'undefined') {
       await injectScript('_my-custom-script.js');
     }
