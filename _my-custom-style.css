@@ -241,7 +241,7 @@ table {
   left: 0;
   z-index: 1;
 }
-.bonus-answer {
+#bonus-output-wrap {
   font-size: 18px;
 }
 #hasBonus {
@@ -272,10 +272,6 @@ table {
 #bonus-output-wrap.active,
 #notes-wrap {
   display: block;
-}
-
-#data-output {
-  font-family: var(--font-family-mono);
 }
 
 hr#answer {
