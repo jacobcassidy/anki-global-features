@@ -3,66 +3,62 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function compareAnswers() {
-  const typedAnswerEl = document.getElementById('typedAnswer'),
-        typedAnswerText = typedAnswerEl.textContent,
-        typedAnswerCharArr = typedAnswerText.split(''),
-        cardAnswerEl = document.getElementById('cardAnswer'),
-        cardAnswerText = cardAnswerEl.textContent,
-        cardAnswerCharArr = cardAnswerText.split('');
+  const typedAnswerEl = document.getElementById('typedAnswer');
+  const typedAnswerText = typedAnswerEl.textContent;
+  const typedAnswerCharArr = typedAnswerText.split('');
+  const cardAnswerEl = document.getElementById('cardAnswer');
+  const cardAnswerText = cardAnswerEl.textContent;
+  // const cardAnswerCharArr = cardAnswerText.split('');
 
-  let   typedAnswerComparisonArr = [],
-        cardAnswerComparisonHTML = '',
-        typedMatchArr = [],
-        cardMatchArr = [],
-        lastTypedMatchIndexUsed = -1;
+  // let typedMatchArr = [];
+  let typedAnswerComparisonArr = [];
+  // let typedAnswerComparisonHTML = '';
+  // let cardAnswerComparisonHTML = '';
+  let lastCardMatchIndex = -1;
+  // let cardMatchIndexArr = [];
 
-  for ( let i = 0; i < cardAnswerCharArr.length; i++ ) {
-    // For each cardAnswerCharArr index, loop through typedAnswerCharArr for a match
-    let cardChar = cardAnswerCharArr[i],
-        cardCharEscaped = cardChar.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), // $& means the whole matched string
-        regexp = new RegExp(cardCharEscaped, 'g'),
-        matchTypedtoCardArr = Array.from(typedAnswerText.matchAll(regexp), match => match['index']),
-        wrapCardChar;
 
-    if ( matchTypedtoCardArr.length !== 0  ) {
-      let match = matchTypedtoCardArr.find( typedMatchIndex => typedMatchIndex > lastTypedMatchIndexUsed );
-      if ( match !== undefined ) {
-        wrapCardChar = '<span class="typedCorrect">' + cardChar + '</span>';
-        lastTypedMatchIndexUsed  = match;
-        typedMatchArr.push(match);
-        cardMatchArr.push(i);
-      } else {
-        wrapCardChar = '<span class="typedNotFound">' + cardChar + '</span>';
-      }
-    } else {
-      wrapCardChar = '<span class="typedNotFound">' + cardChar + '</span>';
-    }
-    cardAnswerComparisonHTML += wrapCardChar;
-  }
-
+  // For each typedAnswerCharArr index, find the next available match in cardAnswerCharArr
   for (let i = 0; i < typedAnswerCharArr.length; i++ ) {
-    // For each typedAnswerCharArr index, add a conditional wrap around the typed character based on the match status
-    let typedChar = typedAnswerCharArr[i],
-        typedMatch = typedMatchArr.find( match => match === i ),
-        typedMatchIndex = typedMatchArr.findIndex( match => match === i ),
-        typedMatchIndexValue = typedMatchArr[typedMatchIndex],
-        cardMatchIndexValue = cardMatchArr[typedMatchIndex],
-        lastTypedMatchIndexValue = typedMatchArr[typedMatchIndex - 1],
-        wrapTypedChar;
 
-    if ( typedMatch !== undefined && typedMatchIndexValue >= cardMatchIndexValue ) {
-      wrapTypedChar = '<span class="typedCorrect">' + typedChar + '</span>';
+    let typedChar = typedAnswerCharArr[i];
+    let typedCharEscaped = typedChar.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+    let regexp = new RegExp(typedCharEscaped, 'g');
+    let cardToTypedMatchArr = Array.from(cardAnswerText.matchAll(regexp), match => match['index']);
+    let wrapTypedChar;
 
-    } else if ( typedMatch !== undefined ) {
-      let dashesNeeded =  cardMatchArr[typedMatchIndex] - typedAnswerComparisonArr.length,
-          dashesString =  '<span class="typedIncorrect">-</span>';
-          dashesAdded = 0;
+    console.log('\nlast card match: ' + lastCardMatchIndex);
+    console.log('card match array: ' + cardToTypedMatchArr);
 
-      while ( dashesNeeded > dashesAdded ) {
-        typedAnswerComparisonArr.splice( lastTypedMatchIndexValue + 1, 0, dashesString );
-        dashesAdded++;
+    if ( cardToTypedMatchArr.length !== 0  ) {
+
+      let cardMatchIndex = cardToTypedMatchArr.find( match => match > lastCardMatchIndex );
+
+      console.log('available match index: ' + cardMatchIndex);
+
+      if ( cardMatchIndex <= typedAnswerComparisonArr.length )  {
+        wrapTypedChar = '<span class="typedCorrect">' + typedChar + '</span>';
+        lastCardMatchIndex  = cardMatchIndex;
+        // cardMatchIndexArr.push( lastCardMatchIndex );
+
+      } else if ( cardMatchIndex ) {
+        let dashesNeeded =  cardMatchIndex - typedAnswerComparisonArr.length;
+        let dashesString =  '<span class="typedIncorrect">-</span>';
+        let dashesAdded = 0;
+
+        while ( dashesNeeded > dashesAdded ) {
+          typedAnswerComparisonArr.splice( lastCardMatchIndex + 1, 0, dashesString );
+          dashesAdded++;
+        }
+
+        wrapTypedChar = '<span class="typedCorrect">' + typedChar + '</span>';
+        // cardMatchIndexArr.push(cardMatchIndex);
+        lastCardMatchIndex  = cardMatchIndex;
+        // typedMatchArr.push(i);
+
+      } else {
+        wrapTypedChar = '<span class="typedIncorrect">' + typedChar + '</span>';
       }
-      wrapTypedChar = '<span class="typedCorrect">' + typedChar + '</span>';
 
     } else {
       wrapTypedChar = '<span class="typedIncorrect">' + typedChar + '</span>';
@@ -72,6 +68,5 @@ function compareAnswers() {
   }
 
   typedAnswerEl.innerHTML = typedAnswerComparisonArr.join('');
-  cardAnswerEl.innerHTML = cardAnswerComparisonHTML;
-
+  // cardAnswerEl.innerHTML = cardAnswerComparisonHTML;
 }
