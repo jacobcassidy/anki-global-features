@@ -1,104 +1,65 @@
 const typedAnswerEl = document.getElementById('typedAnswer'),
-      typedAnswerText = typedAnswerEl.textContent,
-      typedAnswerCharArr = typedAnswerText.split(''),
       cardAnswerEl = document.getElementById('cardAnswer'),
+      typedAnswerText = typedAnswerEl.textContent,
       cardAnswerText = cardAnswerEl.textContent,
+      typedAnswerCharArr = typedAnswerText.split(''),
       cardAnswerCharArr = cardAnswerText.split(''),
       dmp = new diff_match_patch(),
-      typedDiff = dmp.diff_main(typedAnswerText, cardAnswerText),
-      cardDiff = dmp.diff_main(cardAnswerText, typedAnswerText);
+      diff = dmp.diff_main(cardAnswerText, typedAnswerText);
 
-let   typedMatchCharArr = [],
-      typedAnswerComparisonArr = [],
-      cardMatchCharArr = [],
-      cardAnswerComparisonArr = [];
+let   charDiffArr = [],
+      typedComparisonAnswerArr = [],
+      cardComparisonAnswerArr = [],
+      lastCorrectMatchIndex = 0;
 
-function addToTypedMatchCharArr() {
-  for (let i = 0; i < typedDiff.length; i++ ) {
-    let typedStr = typedDiff[i][1]; // 'plus'
-    let typedStrArr = typedStr.split(''); // ['p', 'l', 'u', 's']
-    let isTypedMatch = typedDiff[i][0]; // -1
+// Create array of indiviual characters and their match type from array of diff strings
+for (let i = 0; i < diff.length; i++ ) {
+  let diffStr = diff[i][1]; // string such as 'plus'
+  let diffStrArr = diffStr.split(''); // ['p', 'l', 'u', 's']
+  let isDiffMatch = diff[i][0]; // -1, 0, or 1
 
-    typedStrArr.forEach( char => {
-      let typedCharDiff = [isTypedMatch, char]; // [-1, 'p']
-      if ( isTypedMatch !== 1 ) {
-        typedMatchCharArr.push(typedCharDiff);
-      }
-    });
-  }
+  diffStrArr.forEach( char => {
+    let diffChar = [isDiffMatch, char]; // example output: [-1, 'p']
+    charDiffArr.push(diffChar);
+  });
 }
 
-function addToCardMatchCharArr() {
-  for ( let i = 0; i < cardDiff.length; i++ ) {
-    let cardStr = cardDiff[i][1]; // '+,' string
-    let cardStrArr = cardStr.split(''); // ['+', ',']
-    let isCardMatch = cardDiff[i][0]; // -1, 0, or 1
+// Wrapped characters depending on their match type and inserted into the comparison answer arrays.
+for( let i = 0; i < charDiffArr.length; i++ ) {
+  let diffChar = charDiffArr[i][1], // 'p'
+      sortDiffChar = charDiffArr[i][0], // -1, 0, or 1
+      wrapTypedChar,
+      wrapCardChar;
 
-    cardStrArr.forEach( char => {
-      let cardCharDiff = [isCardMatch, char]; // [0, 'K']
-      if ( isCardMatch !== 1 ) {
-        cardMatchCharArr.push(cardCharDiff);
+  if ( sortDiffChar === -1 ) {
+    wrapCardChar = '<span class="typedMissing">' + diffChar + '</span>';
+  } else if ( sortDiffChar === 0 ) {
+    // Insert dashes if needed to align typed and card answers
+    if ( typedComparisonAnswerArr.length < cardComparisonAnswerArr.length ) {
+      let dashesNeeded = cardComparisonAnswerArr.length - typedComparisonAnswerArr.length;
+      let dashesStr = '<span class="typedIncorrect">-</span>';
+      let dashesAdded = 0;
+
+      while ( dashesNeeded > dashesAdded ) {
+        typedComparisonAnswerArr.splice( lastCorrectMatchIndex + 1, 0, dashesStr );
+        dashesAdded++;
       }
-    });
-  }
-}
-
-function addToTypedAnswerComparisonArr() {
-  let lastCorrectCardCharIndex = -1;
-  let lastCorrectTypedCharIndex = -1;
-  let dashesInserted = 0;
-
-  for( let i = 0; i < typedMatchCharArr.length; i++ ) {
-    let typedMatchNum = typedMatchCharArr[i][0];
-    let typedMatchChar = typedMatchCharArr[i][1];
-    let wrapTypedMatchChar;
-
-    if ( typedMatchNum === -1 ) {
-      wrapTypedMatchChar = '<span class="typedIncorrect">' + typedMatchChar + '<span>';
-
-    } else if ( typedMatchNum === 0 ) {
-      let cardMatchCharIndex = cardMatchCharArr.findIndex( (innerArr, index) => innerArr[0] === 0 && innerArr[1] === typedMatchChar && index > lastCorrectCardCharIndex );
-      let indexWithDashes = i + dashesInserted;
-
-      if ( cardMatchCharIndex > indexWithDashes ) {
-        let dashesNeeded = cardMatchCharIndex - indexWithDashes;
-        let dashesStr = '<span class="typedIncorrect">-</span>';
-        let dashesAdded = 0;
-
-        while ( dashesNeeded > dashesAdded ) {
-          typedAnswerComparisonArr.splice( lastCorrectTypedCharIndex + 1, 0, dashesStr );
-          dashesAdded++;
-        }
-
-        dashesInserted += dashesNeeded;
-      }
-      wrapTypedMatchChar = '<span class="typedCorrect">' + typedMatchChar + '</span>';
-      lastCorrectCardCharIndex = cardMatchCharIndex;
-      lastCorrectTypedCharIndex = indexWithDashes;
     }
-    typedAnswerComparisonArr.push(wrapTypedMatchChar);
+    wrapTypedChar = '<span class="typedCorrect">' + diffChar + '</span>';
+    wrapCardChar = '<span class="typedCorrect">' + diffChar + '</span>';
+    lastCorrectMatchIndex = typedComparisonAnswerArr.length;
+
+  } else if ( sortDiffChar === 1 ) {
+    wrapTypedChar = '<span class="typedIncorrect">' + diffChar + '</span>';
+  }
+
+  if ( wrapTypedChar !== undefined ) {
+    typedComparisonAnswerArr.push(wrapTypedChar);
+  }
+  if ( wrapCardChar !== undefined ) {
+    cardComparisonAnswerArr.push(wrapCardChar);
   }
 }
-
-function addToCardAnswerComparisonArr() {
-  for( let i = 0; i < cardMatchCharArr.length; i++ ) {
-    let cardMatchNum = cardMatchCharArr[i][0];
-    let cardMatchChar = cardMatchCharArr[i][1];
-
-    if ( cardMatchNum === -1 ) {
-      let wrapCardMatchChar = '<span class="typedNotFound">' + cardMatchChar + '<span>';
-      cardAnswerComparisonArr.push(wrapCardMatchChar);
-
-    } else if ( cardMatchNum === 0 ) {
-      let wrapCardMatchChar = '<span class="typedCorrect">' + cardMatchChar + '<span>';
-      cardAnswerComparisonArr.push(wrapCardMatchChar);
-    }
-  }
-}
-
-addToTypedMatchCharArr();
-addToCardMatchCharArr();
-addToTypedAnswerComparisonArr();
-addToCardAnswerComparisonArr();
-typedAnswerEl.innerHTML = typedAnswerComparisonArr.join('');
-cardAnswerEl.innerHTML = cardAnswerComparisonArr.join('');
+// Replace original typed and char answers with comparison answers
+typedAnswerEl.innerHTML = typedComparisonAnswerArr.join('');
+cardAnswerEl.innerHTML = cardComparisonAnswerArr.join('');
