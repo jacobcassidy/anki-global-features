@@ -70,7 +70,7 @@ pre {
   color: var(--pre-color);
   line-height: 1.333;
   padding: 20px;
-	text-align: left !important;
+  text-align: left !important;
   white-space: pre-wrap;
 }
 pre code {
