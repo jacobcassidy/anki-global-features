@@ -14,25 +14,26 @@ let   charDiffArr = [],
 
 // Create array of indiviual characters and their match type from array of diff strings
 for (let i = 0; i < diff.length; i++ ) {
-  let diffStr = diff[i][1]; // string such as 'plus'
-  let diffStrArr = diffStr.split(''); // ['p', 'l', 'u', 's']
-  let isDiffMatch = diff[i][0]; // -1, 0, or 1
+  let diffStr = diff[i][1];             // example: 'plus'
+  let diffStrArr = diffStr.split('');   // example: ['p', 'l', 'u', 's']
+  let isDiffMatch = diff[i][0];         // -1, 0, or 1
 
   diffStrArr.forEach( char => {
-    let diffChar = [isDiffMatch, char]; // example output: [-1, 'p']
+    let diffChar = [isDiffMatch, char]; // example: [-1, 'p']
     charDiffArr.push(diffChar);
   });
 }
 
 // Wrapped characters depending on their match type and inserted into the comparison answer arrays.
 for( let i = 0; i < charDiffArr.length; i++ ) {
-  let diffChar = charDiffArr[i][1], // 'p'
+  let diffChar = charDiffArr[i][1],     // 'p'
       sortDiffChar = charDiffArr[i][0], // -1, 0, or 1
       wrapTypedChar,
       wrapCardChar;
 
   if ( sortDiffChar === -1 ) {
     wrapCardChar = '<span class="typedMissing">' + diffChar + '</span>';
+
   } else if ( sortDiffChar === 0 ) {
     // Insert dashes if needed to align typed and card answers
     if ( typedComparisonAnswerArr.length < cardComparisonAnswerArr.length ) {
@@ -60,6 +61,7 @@ for( let i = 0; i < charDiffArr.length; i++ ) {
     cardComparisonAnswerArr.push(wrapCardChar);
   }
 }
-// Replace original typed and char answers with comparison answers
-typedAnswerEl.innerHTML = typedComparisonAnswerArr.join('');
-cardAnswerEl.innerHTML = cardComparisonAnswerArr.join('');
+
+// Replace original answers with comparison answers inserted in the <pre> tag
+typedAnswerEl.firstElementChild.innerHTML = typedComparisonAnswerArr.join('');
+cardAnswerEl.firstElementChild.innerHTML = cardComparisonAnswerArr.join('');
