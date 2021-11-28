@@ -7,34 +7,34 @@ const typedAnswerEl = document.getElementById('typedAnswer'),
       dmp = new diff_match_patch(),
       diff = dmp.diff_main(cardAnswerText, typedAnswerText);
 
-let   charDiffArr = [],
+let   diffSortCharArr = [],
       typedComparisonAnswerArr = [],
       cardComparisonAnswerArr = [],
       lastCorrectMatchIndex = 0;
 
 // Create array of indiviual characters and their match type from array of diff strings
 for (let i = 0; i < diff.length; i++ ) {
-  let diffStr = diff[i][1];             // example: 'plus'
-  let diffStrArr = diffStr.split('');   // example: ['p', 'l', 'u', 's']
-  let isDiffMatch = diff[i][0];         // -1, 0, or 1
+  let diffSort = diff[i][0];             // -1, 0, or 1
+  let diffStr = diff[i][1];              // example: 'plus'
+  let diffStrSplit = diffStr.split('');  // example: ['p', 'l', 'u', 's']
 
-  diffStrArr.forEach( char => {
-    let diffChar = [isDiffMatch, char]; // example: [-1, 'p']
-    charDiffArr.push(diffChar);
+  diffStrSplit.forEach( diffChar => {
+    let diffSortChar = [diffSort, diffChar]; // example: [-1, 'p']
+    diffSortCharArr.push(diffSortChar);
   });
 }
 
 // Wrapped characters depending on their match type and inserted into the comparison answer arrays.
-for( let i = 0; i < charDiffArr.length; i++ ) {
-  let diffChar = charDiffArr[i][1],     // 'p'
-      sortDiffChar = charDiffArr[i][0], // -1, 0, or 1
+for( let i = 0; i < diffSortCharArr.length; i++ ) {
+  let charMatch = diffSortCharArr[i][1],   // 'p'
+      isCharMatch = diffSortCharArr[i][0], // -1, 0, or 1
       wrapTypedChar,
       wrapCardChar;
 
-  if ( sortDiffChar === -1 ) {
-    wrapCardChar = '<span class="typedMissing">' + diffChar + '</span>';
+  if ( isCharMatch === -1 ) {
+    wrapCardChar = '<span class="typedMissing">' + charMatch + '</span>';
 
-  } else if ( sortDiffChar === 0 ) {
+  } else if ( isCharMatch === 0 ) {
     // Insert dashes if needed to align typed and card answers
     if ( typedComparisonAnswerArr.length < cardComparisonAnswerArr.length ) {
       let dashesNeeded = cardComparisonAnswerArr.length - typedComparisonAnswerArr.length;
@@ -46,12 +46,12 @@ for( let i = 0; i < charDiffArr.length; i++ ) {
         dashesAdded++;
       }
     }
-    wrapTypedChar = '<span class="typedCorrect">' + diffChar + '</span>';
-    wrapCardChar = '<span class="typedCorrect">' + diffChar + '</span>';
+    wrapTypedChar = '<span class="typedCorrect">' + charMatch + '</span>';
+    wrapCardChar = '<span class="typedCorrect">' + charMatch + '</span>';
     lastCorrectMatchIndex = typedComparisonAnswerArr.length;
 
-  } else if ( sortDiffChar === 1 ) {
-    wrapTypedChar = '<span class="typedIncorrect">' + diffChar + '</span>';
+  } else if ( isCharMatch === 1 ) {
+    wrapTypedChar = '<span class="typedIncorrect">' + charMatch + '</span>';
   }
 
   if ( wrapTypedChar !== undefined ) {
