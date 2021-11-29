@@ -132,7 +132,7 @@ textarea.has-title {
 }
 
 .card-inner {
-  padding: 30px calc(50% - 320px);
+  padding: 30px calc(50% - 360px);
 }
 @media only screen and (max-width: 680px) {
   .card-inner {
@@ -163,6 +163,7 @@ textarea.has-title {
   color: var(--color-tertiary);
   font-size: 12px;
   font-weight: bold;
+  margin: 0 auto;
   text-transform: uppercase;
 }
 .box-title,
@@ -174,34 +175,10 @@ textarea.has-title {
 .box-title-inner,
 .input-title {
   background-color: var(--bg-tertiary);
-  padding: 4px;
-}
-.box-title {
-  margin: -20px -20px 20px;
-}
-.box-title-inner {
-  margin: 20px -20px;
-}
-.input-title {
-  margin: 0 auto;
+  padding: 4px 20px;
 }
 .notes-title {
-  margin: -20px -20px 10px;
-  padding: 10px 0 0;
-}
-
-.intitle-comparison,
-.intitle-type-hint {
-  font-weight: normal;
-}
-.intitle-comparison:before {
-  content: '\2022';
-  display: inline;
-	margin: 0 6px 0 2px;
-}
-.intitle-type-hint {
-  display: block;
-  text-transform: none;
+  padding: 10px 20px 0;
 }
 
 .box,
@@ -209,7 +186,6 @@ textarea.has-title {
   border-radius: 5px;
   font-size: 18px;
   margin: 0 auto 30px;
-  padding: 20px;
 }
 .box {
   background-color: var(--bg-secondary);
@@ -221,7 +197,6 @@ textarea.has-title {
   border: 1px solid var(--bg-secondary);
   color: var(--color-tertiary);
 }
-
 .box code {
   background-color: var(--bg-tertiary);
   border-color: var(--border-secondary);
@@ -231,6 +206,13 @@ textarea.has-title {
 }
 .notes.long {
   text-align: left;
+}
+
+.input-wrap {
+  margin: 0 auto 30px;
+}
+.input-wrap.is-primary .input-title {
+  margin-top: 10px;
 }
 
 .input-inner-wrap {
@@ -248,38 +230,68 @@ textarea.has-title {
   left: 0;
   z-index: 1;
 }
-.input-inner-wrap .additional-question {
+.input-inner-wrap .faux-placeholder {
   color: var(--color-tertiary);
   font-family: var(--font-family-primary);
   font-size: 18px;
   position: absolute;
   padding: 15px 20px;
+  text-align: left;
 }
-
-.input-inner-wrap .additional-question code {
+.input-inner-wrap .faux-placeholder code {
   background-color: var(--bg-primary);
   border: 1px solid var(--bg-secondary);
   color: var(--color-tertiary);
+}
+.is-comparison:before,
+.is-type-hint:before {
+  content: '\2022';
+  margin: 0 6px;
+}
+.is-comparison,
+.is-type-hint {
+  font-weight: normal;
+  text-transform: none;
+}
+
+input,
+textarea,
+.input-wrap {
+  max-width: 600px;
+}
+code#typeans,
+.output-wrap,
+.notes-box {
+  max-width: 640px;
+}
+
+.output-data,
+.answer,
+.notes {
+  padding: 20px;
+}
+
+.input-wrap,
+.input-wrap.is-primary .input-title,
+.faux-placeholder.inactive {
+  display: none;
+}
+
+.input-wrap.active,
+.input-wrap.is-primary .input-title.active {
+  display: block;
 }
 
 .replay-button {
   margin: 10px;
 }
 
-/* .input-wrap,
-.output-wrap,
-.notes-box.inactive  {
-  display: none;
-} */
 
-.input-wrap.active,
-.output-wrap.active,
-.notes-box {
+/* DEFAULT ANKI ELEMENTS */
+.card-inner textarea {
   display: block;
 }
 
-
-/* DEFAULT ANKI ELEMENTS */
 .card-inner center {
   line-height: 0;
 }
@@ -289,7 +301,7 @@ textarea.has-title {
   border: none;
   color: var(--pre-color);
   display: block;
-  margin-bottom: 30px;
+  margin: 10px auto 30px;
   padding: 20px;
   text-align: left;
 }
