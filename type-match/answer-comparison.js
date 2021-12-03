@@ -2,8 +2,6 @@ const typedAnswerEl = document.getElementById('typedAnswer'),
       cardAnswerEl = document.getElementById('cardAnswer'),
       typedAnswerText = typedAnswerEl.textContent,
       cardAnswerText = cardAnswerEl.textContent,
-      typedAnswerCharArr = typedAnswerText.split(''),
-      cardAnswerCharArr = cardAnswerText.split(''),
       dmp = new diff_match_patch(),
       diff = dmp.diff_main(cardAnswerText, typedAnswerText);
 
