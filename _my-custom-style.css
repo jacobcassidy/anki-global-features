@@ -1,3 +1,4 @@
+/* VARIABLES */
 :root {
   --brand-color-h: 0;
   --brand-color-s: 0%;
@@ -9,18 +10,22 @@
 
   --border-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 40% ));
   --border-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 35% ));
+  --border-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 30% ));
 
   --color-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20% ));
   --color-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 10% ));
   --color-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 10% ));
 
   --notes-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 47.5% ));
+
   --pre-color: hsl(0, 0%, 75%);
+  --pre-bg: hsla(0,0%,15%,0.85);
 
   --font-family-primary: arial, sans-serif;
   --font-family-mono: 'Inconsolata', 'monospace', monospace;
 }
 
+/* DEFAULT STYLES */
 @font-face {
   font-family: 'Inconsolata';
   src: url('_inconsolata-regular.woff2') format('woff2'),
@@ -45,8 +50,8 @@ a {
 }
 
 code,
-pre,
 input,
+pre,
 textarea {
   border-radius: 5px;
   font-family: var(--font-family-mono);
@@ -58,8 +63,8 @@ textarea {
   border: 1px solid var(--border-primary);
   color: var(--color-secondary);
 }
-pre,
 input,
+pre,
 textarea {
   line-height: 1.333;
   margin: 10px auto 30px;
@@ -70,6 +75,10 @@ code,
 pre {
   font-style: normal;
 }
+input,
+textarea {
+  max-width: 600px;
+}
 pre,
 textarea {
   padding: 20px;
@@ -79,11 +88,12 @@ code {
   padding: 2px 4px;
   margin: 0;
 }
+
 input {
-  padding: 15px 20px;
+  padding: 10px;
 }
 pre {
-  background-color: hsl(0,0%,15%);
+  background-color: var(--pre-bg);
   color: var(--pre-color);
   padding: 20px;
   text-align: left;
@@ -96,6 +106,7 @@ pre code {
   padding: 0;
 }
 textarea {
+  display: block;
   height: 150px;
 }
 textarea::placeholder {
@@ -106,7 +117,7 @@ textarea::placeholder {
 }
 textarea.has-title {
   border-top: 0;
-  border-radius: 0 0  5px 5px;
+  border-radius: 0 0 5px 5px;
   margin-top: 0;
   padding: 15px 20px;
 }
@@ -156,66 +167,36 @@ textarea.has-title {
   padding-bottom: 5px;
 }
 
-.box-title,
-.box-title-inner,
+/* TITLE STYLES */
 .input-title,
+.output-title,
 .notes-title {
+  border-radius: 5px 5px 0 0;
   color: var(--color-tertiary);
   font-size: 12px;
   font-weight: bold;
   margin: 0 auto;
   text-transform: uppercase;
 }
-.box-title,
 .input-title,
-.notes-title {
-  border-radius: 5px 5px 0 0;
-}
-.box-title,
-.box-title-inner,
-.input-title {
+.output-title {
   background-color: var(--bg-tertiary);
   padding: 4px 20px;
 }
-.notes-title {
-  padding: 10px 20px 0;
-}
-
-.box,
-.notes-box {
-  border-radius: 5px;
-  font-size: 18px;
-  margin: 0 auto 30px;
-}
-.box {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--bg-tertiary);
-  color: var(--color-secondary);
-}
-.notes-box {
-  background-color: var(--notes-bg);
-  border: 1px solid var(--bg-secondary);
-  color: var(--color-tertiary);
-}
-.box code {
-  background-color: var(--bg-tertiary);
-  border-color: var(--border-secondary);
-}
-.notes code {
-  color: var(--color-tertiary);
-}
-.notes.long {
-  text-align: left;
-}
-
-.input-wrap {
-  margin: 0 auto 30px;
-}
-.input-wrap.is-primary .input-title {
+.is-primary .input-title {
   margin-top: 10px;
 }
+.output-title.is-inner {
+  border-radius: 0;
+}
 
-.input-inner-wrap {
+
+/* INPUT STYLES */
+.input-wrap {
+  margin: 0 auto 45px;
+  max-width: 600px;
+}
+.input-textarea-wrap {
   background-color: #fff;
   border-radius: 0 0 5px 5px;
   height: 100px;
@@ -223,14 +204,14 @@ textarea.has-title {
   position: relative;
   width: 100%;
 }
-.input-inner-wrap textarea {
+.input-textarea-wrap textarea {
   position: absolute;
   background: transparent;
   height: 100px;
   left: 0;
   z-index: 1;
 }
-.input-inner-wrap .faux-placeholder {
+.input-faux-placeholder {
   color: var(--color-tertiary);
   font-family: var(--font-family-primary);
   font-size: 18px;
@@ -238,106 +219,135 @@ textarea.has-title {
   padding: 15px 20px;
   text-align: left;
 }
-.input-inner-wrap .faux-placeholder code {
+.input-faux-placeholder code {
   background-color: var(--bg-primary);
   border: 1px solid var(--bg-secondary);
   color: var(--color-tertiary);
 }
-.is-comparison:before,
-.is-type-hint:before {
-  content: '\2022';
-  margin: 0 6px;
-}
-.is-comparison,
-.is-type-hint {
+.input-comparison,
+.input-type-hint {
   font-weight: normal;
   text-transform: none;
 }
-
-input,
-textarea,
-.input-wrap {
-  max-width: 600px;
-}
-code#typeans,
-.output-wrap,
-.notes-box {
-  max-width: 640px;
+.input-comparison:before,
+.input-type-hint:before {
+  content: '|';
+  margin: 0 8px;
+  color: var(--border-tertiary);
 }
 
+
+/* OUTPUT STYLES */
+.output-wrap {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 5px;
+  color: var(--color-secondary);
+  font-size: 18px;
+  margin: 10px auto 45px;
+}
+.output-wrap.is-primary {
+  font-size: 20px;
+}
+:not(.is-primary) > .output-comparison {
+  border-radius: 0 0 5px 5px;
+}
+.output-comparison {
+  margin: 0;
+}
+.output-wrap code {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-secondary);
+}
 .output-data,
-.answer,
-.notes {
+.output-answer {
   padding: 20px;
 }
 
-.input-wrap,
-.input-wrap.is-primary .input-title,
-.faux-placeholder.inactive {
-  display: none;
+
+/* NOTES STYLES */
+.notes-wrap {
+  background-color: var(--notes-bg);
+  border: 1px solid var(--bg-secondary);
+  border-radius: 5px;
+  color: var(--color-tertiary);
+  font-size: 18px;
+  margin: 10px auto 30px;
+}
+.notes-title {
+  padding: 10px 20px 0;
+}
+.notes-content {
+  padding: 10px 20px 20px;
+}
+.notes-content code {
+  color: var(--color-tertiary);
+}
+.notes-long {
+  text-align: left;
 }
 
-.input-wrap.active,
-.input-wrap.is-primary .input-title.active {
-  display: block;
-}
 
+/* OTHER STYLES */
 .replay-button {
   margin: 10px;
 }
 
 
-/* DEFAULT ANKI ELEMENTS */
-.card-inner textarea {
+/* TOGGLE VIEWS */
+.type-hint,
+.input-wrap,
+.is-primary .input-title,
+.output-wrap,
+.notes-wrap,
+.input-faux-placeholder.inactive,
+.output-title.inactive,
+.output-title span.inactive,
+.output-data.inactive,
+.output-answer.inactive {
+  display: none;
+}
+.type-hint.active,
+.input-wrap.active,
+.is-primary .input-title.active,
+.output-wrap.active,
+.notes-wrap.active {
   display: block;
 }
 
-.card-inner center {
-  line-height: 0;
-}
 
-.card-inner code#typeans {
-  background-color: hsl(0,0%,15%);
+/* DEFAULT ANKI OUTPUT ELEMENTS */
+code#typeans {
+  background-color: var(--pre-bg);
   border: none;
   color: var(--pre-color);
   display: block;
-  margin: 10px auto 30px;
+  margin: 10px auto 45px;
   padding: 20px;
   text-align: left;
 }
-
-.card-inner hr#answer {
+hr#answer {
   border-color: var(--bg-secondary);
   border-width: 2px;
   border-style: solid;
   border-top: 0;
   margin: 20px 0;
 }
-
-.card-inner #typearrow {
+#typearrow {
   padding: 4px 0;
 }
-
-/* ANSWER COMPARISON STYLES */
-
 .typeBad,
 .typeGood,
-.typeMissed,
-.typedCorrect,
-.typedIncorrect,
-.typedMissing {
+.typeMissed {
   color: #666;
 }
-.typeBad,
-.typedIncorrect {
+.typeBad {
   background: #ff9999;
 }
-.typeGood,
-.typedCorrect {
+.typeGood {
   background: #b2ffb2;
 }
-.typeMissed,
-.typedMissing {
+.typeMissed {
   background: #d1d1d1;
 }
 
