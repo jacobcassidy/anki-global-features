@@ -1,5 +1,7 @@
 const hasMyCustomScript = true,
-      isAnkiPC21 = typeof pycmd !== 'undefined';
+      isAnkiPC = typeof pycmd !== 'undefined',
+      isAnkiWeb = typeof study !== 'undefined',
+      isAnkiDroid = typeof AnkiDroidJS !== 'undefined';
 let   outputDataArr;
 
 watchQA();
@@ -13,10 +15,15 @@ function watchQA() {
   returnInputs();
   showOutputs();
   showNotes();
-
-  // Run functions again when changes are made to the div#qa element
-  const targetNode = document.getElementById('qa'),
-        config = { childList: true },
+  modifyAnkiWeb();
+  // Run functions again when changes are made to the DOM
+  let targetNode;
+  if ( isAnkiDroid ) {
+    targetNode = document.querySelector('body');
+  } else {
+    targetNode = document.getElementById('qa');
+  }
+  const config = { childList: true },
         callback = function( mutationsList, observer ) {
     for ( const mutation of mutationsList ) {
       if ( mutation.type === 'childList' ) {
@@ -27,8 +34,9 @@ function watchQA() {
         returnInputs();
         showOutputs();
         showNotes();
+        modifyAnkiWeb();
       }
-      break; // Don't run functions again when changes made to the div#qa element are created by the functions
+      break; // Don't run functions again when changes made to the DOM are created by the functions
     }
   };
   const observer = new MutationObserver( callback );
@@ -109,7 +117,7 @@ function showTypeHint() {
 function focusFirstInput() {
   // Add focus to first input/textarea element if the ID is not #typeans
   const inputField = document.querySelector( 'input, textarea' );
-  if ( inputField !== null && inputField.id !== typeans ) {
+  if ( inputField !== null && inputField.id !== 'typeans' ) {
     inputField.focus();
   }
 }
@@ -117,17 +125,34 @@ function focusFirstInput() {
 function returnInputs() {
   const inputDataList = document.querySelectorAll('.input-data');
   if ( inputDataList.length !== 0 ) {
-    outputDataArr = Array(inputDataList.length);
+    outputDataArr = Array( inputDataList.length );
     inputDataList.forEach( ( inputData, inputIndex ) => {
-      // Add input data into an array to return for output
       inputData.addEventListener( 'input', event => {
         const inputValue = event.currentTarget.value;
-        outputDataArr.splice( inputIndex, 1, inputValue );
+        // Store input data on AnkiDroid
+        if ( isAnkiDroid ) {
+          try {
+            sessionStorage.setItem( inputIndex, inputValue );
+          } catch (error) {
+            console.log(`${error.name}: ${error.message}`);
+          }
+        // Store input data on AnkiPC, AnkiWeb, & AnkiIOS
+        } else {
+          outputDataArr.splice( inputIndex, 1, inputValue );
+        }
       });
-      // Return data on PC keypress
-      if ( isAnkiPC21 ) {
+      // Return data on AnkiPC keypress
+      if ( isAnkiPC ) {
         inputData.addEventListener( 'keydown', event => {
-          if ( event.ctrlKey && event.key == 'Enter' ) pycmd('ans');
+          if ( event.ctrlKey && event.key === 'Enter' ) pycmd('ans');
+        });
+      // Return data on AnkiWeb keypress
+      } else if ( isAnkiWeb ) {
+        inputData.addEventListener( 'keydown', event => {
+          if ( event.ctrlKey && event.key === 'Enter' ) {
+            event.preventDefault();
+            study.drawAnswer();
+          }
         });
       }
     });
@@ -141,20 +166,16 @@ function showOutputs() {
       const outputAnswer = outputWrap.querySelector('.output-answer'),
             outputData = outputWrap.querySelector('.output-data'),
             hasCompare = outputData.getAttribute('data-compare');
-
       // Show output-wrap if it contains an answer
       if ( outputAnswer !== null && outputAnswer.innerHTML !== '' ) {
         outputWrap.classList.add('active');
       }
-
-      // If compare is active, run comparisons when there is data to compare
+      // Run comparison when compare field is active
       if ( hasCompare !== null && hasCompare !== '' ) {
-
         // Create <pre> element to add comparison answer to
         const preEl = document.createElement('pre');
         preEl.classList.add('output-comparison');
-
-        // Hide output-wrap inner elements when compare is active
+        // Hide output-wrap inner elements not wanted during comparison
         const outputTitleInnerList = outputWrap.querySelectorAll('.output-title.is-inner'),
               outputTitleSpanList = outputWrap.querySelectorAll('.output-title span');
         if ( outputWrap.classList.contains('is-primary') ) {
@@ -172,9 +193,8 @@ function showOutputs() {
         if ( outputTitleSpanList !== 0 ) {
           outputTitleSpanList.forEach( outputTitleSpan => outputTitleSpan.classList.add('inactive') );
         }
-
-        // Don't compare user answer to card answer if the user did NOT input an answer
-        if ( outputDataArr[outputIndex] === undefined ) {
+        // Don't compare user's answer to card's answer if the user did NOT input an answer
+        if ( isAnkiDroid && sessionStorage[outputIndex] === undefined || !isAnkiDroid && outputDataArr[outputIndex] === undefined ) {
           const cardAnswerCharArr = outputAnswer.innerText.split(''),
                 cardAnswerComparisonArr = [];
           cardAnswerCharArr.forEach( cardAnswerChar => {
@@ -182,82 +202,91 @@ function showOutputs() {
           })
           preEl.innerHTML = '\n&darr;\n' + cardAnswerComparisonArr.join('');
           outputWrap.append(preEl);
-
+        // Compare user's answer to card's answer when user did input an answer
         } else {
-
-          // Compare user's answer to card's answer
-          const typedAnswer = outputDataArr[outputIndex],
-                cardAnswer = outputAnswer.textContent,
+          let typedAnswer;
+          // Get typedAnswer value if AnkiDroid
+          if ( isAnkiDroid ) {
+            console.log(sessionStorage);
+            console.log(outputIndex);
+            typedAnswer = sessionStorage[outputIndex];
+          // Get typedAnswer value if AnkiPC, AnkiWeb, or AnkiIOS
+          } else {
+            typedAnswer = outputDataArr[outputIndex]
+          }
+          const cardAnswer = outputAnswer.textContent,
                 dmp = new diff_match_patch(),
                 diffArr = dmp.diff_main( cardAnswer, typedAnswer ),
-                diffSortCharArr = [],
+                diffMatchCharArr = [],
                 typedComparisonArr = [],
                 cardComparisonArr = [];
           let   lastCorrectMatchIndex = 0;
-
-          // Create array of indiviual characters and their match type from diffArr
+          // Create array of indiviual characters and their match type
           for ( let i = 0; i < diffArr.length; i++ ) {
-            const diffSort = diffArr[i][0],              // -1, 0, or 1
-                  diffStr = diffArr[i][1],               // example: 'plus'
-                  diffCharArr = diffStr.split('');       // example: ['p', 'l', 'u', 's']
-
+            const diffMatch = diffArr[i][0],               // -1, 0, or 1
+                  diffStr = diffArr[i][1],                 // example: 'plus'
+                  diffCharArr = diffStr.split('');         // example: ['p', 'l', 'u', 's']
             diffCharArr.forEach( diffChar => {
-              const diffSortChar = [diffSort, diffChar]; // example: [-1, 'p']
-              diffSortCharArr.push(diffSortChar);
+              const diffMatchChar = [diffMatch, diffChar]; // example: [-1, 'p']
+              diffMatchCharArr.push(diffMatchChar);
             });
           }
-
-          // Wrapped characters depending on their match type and add to the comparison arrays.
-          for ( let i = 0; i < diffSortCharArr.length; i++ ) {
-            const charMatch = diffSortCharArr[i][1],     // 'p'
-                  isCharMatch = diffSortCharArr[i][0];   // -1, 0, or 1
+          // Wrap characters depending on their match type and add to respective comparison array.
+          for ( let i = 0; i < diffMatchCharArr.length; i++ ) {
+            const char = diffMatchCharArr[i][1],           // 'p'
+                  isCharMatch = diffMatchCharArr[i][0];    // -1, 0, or 1
             let   wrapTypedChar,
                   wrapCardChar;
-
+            // Wrap characters missed
             if ( isCharMatch === -1 ) {
-              wrapCardChar = '<span class="typeMissed">' + charMatch + '</span>';
-
+              wrapCardChar = '<span class="typeMissed">' + char + '</span>';
+            // Wrap characters correct
             } else if ( isCharMatch === 0 ) {
-
-              // Insert dashes if needed to align typed and card answers
+              // Insert dashes if needed to align correct typed and card characters
               if ( typedComparisonArr.length < cardComparisonArr.length ) {
                 const dashesStr = '<span class="typeBad">-</span>';
                 let   dashesNeeded = cardComparisonArr.length - typedComparisonArr.length,
                       dashesAdded = 0;
-
                 while ( dashesNeeded > dashesAdded ) {
                   typedComparisonArr.splice( lastCorrectMatchIndex + 1, 0, dashesStr );
                   dashesAdded++;
                 }
               }
-              wrapTypedChar = '<span class="typeGood">' + charMatch + '</span>';
-              wrapCardChar = '<span class="typeGood">' + charMatch + '</span>';
+              wrapTypedChar = '<span class="typeGood">' + char + '</span>';
+              wrapCardChar = '<span class="typeGood">' + char + '</span>';
               lastCorrectMatchIndex = typedComparisonArr.length;
-
+            // Wrap characters wrong
             } else if ( isCharMatch === 1 ) {
-              wrapTypedChar = '<span class="typeBad">' + charMatch + '</span>';
+              wrapTypedChar = '<span class="typeBad">' + char + '</span>';
             }
-
+            // Add characters to comparison arrays
             if ( wrapTypedChar !== undefined ) {
               typedComparisonArr.push(wrapTypedChar);
             }
             if ( wrapCardChar !== undefined ) {
               cardComparisonArr.push(wrapCardChar);
             }
-
-            // Add comparison answers to <pre> element and append it to outputWrap
+            // Transform comparison arrays into strings and add them to the <pre> element
             preEl.innerHTML = typedComparisonArr.join('') + '\n&darr;\n' + cardComparisonArr.join('');
             outputWrap.append(preEl);
           }
         }
-
-      // If compare is NOT active, output user's answer
+      // Directly output user's answer if comparison is NOT active,
       } else {
         if ( outputData !== null ) {
-          outputData.textContent = outputDataArr[outputIndex];
+          if ( isAnkiDroid ) {
+            outputData.textContent = sessionStorage[outputIndex];
+          } else {
+            outputData.textContent = outputDataArr[outputIndex];
+          }
         }
       }
     });
+    // Clear sessionStorage for next card on AnkiDroid
+    if ( isAnkiDroid ) {
+      sessionStorage.clear();
+      console.log('Session Cleared');
+    }
   }
 }
 
@@ -278,4 +307,19 @@ function showNotes() {
   }
 }
 
-// Check if it works on AnkiWeb and AnkiMobile iOS
+function modifyAnkiWeb() {
+  if ( isAnkiWeb ) {
+    const leftStudyMenu = document.getElementById('leftStudyMenu'),
+          rightStudyMenu = document.getElementById('rightStudyMenu'),
+          studyMenuWrap = document.getElementById('study-menu-wrap');
+    // Create and add study-menu-wrap element if it doesn't already exist
+    if ( leftStudyMenu !== null && studyMenuWrap === null ) {
+      const studyMenuParent = leftStudyMenu.parentNode,
+            menuWrap = document.createElement('div');
+      menuWrap.id = 'study-menu-wrap';
+      menuWrap.append(leftStudyMenu);
+      menuWrap.append(rightStudyMenu);
+      studyMenuParent.prepend(menuWrap);
+    }
+  }
+}
