@@ -205,14 +205,14 @@ function showOutputs() {
         // Compare user's answer to card's answer when user did input an answer
         } else {
           let typedAnswer;
-          // Get typedAnswer value if AnkiDroid
+          // Get typedAnswer value for AnkiDroid
           if ( isAnkiDroid ) {
             console.log(sessionStorage);
             console.log(outputIndex);
             typedAnswer = sessionStorage[outputIndex];
-          // Get typedAnswer value if AnkiPC, AnkiWeb, or AnkiIOS
+          // Get typedAnswer value for AnkiPC, AnkiWeb, or AnkiIOS
           } else {
-            typedAnswer = outputDataArr[outputIndex]
+            typedAnswer = outputDataArr[outputIndex];
           }
           const cardAnswer = outputAnswer.textContent,
                 dmp = new diff_match_patch(),
@@ -285,7 +285,6 @@ function showOutputs() {
     // Clear sessionStorage for next card on AnkiDroid
     if ( isAnkiDroid ) {
       sessionStorage.clear();
-      console.log('Session Cleared');
     }
   }
 }
