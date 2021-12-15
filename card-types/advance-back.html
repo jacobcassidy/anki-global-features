@@ -1,0 +1,77 @@
+<div class="topic">Dev</div>
+
+<div class="card-inner card-back">
+
+  <div class="question">{{Question}}</div>
+  <div class="type-hint">{{Type Hint}}</div>
+	{{type:Question}}
+
+	<div class="question">{{Question 3}}</div>
+	<div class="type-hint">{{Type Hint 3}}</div>
+  <div class="output-wrap is-primary">
+    <div class="output-title">Your Answer</div>
+    <div class="output-data" data-compare="{{Compare 3}}"></div>
+    <div class="output-title is-inner">Card's Answer</div>
+    <div class="output-answer">{{Answer 3}}</div>
+  </div>
+
+  <div class="question">{{Question 2}}</div>
+	<div class="type-hint">{{Type Hint 2}}</div>
+  <div class="output-wrap is-primary">
+    <div class="output-title">Your Answer</div>
+    <div class="output-data" data-compare="{{Compare 2}}"></div>
+    <div class="output-title is-inner">Card's Answer</div>
+    <div class="output-answer">{{Answer 2}}</div>
+  </div>
+
+  <div class="output-wrap">
+    <div class="output-title"><span>Your</span> Bonus <span>Answer</span></div>
+    <div class="output-data" data-compare="{{Bonus Compare}}"></div>
+    <div class="output-title is-inner">Card's Bonus Answer</div>
+    <div class="output-answer">{{Bonus Answer}}</div>
+  </div>
+
+  <div class="output-wrap">
+    <div class="output-title"><span>Your</span> New <span>Answer</span></div>
+    <div class="output-data" data-compare="{{New Compare}}"></div>
+    <div class="output-title is-inner">Card's New Answer</div>
+    <div class="output-answer">{{New Answer}}</div>
+  </div>
+
+  <div class="output-wrap">
+    <div class="output-title"><span>Your</span> Additional <span>Answer</span></div>
+    <div class="output-data" data-compare="{{Additional Compare}}"></div>
+    <div class="output-title is-inner">Card's Additional Answer</div>
+    <div class="output-answer">{{Additional Answer}}</div>
+  </div>
+
+	<div class="notes-wrap">
+  	<div class="notes-title">Notes</div>
+  	<div class="notes-content">{{Notes}}</div>
+	</div>
+
+</div>
+
+<script>
+  var injectScript = (src) => {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  };
+
+  (async () => {
+		// Check if the function already exists in order to prevent duplicate loading
+		// macOS source location: ~/Library/Application Support/Anki2/[user]/collection.media/_my-custom-script.js
+    if (typeof hasDiffMatchScript === 'undefined') {
+      await injectScript('_diff_match_patch.js');
+    }
+		if (typeof hasMyCustomScript === 'undefined') {
+      await injectScript('_my-custom-script.js');
+    }
+  })();
+</script>
