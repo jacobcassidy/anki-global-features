@@ -6,8 +6,9 @@
   --brand-color-s: 64%;
   --brand-color-l: 49%;
 
-  /* NORMAL VARIABLES */
+  /* DEFAULT VARIABLES */
   --pre-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 45% ));
+
   /* NIGHTMODE VARIABLES */
   --bg-primary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 40% ));
   --bg-secondary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 35% ));

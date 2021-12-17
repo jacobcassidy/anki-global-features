@@ -1,0 +1,12 @@
+@import url("_my-custom-style.css");
+
+:root {
+  /* HTML5 BRAND COLOR #e34f26 */
+  --brand-color-h: 13;
+  --brand-color-s: 77%;
+  --brand-color-l: 52%;
+
+  /* DEFAULT VARIABLES */
+  --input-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 48% ));
+  --pre-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 45% ));
+}

@@ -1,25 +1,8 @@
 @import url("_my-custom-style.css");
-/* macOS source: ~/Library/Application Support/Anki2/user/collection.media/_my-custom-style.css */
 
-/* PYTHON BRAND COLOR #3776ab */
-
-/* VARIABLES */
 :root {
+  /* PYTHON BRAND COLOR #3776ab */
   --brand-color-h: 207;
   --brand-color-s: 51%;
   --brand-color-l: 44%;
-
-  --bg-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 52.5% ));
-  --bg-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 47.5% ));
-  --bg-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 42.5% ));
-
-  --border-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 42.5% ));
-  --border-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 37.5% ));
-
-  --color-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20% ));
-  --color-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 15% ));
-  --color-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 17.5% ));
-
-  --notes-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 50% ));
-
 }

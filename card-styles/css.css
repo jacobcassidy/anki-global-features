@@ -1,0 +1,22 @@
+@import url("_my-custom-style.css");
+
+:root {
+  /* CSS3 BRAND COLOR #2965f1 */
+  --brand-color-h: 222;
+  --brand-color-s: 88%;
+  --brand-color-l: 55%;
+
+  /* DEFAULT VARIABLES */
+  --bg-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 40% ));
+  --bg-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 35% ));
+  --bg-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 30% ));
+  --bg-quaternary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 25% ));
+
+  --color-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 30% ));
+  --color-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20% ));
+  --color-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 10% ));
+
+  --input-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 44% ));
+  --notes-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 37.5% ));
+  --pre-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 45% ));
+}
