@@ -2,8 +2,8 @@
 *
 
 # KEEP THE FOLLOWING ROOT COLLECTION.MEDIA FILES
-!_my-custom-script.js
-!_my-custom-style.css
+!_global.js
+!_global.css
 !_diff_match_patch.js
 !_inconsolata-regular.*
 !readme.md
