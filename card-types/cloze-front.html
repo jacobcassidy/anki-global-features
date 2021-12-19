@@ -1,39 +1,44 @@
-<div class="topic">Your Topic Here</div>
+<div class="topic">TOPIC</div>
 
-<div class="card-inner">
+<div class="card-inner card-front">
 
   <div class="question">{{cloze:Cloze Question}}</div>
+  <div class="type-hint">{{Type Hint}}</div>
+  <div class="input-wrap is-primary">
+    <div class="input-title" data-compare="true">Cloze</div>
+    <textarea class="input-data tappable" type="text"></textarea>
+  </div>
 
-  <div class="typing-hint">{{Type Hint}}</div>
-
-  <div id="input-wrap">{{type:cloze:Cloze Question}}</div>
-
-  <div id="bonus-input-wrap">
-    <div class="input-title">Bonus</div>
-    <div class="has-title bonus-input-wrap__inner">
-      <textarea id="data-input" class="tappable" type="text"></textarea>
-      <div id="hasBonus">{{Bonus Question}}</div>
+  <div class="input-wrap">
+    <div class="input-title" data-compare="{{Bonus Compare}}" data-type-hint="{{Bonus Type Hint}}">Bonus</div>
+    <div class="input-textarea-wrap">
+      <textarea class="input-data tappable has-title" type="text"></textarea>
+      <!-- Placeholders cannot parse html, so a faux placeholder overlaid on the textarea is used instead -->
+      <div class="input-faux-placeholder">{{Bonus Question}}</div>
     </div>
   </div>
 
 </div>
 
 <script>
-  var injectScript = (src) => {
-    return new Promise((resolve, reject) => {
-      const script = document.createElement('script');
-      script.src = src;
-      script.async = true;
-      script.onload = resolve;
-      script.onerror = reject;
-      document.head.appendChild(script);
-    });
-  };
-  (async () => {
-    // Check if the function already exists in order to prevent duplicate loading
-    // macOS source location: ~/Library/Application Support/Anki2/user/collection.media/_my-custom-script.js
-    if (typeof hasMyCustomScript === 'undefined') {
-      await injectScript('_my-custom-script.js');
-    }
-  })();
+var injectScript = (src) => {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+};
+(async () => {
+  // Check if the function already exists in order to prevent duplicate loading
+  // macOS source location: ~/Library/Application Support/Anki2/[user]/collection.media/_my-custom-script.js
+  if (typeof hasDiffMatchScript === 'undefined') {
+    await injectScript('_diff_match_patch.js');
+  }
+  if (typeof hasMyCustomScript === 'undefined') {
+    await injectScript('_my-custom-script.js');
+  }
+})();
 </script>
