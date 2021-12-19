@@ -19,7 +19,7 @@
   --color-secondary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 25% ));
   --color-tertiary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 20% ));
 
+  --input-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 25% ));
   --notes-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 37.5% ));
-  --input-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 45% ));
   --pre-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 45% ));
 }
