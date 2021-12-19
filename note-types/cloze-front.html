@@ -38,7 +38,7 @@ var injectScript = (src) => {
     await injectScript('_diff_match_patch.js');
   }
   if (typeof hasMyCustomScript === 'undefined') {
-    await injectScript('_my-custom-script.js');
+    await injectScript('_global.js');
   }
 })();
 </script>
