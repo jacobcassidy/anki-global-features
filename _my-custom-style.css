@@ -34,9 +34,9 @@
   --bg-tertiary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20% ));
   --bg-quaternary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 12.5% ));
 
-  --color-primary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 20% ));
-  --color-secondary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 15% ));
-  --color-tertiary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 10% ));
+  --color-primary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 25% ));
+  --color-secondary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 20% ));
+  --color-tertiary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 15% ));
 
   --input-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 12.5% ));
   --notes-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 31.25% ));
@@ -149,6 +149,13 @@ textarea.has-title {
   margin-top: 0;
   padding: 15px 20px;
 }
+table {
+  max-width: 680px;
+  width: 100% !important;
+}
+table pre {
+  margin: 0;
+}
 
 .card {
   background-color: var(--bg-primary);
@@ -198,6 +205,9 @@ textarea.has-title {
   font-size: 12px;
   font-style: italic;
   padding-bottom: 5px;
+}
+.type-hint code {
+  font-size: 12px;
 }
 
 /* TITLE STYLES */
