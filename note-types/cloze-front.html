@@ -21,24 +21,23 @@
 </div>
 
 <script>
-var injectScript = (src) => {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = src;
-    script.async = true;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-};
-(async () => {
-  // Check if the function already exists in order to prevent duplicate loading
-  // macOS source location: ~/Library/Application Support/Anki2/[user]/collection.media/_my-custom-script.js
-  if (typeof hasDiffMatchScript === 'undefined') {
-    await injectScript('_diff_match_patch.js');
-  }
-  if (typeof hasMyCustomScript === 'undefined') {
-    await injectScript('_global.js');
-  }
-})();
+  var injectScript = (src) => {
+    return new Promise( (resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  };
+  ( async () => {
+    // Check if the scripts already exists in order to prevent duplicate loading
+    if ( typeof hasDiffMatchScript === 'undefined' ) {
+      await injectScript('_diff_match_patch.js');
+    }
+    if ( typeof hasMyCustomScript === 'undefined' ) {
+      await injectScript('_global.js');
+    }
+  })();
 </script>
