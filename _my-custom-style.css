@@ -28,7 +28,7 @@
   --font-family-primary: arial, sans-serif;
   --font-family-mono: 'Inconsolata', 'monospace', monospace;
 
-/* NIGHTMODE VARIABLES */
+  /* NIGHTMODE VARIABLES */
   --bg-primary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 35% ));
   --bg-secondary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 27.5% ));
   --bg-tertiary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20% ));
@@ -364,7 +364,6 @@ table pre {
   display: block;
 }
 
-
 /* DEFAULT ANKI OUTPUT ELEMENTS */
 code#typeans {
   background-color: var(--pre-bg);
@@ -374,11 +373,6 @@ code#typeans {
   margin: 10px auto 45px;
   padding: 20px;
   text-align: left;
-}
-.nightMode code#typeans {
-  background-color: var(--pre-bg--nightmode);
-  border: 0;
-  color: var(--pre-color--nightmode);
 }
 
 input#typeans {
@@ -418,7 +412,6 @@ hr#answer {
 .typeMissed {
   background: var(--type-missed-bg);
 }
-
 
 /* DEFAULT ANKIWEB ELEMENTS */
 body {
@@ -505,7 +498,6 @@ button.navbar-toggler-right {
   margin: 0;
 }
 
-
 /* CODE SYNTAX HIGHLIGHTING ADD-ON STYLES */
 
 /* OFF-WHITE */
@@ -577,7 +569,6 @@ button.navbar-toggler-right {
   color: #E6DB74;
 }
 
-
 /* NIGHTMODE STYLES */
 body.nightMode,
 .nightMode.card {
@@ -614,7 +605,8 @@ body.nightMode,
 .nightMode input#typeans {
   color: var(--color-secondary--nightmode);
 }
-.nightMode code {
+.nightMode code,
+.nightMode code#typeans {
   background-color: var(--bg-tertiary--nightmode);
   border: 0;
 }
@@ -622,7 +614,8 @@ body.nightMode,
   background-color: var(--pre-bg--nightmode);
   color: var(--pre-color--nightmode);
 }
-.nightMode pre code {
+.nightMode pre code,
+.nightMode code#typeans {
   color: var(--pre-color--nightmode);
 }
 .nightMode textarea::placeholder {
