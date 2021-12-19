@@ -164,11 +164,20 @@ function showOutputs() {
   if ( outputWrapList.length !== 0 ) {
     outputWrapList.forEach( ( outputWrap, outputIndex ) => {
       const outputAnswer = outputWrap.querySelector('.output-answer'),
+            outputClozeList = outputWrap.querySelectorAll('.cloze');
             outputData = outputWrap.querySelector('.output-data'),
             hasCompare = outputData.getAttribute('data-compare');
       // Show output-wrap if it contains an answer
       if ( outputAnswer !== null && outputAnswer.innerHTML !== '' ) {
         outputWrap.classList.add('active');
+      }
+      // For cloze answers, remove all text except the active cloze(s)
+      if ( outputClozeList.length !== 0 ) {
+        let clozeArr = [];
+        outputClozeList.forEach ( cloze => {
+          clozeArr.push(cloze.innerText);
+        });
+        outputAnswer.innerText = clozeArr.join(', ');
       }
       // Run comparison when compare field is active
       if ( hasCompare !== null && hasCompare !== '' ) {
