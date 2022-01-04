@@ -171,6 +171,13 @@ function showOutputs() {
       if ( outputAnswer !== null && outputAnswer.innerHTML !== '' ) {
         outputWrap.classList.add('active');
       }
+      // Align text left if there are more than 150 characters in the output content
+      if ( outputData !== null && outputData.innerText.length > 150 ) {
+        outputData.classList.add('long-content');
+      }
+      if ( outputAnswer !== null && outputAnswer.innerText.length > 150 ) {
+        outputAnswer.classList.add('long-content');
+      }
       // For cloze answers, remove all text except the active cloze(s)
       if ( outputClozeList.length !== 0 ) {
         let clozeArr = [];
@@ -309,7 +316,7 @@ function showNotes() {
       }
       // Align text left if there are more than 200 characters in the note content
       if ( hasNotes !== null && hasNotes.innerText.length > 200 ) {
-        hasNotes.classList.add('notes-long');
+        hasNotes.classList.add('long-content');
       }
     });
   }

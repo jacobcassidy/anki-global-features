@@ -316,6 +316,12 @@ table pre {
   padding: 20px;
 }
 
+.output-data,
+.output-answer,
+.notes-content {
+  white-space: pre-line;
+}
+
 /* NOTES STYLES */
 .notes-wrap {
   background-color: var(--notes-bg);
@@ -334,11 +340,11 @@ table pre {
 .notes-content code {
   color: var(--color-tertiary);
 }
-.notes-long {
-  text-align: left;
-}
 
 /* OTHER STYLES */
+.long-content {
+  text-align: left;
+}
 .replay-button {
   margin: 10px;
 }
