@@ -237,8 +237,6 @@ function showOutputs() {
                 typedComparisonArr = [],
                 cardComparisonArr = [];
           let   lastCorrectMatchIndex = 0;
-
-          console.log(dmpArr);
           // Create array of indiviual characters and their match type
           for ( let i = 0; i < dmpArr.length; i++ ) {
             const dmpMatchType = dmpArr[i][0],                      // -1, 0, or 1
@@ -255,14 +253,12 @@ function showOutputs() {
                   charMatchType = dmpMatchTypeAndCharArr[i][0];     // -1, 0, or 1
             let   wrapTypedChar,
                   wrapCardChar;
-
-            console.log(dmpMatchTypeAndCharArr);
             // Wrap characters missed (for card answer)
             if ( charMatchType === -1 ) {
               // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
               const nextIndex = i + 1,
                     nextChar = dmpMatchTypeAndCharArr[nextIndex][1],
-                    regex = /\u00A0/, // unicode for &nbsp
+                    regex = /\u00A0/, // unicode for &nbsp;
                     isNBSP = regex.test(char);
               if ( isNBSP && nextChar === ' ' ) {
                 wrapCardChar = '<span class="typeGood">' + char + '</span>';
@@ -289,7 +285,7 @@ function showOutputs() {
               // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
               const previousIndex = i - 1,
                     previousChar = dmpMatchTypeAndCharArr[previousIndex][1],
-                    regex = /\u00A0/, // unicode for &nbsp
+                    regex = /\u00A0/, // unicode for &nbsp;
                     isNBSP = regex.test(previousChar);
               if ( isNBSP && char === ' ' ) {
                 wrapTypedChar = '<span class="typeGood">' + char + '</span>';
