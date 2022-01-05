@@ -255,9 +255,20 @@ function showOutputs() {
                   charMatchType = dmpMatchTypeAndCharArr[i][0];     // -1, 0, or 1
             let   wrapTypedChar,
                   wrapCardChar;
-            // Wrap characters missed (for typed answer)
+
+            console.log(dmpMatchTypeAndCharArr);
+            // Wrap characters missed (for card answer)
             if ( charMatchType === -1 ) {
-              wrapCardChar = '<span class="typeMissed">' + char + '</span>';
+              // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
+              const nextIndex = i + 1,
+                    nextChar = dmpMatchTypeAndCharArr[nextIndex][1],
+                    regex = /\u00A0/, // unicode for &nbsp
+                    isNBSP = regex.test(char);
+              if ( isNBSP && nextChar === ' ' ) {
+                wrapCardChar = '<span class="typeGood">' + char + '</span>';
+              } else {
+                wrapCardChar = '<span class="typeMissed">' + char + '</span>';
+              }
             // Wrap characters correct (for both typed and card answers)
             } else if ( charMatchType === 0 ) {
               // Insert dashes in typed answer if needed to align correct matches to card answer
@@ -275,7 +286,16 @@ function showOutputs() {
               lastCorrectMatchIndex = typedComparisonArr.length;
             // Wrap characters wrong (for typed answer)
             } else if ( charMatchType === 1 ) {
-              wrapTypedChar = '<span class="typeBad">' + char + '</span>';
+              // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
+              const previousIndex = i - 1,
+                    previousChar = dmpMatchTypeAndCharArr[previousIndex][1],
+                    regex = /\u00A0/, // unicode for &nbsp
+                    isNBSP = regex.test(previousChar);
+              if ( isNBSP && char === ' ' ) {
+                wrapTypedChar = '<span class="typeGood">' + char + '</span>';
+              } else {
+                wrapTypedChar = '<span class="typeBad">' + char + '</span>';
+              }
             }
             // Add characters to comparison arrays
             if ( wrapTypedChar !== undefined ) {
