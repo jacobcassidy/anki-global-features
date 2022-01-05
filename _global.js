@@ -232,33 +232,35 @@ function showOutputs() {
           }
           const cardAnswer = outputAnswer.textContent,
                 dmp = new diff_match_patch(),
-                diffArr = dmp.diff_main( cardAnswer, typedAnswer ),
-                diffMatchCharArr = [],
+                dmpArr = dmp.diff_main( cardAnswer, typedAnswer ),
+                dmpMatchTypeAndCharArr = [],
                 typedComparisonArr = [],
                 cardComparisonArr = [];
           let   lastCorrectMatchIndex = 0;
+
+          console.log(dmpArr);
           // Create array of indiviual characters and their match type
-          for ( let i = 0; i < diffArr.length; i++ ) {
-            const diffMatch = diffArr[i][0],               // -1, 0, or 1
-                  diffStr = diffArr[i][1],                 // example: 'plus'
-                  diffCharArr = diffStr.split('');         // example: ['p', 'l', 'u', 's']
-            diffCharArr.forEach( diffChar => {
-              const diffMatchChar = [diffMatch, diffChar]; // example: [-1, 'p']
-              diffMatchCharArr.push(diffMatchChar);
+          for ( let i = 0; i < dmpArr.length; i++ ) {
+            const dmpMatchType = dmpArr[i][0],                      // -1, 0, or 1
+                  dmpStr = dmpArr[i][1],                            // example: 'plus'
+                  dmpCharArr = dmpStr.split('');                    // example: ['p', 'l', 'u', 's']
+            dmpCharArr.forEach( dmpChar => {
+              const dmpMatchTypeAndChar = [dmpMatchType, dmpChar];  // example: [-1, 'p']
+              dmpMatchTypeAndCharArr.push(dmpMatchTypeAndChar);
             });
           }
           // Wrap characters depending on their match type and add to respective comparison array.
-          for ( let i = 0; i < diffMatchCharArr.length; i++ ) {
-            const char = diffMatchCharArr[i][1],           // 'p'
-                  isCharMatch = diffMatchCharArr[i][0];    // -1, 0, or 1
+          for ( let i = 0; i < dmpMatchTypeAndCharArr.length; i++ ) {
+            const char = dmpMatchTypeAndCharArr[i][1],              // 'p'
+                  charMatchType = dmpMatchTypeAndCharArr[i][0];     // -1, 0, or 1
             let   wrapTypedChar,
                   wrapCardChar;
-            // Wrap characters missed
-            if ( isCharMatch === -1 ) {
+            // Wrap characters missed (for typed answer)
+            if ( charMatchType === -1 ) {
               wrapCardChar = '<span class="typeMissed">' + char + '</span>';
-            // Wrap characters correct
-            } else if ( isCharMatch === 0 ) {
-              // Insert dashes if needed to align correct typed and card characters
+            // Wrap characters correct (for both typed and card answers)
+            } else if ( charMatchType === 0 ) {
+              // Insert dashes in typed answer if needed to align correct matches to card answer
               if ( typedComparisonArr.length < cardComparisonArr.length ) {
                 const dashesStr = '<span class="typeBad">-</span>';
                 let   dashesNeeded = cardComparisonArr.length - typedComparisonArr.length,
@@ -271,8 +273,8 @@ function showOutputs() {
               wrapTypedChar = '<span class="typeGood">' + char + '</span>';
               wrapCardChar = '<span class="typeGood">' + char + '</span>';
               lastCorrectMatchIndex = typedComparisonArr.length;
-            // Wrap characters wrong
-            } else if ( isCharMatch === 1 ) {
+            // Wrap characters wrong (for typed answer)
+            } else if ( charMatchType === 1 ) {
               wrapTypedChar = '<span class="typeBad">' + char + '</span>';
             }
             // Add characters to comparison arrays
