@@ -210,7 +210,8 @@ function showOutputs() {
           outputTitleSpanList.forEach( outputTitleSpan => outputTitleSpan.classList.add('inactive') );
         }
         // Don't compare user's answer to card's answer if the user did NOT input an answer
-        if ( isAnkiDroid && sessionStorage[outputIndex] === undefined || !isAnkiDroid && outputDataArr[outputIndex] === undefined ) {
+        if ( isAnkiDroid && sessionStorage === undefined || isAnkiDroid && sessionStorage[outputIndex] === undefined || !isAnkiDroid && outputDataArr === undefined || !isAnkiDroid && outputDataArr[outputIndex] === undefined ) {
+
           const cardAnswerCharArr = outputAnswer.innerText.split(''),
                 cardAnswerComparisonArr = [];
           cardAnswerCharArr.forEach( cardAnswerChar => {
@@ -257,9 +258,13 @@ function showOutputs() {
             if ( charMatchType === -1 ) {
               // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
               const nextIndex = i + 1,
-                    nextChar = dmpMatchTypeAndCharArr[nextIndex][1],
                     regex = /\u00A0/, // unicode for &nbsp;
                     isNBSP = regex.test(char);
+              let   nextChar;
+
+              if ( dmpMatchTypeAndCharArr[nextIndex] !== undefined ) {
+                nextChar = dmpMatchTypeAndCharArr[nextIndex][1];
+              }
               if ( isNBSP && nextChar === ' ' ) {
                 wrapCardChar = '<span class="typeGood">' + char + '</span>';
               } else {
@@ -308,9 +313,9 @@ function showOutputs() {
       // Directly output user's answer if comparison is NOT active,
       } else {
         if ( outputData !== null ) {
-          if ( isAnkiDroid ) {
+          if ( isAnkiDroid && sessionStorage !== undefined ) {
             outputData.textContent = sessionStorage[outputIndex];
-          } else {
+          } else if ( !isAnkiDroid && outputDataArr !== undefined ) {
             outputData.textContent = outputDataArr[outputIndex];
           }
         }
