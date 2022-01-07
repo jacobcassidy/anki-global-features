@@ -289,9 +289,12 @@ function showOutputs() {
             } else if ( charMatchType === 1 ) {
               // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
               const previousIndex = i - 1,
-                    previousChar = dmpMatchTypeAndCharArr[previousIndex][1],
-                    regex = /\u00A0/, // unicode for &nbsp;
-                    isNBSP = regex.test(previousChar);
+                    regex = /\u00A0/; // unicode for &nbsp;
+              let   previousChar;
+              if ( dmpMatchTypeAndCharArr[previousIndex] !== undefined ) {
+                previousChar = dmpMatchTypeAndCharArr[previousIndex][1];
+              }
+              const isNBSP = regex.test(previousChar);
               if ( isNBSP && char === ' ' ) {
                 wrapTypedChar = '<span class="typeGood">' + char + '</span>';
               } else {
