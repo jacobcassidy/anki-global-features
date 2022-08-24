@@ -58,10 +58,10 @@ function showInputs() {
               inputTextarea = inputWrap.querySelector('textarea');
         inputWrap.classList.add('active');
         if ( inputTitle !== null ) {
-          // Show "Be precise" text in input title if comparison is active
+          // For comparison inputs, show a forward slash
           const hasDataCompare = inputTitle.getAttribute('data-compare');
           if ( hasDataCompare !== '' ) {
-            inputTitle.innerHTML += '<span class="input-comparison">Be precise</span>';
+            inputTitle.innerHTML += '<span class="input-comparison">&#47;</span>';
           }
           // Show type hint text in input title if it exists
           const hasDataTypeHint = inputTitle.getAttribute('data-type-hint');
