@@ -61,7 +61,7 @@ function showInputs() {
           // For comparison inputs, show a forward slash
           const hasDataCompare = inputTitle.getAttribute('data-compare');
           if ( hasDataCompare !== '' ) {
-            inputTitle.innerHTML += '<span class="input-comparison">&#47;</span>';
+            inputTitle.innerHTML += '<span class="input-comparison">&nbsp; &#47; &nbsp;</span>';
           }
           // Show type hint text in input title if it exists
           const hasDataTypeHint = inputTitle.getAttribute('data-type-hint');

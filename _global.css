@@ -281,12 +281,12 @@ table pre {
   font-weight: normal;
   text-transform: none;
 }
-.input-comparison:before,
+/* .input-comparison:before,
 .input-type-hint:before {
   content: '|';
   margin: 0 8px;
   color: var(--bg-quaternary);
-}
+} */
 
 /* OUTPUT STYLES */
 .output-wrap {
