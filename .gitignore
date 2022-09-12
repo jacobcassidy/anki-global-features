@@ -13,6 +13,9 @@
 !*/
 !*/**
 
+# IGNORE THE FOLLOWING DIRECTORIES
+\*Development Assets
+
 # IGNORE FILE TYPES
 *.DS_store
 
