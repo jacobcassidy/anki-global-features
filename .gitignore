@@ -2,9 +2,9 @@
 *
 
 # KEEP THE FOLLOWING ROOT COLLECTION.MEDIA FILES
-!_global.js
-!_global.css
 !_diff_match_patch.js
+!_global.css
+!_global.js
 !_inconsolata-regular.*
 !readme.md
 !.gitignore
@@ -14,7 +14,7 @@
 !*/**
 
 # IGNORE THE FOLLOWING DIRECTORIES
-\*Development Assets
+--dev-assets
 
 # IGNORE FILE TYPES
 *.DS_store
