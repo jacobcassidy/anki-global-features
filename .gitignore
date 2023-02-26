@@ -1,21 +1,17 @@
-# EXCLUDE EVERYTHING EXCEPT CUSTOM ASSETS
+# EXCLUDE EVERYTHING EXCEPT ASSETS LISTED BELOW
 *
 
 # KEEP THE FOLLOWING ROOT COLLECTION.MEDIA FILES
+!readme.md
+!.gitignore
+!assets/
+!assets/**
+!collection.media/
 !_diff_match_patch.js
 !_global.css
 !_global.js
 !_inconsolata-regular.*
-!readme.md
-!.gitignore
 
-# KEEP ALL DIRECTORY FILES
-!*/
-!*/**
-
-# IGNORE THE FOLLOWING DIRECTORIES
---dev-assets
-
-# IGNORE FILE TYPES
+# # IGNORE FILE TYPES
 *.DS_store
 
