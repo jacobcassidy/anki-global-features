@@ -12,6 +12,6 @@
 !_global.js
 !_inconsolata-regular.*
 
-# # IGNORE FILE TYPES
+# IGNORE FILE TYPES
 *.DS_store
 
