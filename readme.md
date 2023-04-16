@@ -2,15 +2,15 @@
 
 ## About
 
-Anki Advanced Typed Cards provides a way to add and sync card styles and advance features across all Anki apps from a single place. So you can have a similar experience using an Anki app to review your cards, no matter which device you're currently using.
+Anki Advanced Typed Cards provides a way to add and sync card styles and advance features across all Anki apps from a single place. This allows you to have a similar experience using an Anki app to review your cards, no matter which device you're currently using.
 
-Anki apps for different devices:
-- [AnkiPC](https://apps.ankiweb.net/) (For Windows, Mac, or Linus)
-- [AnkiWeb](https://ankiweb.net) (For the web only)
-- [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (For iOS & iPadOS)
-- [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (For Android)
+The Anki apps available for different devices:
+- [AnkiPC](https://apps.ankiweb.net/) (For Windows, Mac, or Linus - Free)
+- [AnkiWeb](https://ankiweb.net) (For the web only - Free)
+- [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (For iOS & iPadOS - Paid)
+- [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (For Android - Free)
 
-*Note: The setup of Anki Advanced Typed Cards requires the AnkiPC app. After you are set up, you may use any of Anki's apps with the features synced across all of them.*
+*Note: The setup of Anki Advanced Typed Cards requires the free AnkiPC app. After you are set up, you may use any of the Anki apps with the features synced across all of them.*
 
 ### The Anki Advanced Typed Cards main features:
 1. The ability to quickly modify the design of your cards globally with CSS and have the styles sync across all Anki apps.
