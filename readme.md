@@ -49,11 +49,9 @@ The Anki apps available for different devices:
 
 ### 4. Streamlined Comparison Answers
 
-#### Purpose:
+**Purpose:** Anki currently uses different comparison algorithms for different Anki apps. This gives you different results depending on which device you're using. Anki Advance Typed Cards uses a single comparison algorithm which is synced across all Anki apps to produce matching results no matter which device you are using.
 
-Anki currently uses different comparison algorithms for different Anki apps. This gives you different results depending on which device you're using. Anki Advance Typed Cards uses a single comparison algorithm which is synced across all Anki apps to produce matching results no matter which device you are using.
-
-#### Example:
+**Example:**
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
@@ -80,7 +78,7 @@ Anki only allows one comparison answer per card, even if you have multiple input
     - __macOS:__ `~/Library/Application Support/Anki2/[username]/collection.media/_my-custom-style.css`.
     - __Windows:__ `?`
 
-    **Note:** `[username]` is your Anki profile name. The default username is `User 1`.
+    *Note: `[username]` is your Anki profile name. The default username is `User 1`.*
 
 3. ### Create your note types
     - Advance type [PHP Example]
