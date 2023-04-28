@@ -1,27 +1,33 @@
 # Anki Advance Typed Cards
 
-## About
+Anki Advance Typed Cards provides a way to add and sync advance features and card styles across all Anki apps from one place. This allows you to have a similar experience reviewing your cards no matter which device you're using.
 
-Anki Advanced Typed Cards provides a way to add and sync card styles and advance features across all Anki apps from a single place. This allows you to have a similar experience reviewing your cards no matter which device you're using.
-
-The Anki apps available for different devices:
+Anki apps are available for the following devices:
 - [AnkiPC](https://apps.ankiweb.net/) (for Windows, Mac, or Linus - Free)
-- [AnkiWeb](https://ankiweb.net) (for the web only - Free)
+- [AnkiWeb](https://ankiweb.net) (for web only - Free)
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (for iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (for Android - Free)
 
-*Note: The setup of Anki Advanced Typed Cards requires the free AnkiPC app. After you are set up, you may use any of the Anki apps with the features synced across all of them.*
+*Note: The setup of Anki Advance Typed Cards requires the free AnkiPC app. After you are set up, you may use any of the Anki apps with the features synced across all of them.*
 
-### The Main Features
+## Features
+
+| TABLE OF CONTENT                                                        |
+| ----                                                                    |
+| 1. [Multiline Typed Inputs](#1-multiline-typed-inputs)                  |
+| 2. [Infinity Inputs](#2-infinity-inputs)                                |
+| 3. [Streamlined Comparison Answers](#3-streamlined-comparison-answers)  |
+| 4. [Multiple Comparison Answers](#4-multiple-comparison-answers)        |
+| 5. [Global Card Designs](#5-global-card-designs)                        |
+
+<!-- ### The Main Features
 1. The ability to quickly modify the design of your cards globally with CSS and have the styles sync across all Anki apps.
 2. The ability to add multiline typed inputs to your cards that work on all Anki apps.
 3. The ability to have as many multiline inputs as you want in a single card.
 4. Streamlined comparison answers that work with multiline inputs across all Anki apps.
-5. No limit to how many comparison answers you can have per card.
+5. No limit to how many comparison answers you can have per card. -->
 
-## Features In Detail
-
-### 1. Global Card Designs
+### 1. Multiline Typed Inputs
 
 #### Purpose:
 
@@ -29,15 +35,7 @@ The Anki apps available for different devices:
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
-### 2. Multiline Typed Inputs
-
-#### Purpose:
-
-#### Example:
-
-[ADD GIF SCREENSHOT EXAMPLE]
-
-### 3. Countless Inputs
+### 2. Infinity Inputs
 
 #### Purpose:
 
@@ -47,7 +45,7 @@ The Anki apps available for different devices:
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
-### 4. Streamlined Comparison Answers
+### 3. Streamlined Comparison Answers
 
 **Purpose:** Anki currently uses different comparison algorithms for different Anki apps. This gives you different results depending on which device you're using. Anki Advance Typed Cards uses a single comparison algorithm which is synced across all Anki apps to produce matching results no matter which device you are using.
 
@@ -55,7 +53,7 @@ The Anki apps available for different devices:
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
-### 5. Limitless Comparison Answers
+### 4. Multiple Comparison Answers
 
 #### Purpose:
 
@@ -65,7 +63,15 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
-## The Setup Guide
+### 5. Global Card Designs
+
+#### Purpose:
+
+#### Example:
+
+[ADD GIF SCREENSHOT EXAMPLE]
+
+## Setup Guide
 
 1. ### Download the files
     - `_global.css`
