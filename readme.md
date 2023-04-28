@@ -3,22 +3,23 @@
 Anki Advance Typed Cards provides a way to add and sync advance features and card styles across all Anki apps from one place. This allows you to have a similar experience reviewing your cards no matter which device you're using.
 
 Anki apps are available for the following devices:
+
 - [AnkiPC](https://apps.ankiweb.net/) (for Windows, Mac, or Linus - Free)
 - [AnkiWeb](https://ankiweb.net) (for Web - Free)
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (for iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (for Android - Free)
 
-*Note: The setup of Anki Advance Typed Cards requires using the AnkiPC app. After you are set up, you may use any of the Anki apps with the features synced across all of them.*
+_Note: The setup of Anki Advance Typed Cards requires using the AnkiPC app. After you are set up, you may use any of the Anki apps with the features synced across all of them._
 
 ## Features
 
-| TABLE OF CONTENT                                                        |
-| ----                                                                    |
-| [Multiline Typed Inputs](#multiline-typed-inputs)                  |
-| [Infinity Inputs](#infinity-inputs)                                |
-| [Streamlined Comparison Answers](#streamlined-comparison-answers)  |
-| [Multiple Comparison Answers](#multiple-comparison-answers)        |
-| [Global Card Designs](#global-card-designs)                        |
+| TABLE OF CONTENT                                                  |
+| ----------------------------------------------------------------- |
+| [Multiline Typed Inputs](#multiline-typed-inputs)                 |
+| [Infinity Inputs](#infinity-inputs)                               |
+| [Streamlined Comparison Answers](#streamlined-comparison-answers) |
+| [Multiple Comparison Answers](#multiple-comparison-answers)       |
+| [Global Card Designs](#global-card-designs)                       |
 
 <!-- ### The Main Features
 1. The ability to quickly modify the design of your cards globally with CSS and have the styles sync across all Anki apps.
@@ -39,7 +40,7 @@ Anki apps are available for the following devices:
 
 **Purpose:**
 
-*Note: While this feature gives you the ability to add as many typed inputs on a single card as you want, you'll get the most benefit from your study by keeping your cards simple. Which mean only using an extra input or two when it makes sense - such as having a short bonus question with a typed input related the original question.*
+_Note: While this feature gives you the ability to add as many typed inputs on a single card as you want, you'll get the most benefit from your study by keeping your cards simple. Which mean only using an extra input or two when it makes sense - such as having a short bonus question with a typed input related the original question._
 
 **Example:**
 
@@ -81,14 +82,14 @@ _global.js
 _diff_match_patch.js
 ```
 
-*Note: Files that are not prefix with an underscore `_` will show up in Anki's "Check Media..." tool for files to delete. This is why you will see the root files using the leading underscore for their names, such as `_global.css`.*
+_Note: Files that are not prefix with an underscore `_` will show up in Anki's "Check Media..." tool for files to delete. This is why you will see the root files using the leading underscore for their names, such as `_global.css`._
 
 ### Step 2. Add the files to your Anki collection.media directory found at:
 
 - **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/_my-custom-style.css`.
 - **Windows:** `?`
 
-*Note: `[username]` is your Anki profile name. The default username is `User 1`.*
+_Note: `[username]` is your Anki profile name. The default username is `User 1`._
 
 ### Step 3. Create your note types
 
