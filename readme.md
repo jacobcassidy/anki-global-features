@@ -1,17 +1,17 @@
 # Anki Advance Typed Cards
 
-Anki Advance Typed Cards provides a way to add and sync advance features and card styles across all Anki apps from one place. This allows you to have a similar experience reviewing your cards no matter which device you're using.
+Anki Advance Typed Cards provides a way to add and sync advance features and global card styles across all Anki apps.
 
 Anki apps are available for the following devices:
 
-- [AnkiPC](https://apps.ankiweb.net/) (for Windows, Mac, or Linus - Free)
-- [AnkiWeb](https://ankiweb.net) (for Web - Free)
-- [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (for iOS & iPadOS - Paid)
-- [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (for Android - Free)
+- [AnkiPC](https://apps.ankiweb.net/) (Windows, Mac, or Linus - Free)
+- [AnkiWeb](https://ankiweb.net) (Web - Free)
+- [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
+- [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
 
-_Note: The setup of Anki Advance Typed Cards requires using the AnkiPC app. After you are set up, you may use any of the Anki apps with the features synced across all of them._
+_Note: Anki Advance Typed Cards requires the use of the AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them._
 
-## Features
+## Advance Features
 
 | TABLE OF CONTENT                                                  |
 | ----------------------------------------------------------------- |
@@ -72,9 +72,18 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
-## Setup Guide
+## Installation Guides
 
-### Step 1. Download the files
+|                                                     |
+| --------------------------------------------------- |
+| [Install All Features & Styles](#install-all-features)       |
+| [Install Advance Inputs](#advance-inputs)           |
+| [Install Advance Comparisons](#advance-comparisons) |
+| [Install Global Styles](#global-styles)             |
+
+### Install All Features
+
+#### Step 1: Download the following files:
 
 ```
 _global.css
@@ -82,25 +91,33 @@ _global.js
 _diff_match_patch.js
 ```
 
-_Note: Files that are not prefix with an underscore `_` will show up in Anki's "Check Media..." tool for files to delete. This is why you will see the root files using the leading underscore for their names, such as `_global.css`._
+_Note: Files that are not prefix with an underscore `_`will show up in Anki's "Check Media..." tool for files to delete. This is why you will see the root files using the leading underscore for their names, such as`_global.css`._
 
-### Step 2. Add the files to your Anki collection.media directory found at:
+#### Step 2: Add the files you just downloaded to your Anki `collection.media` directory found at:
 
 - **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/_my-custom-style.css`.
 - **Windows:** `?`
 
 _Note: `[username]` is your Anki profile name. The default username is `User 1`._
 
-### Step 3. Create your note types
+### Advance Inputs
+
+### Advance Comparisons
+
+### Global Styles
+
+#### Step 1: Download the files
+
+#### Step 3: Create your note types
 
 - Advance type [PHP Example]
 - Cloze type [JavaScript Example]
 
-### Step 4. Card Color Styles
+#### Step 4: Card Color Styles
 
 - CSS, Git, HTML, JavaScript, NodeJS, PHP, Python, React, Ruby, WordPress
 
-### Step 5. Night Mode Styles
+#### Step 5: Night Mode Styles
 
 - Using nightmode? Here's how to style your cards:
 
