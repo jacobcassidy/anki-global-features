@@ -74,16 +74,19 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 ## Installation Guides
 
-|                                                     |
-| --------------------------------------------------- |
-| [Install All Features & Styles](#install-all-features)       |
-| [Install Advance Inputs](#advance-inputs)           |
-| [Install Advance Comparisons](#advance-comparisons) |
-| [Install Global Styles](#global-styles)             |
+| Table of Content                                       |
+| ------------------------------------------------------ |
+| [Install All Features & Styles](#install-all-features) |
+| [Install Advance Inputs](#advance-inputs)              |
+| [Install Advance Comparisons](#advance-comparisons)    |
+| [Install Global Styles](#global-styles)                |
 
 ### Install All Features
 
 #### Step 1: Download the following files:
+
+- <a href="https://github.com/jacobcassidy/anki-advance-typed-cards/raw/main/collection.media/_diff_match_patch.js" download>`_global.css`</a>
+
 
 ```
 _global.css
