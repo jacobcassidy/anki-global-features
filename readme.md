@@ -1,16 +1,16 @@
 # Anki Advance Typed Cards
 
-| Table of Content                                |
-| :---------------------------------------------- |
-| [About](#about)                                 |
-| [Features](#features)                           |
-| [Installation](#installation)                   |
-| [How To Use](#how-to-use) |
-| [FAQs](#faqs)                                   |
+| Table of Content              |
+| :---------------------------- |
+| [About](#about)               |
+| [Features](#features)         |
+| [Installation](#installation) |
+| [How To Use](#how-to-use)     |
+| [FAQs](#faqs)                 |
 
 ## About
 
-Anki Advance Typed Cards provides a way to add and sync advance features and global card styles across all Anki apps.
+Anki Advance Typed Cards provides a way to add and sync advance features and global card designs across all Anki apps.
 
 Anki apps are available for the following devices:
 
@@ -19,11 +19,11 @@ Anki apps are available for the following devices:
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
 
-> _Note: Anki Advance Typed Cards requires the use of the free AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them._
+> Note: Anki Advance Typed Cards requires the use of the free AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them.
 
 ## Features
 
-| Advance Features Index                                                 |
+| Index                                                                  |
 | :--------------------------------------------------------------------- |
 | 1. [Multiline Typed Inputs](#1-multiline-typed-inputs)                 |
 | 2. [Infinity Typed Inputs](#2-infinity-typed-inputs)                   |
@@ -118,13 +118,13 @@ _Note: `[username]` is your Anki profile name. The default username is `User 1`.
 
 - Using nightmode? Here's how to style your cards:
 
-## How To Use The Features
+## How To Use
 
-| Index                               |
-| :----------------------------------------------------- |
-| [How to Use the Advance Inputs](#)              |
-| [How to Use the Advance Comparisons](#)    |
-| [How to Use the Global Card Designs](#)                |
+| Index                                   |
+| :-------------------------------------- |
+| [How to Use The Advance Inputs](#)      |
+| [How to Use The Advance Comparisons](#) |
+| [How to Use The Global Card Designs](#) |
 
 ## FAQs
 
@@ -134,4 +134,4 @@ Anki plugins only work with the AnkiPC app and are not currently compatible acro
 
 ### I found a bug, how can I report it?
 
-If you came across a bug or issue, please [open an issue](https://github.com/jacobcassidy/anki-advance-typed-cards/issues). Please provide as much detail as you can in the issue so I can replicate the problem and fix it. Screenshots and/or screencasts of the problem are extra helpful.
+If you came across a bug, please [open an issue](https://github.com/jacobcassidy/anki-advance-typed-cards/issues) and provide as much detail as you can so I can replicate the problem and fix it. Screenshots and/or screencasts of the problem are extra helpful.
