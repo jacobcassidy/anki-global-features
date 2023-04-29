@@ -2,7 +2,8 @@
 *
 
 # KEEP THE FOLLOWING ROOT COLLECTION.MEDIA FILES
-!readme.md
+!README.md
+!CHANGELOG.md
 !.gitignore
 !assets/
 !assets/**
@@ -11,7 +12,3 @@
 !_global.css
 !_global.js
 !_inconsolata-regular.*
-
-# IGNORE FILE TYPES
-*.DS_store
-
