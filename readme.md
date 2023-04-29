@@ -6,6 +6,7 @@
 | [Features](#features)         |
 | [Installation](#installation) |
 | [How To Use](#how-to-use)     |
+| [What's New?](#whats-new)     |
 | [FAQs](#faqs)                 |
 
 ## About
@@ -147,6 +148,10 @@ Create your note types:
 
 ### How to Sync The Features and Designs Across All Anki Apps
 
+## What's New?
+
+View the [Changelog](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/CHANGELOG.md).
+
 ## FAQs
 
 ### Why not create an Anki plugin to release these features?
@@ -156,3 +161,4 @@ Anki plugins only work with the AnkiPC app and are not currently compatible acro
 ### I found a bug, how can I report it?
 
 If you came across a bug, please [open an issue](https://github.com/jacobcassidy/anki-advance-typed-cards/issues) and provide as much detail as you can so I can replicate the problem and fix it. Screenshots and/or screencasts of the issue are extra helpful.
+
