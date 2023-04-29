@@ -44,6 +44,8 @@ Anki apps are available for the following devices:
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
+---
+
 ### Infinity Typed Inputs
 
 > Note: While this feature gives you the ability to add as many typed inputs on a single card as you want, you'll get the most benefit from your study by keeping your cards simple. Which mean only using an extra input or two when it makes sense - such as having a short bonus question with a typed input related the original question.
@@ -51,6 +53,8 @@ Anki apps are available for the following devices:
 **Example:**
 
 [ADD GIF SCREENSHOT EXAMPLE]
+
+---
 
 ### Streamlined Comparison Answers
 
@@ -102,25 +106,29 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 ## How To Use
 
-| Index                                                         |
-| :------------------------------------------------------------ |
-| [How to Use The Advance Inputs](#)                            |
-| [How to Use The Advance Comparisons](#)                       |
-| [How to Use The Global Card Designs](#)                       |
+| Index                                                          |
+| :------------------------------------------------------------- |
+| [How to Use The Advance Typed Inputs](#)                       |
+| [How to Use The Advance Comparison Answers](#)                 |
+| [How to Use The Global Card Designs](#)                        |
 | [How to Sync The Features and Designs Across All Anki Apps](#) |
 
-#### Step 3: Create your note types
+Create your note types:
 
 - Advance type [PHP Example]
 - Cloze type [JavaScript Example]
 
-#### Step 4: Card Color Styles
+### How to Use The Advance Typed Inputs
+
+### How to Use the Advance Comparison Answers
+
+### How to Use The Global Card Designs
 
 - CSS, Git, HTML, JavaScript, NodeJS, PHP, Python, React, Ruby, WordPress
 
-#### Step 5: Night Mode Styles
-
 - Using nightmode? Here's how to style your cards:
+
+### How to Sync The Features and Designs Across All Anki Apps
 
 ## FAQs
 
