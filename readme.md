@@ -90,7 +90,7 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 > Note: The above files are prefixed with an underscore `_` to keep them from being added to the delete files list in AnkiPC's "Check Media..." tool.
 
-### Step 3: Add the files you downloaded to your local Anki collection.media directory found at:
+### Step 3: Move the files you downloaded to your local Anki _collection.media_ directory found at:
 
 - **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/`
 - **Windows:** `APPDATA\Anki2`
