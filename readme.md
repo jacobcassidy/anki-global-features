@@ -19,7 +19,9 @@ Anki apps are available for the following devices:
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
 
-> Note: _Anki Advance Typed Cards_ requires use of the free AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them.
+> Note: _Anki Advance Typed Cards_ requires use of the free AnkiPC app to set up the advance features and global card designs. You will also need a free AnkiWeb account to sync the designs and features across all Anki apps.
+>
+>_Anki Advance Typed Cards_ is not affiliated with Anki apps. This is an independent project created to solve my own needs for upgrades to the Anki apps.
 
 ## Features
 
