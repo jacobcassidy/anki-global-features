@@ -88,22 +88,22 @@ Anki only allows one comparison answer per card, even if you have multiple input
 - [\_global.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.js)
 - [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
 
-> _Note: The above files are prefixed with an underscore `_` because that keeps them from being added to the list of files to be deleted in Anki's "Check Media..." tool._
+> Note: The above files are prefixed with an underscore `_` to keep them from being added to the delete files list in Anki's "Check Media..." tool.
 
-### Step 2: Add the files you just downloaded to your Anki `collection.media` directory found at:
+### Step 2: Add the files you just downloaded to your Anki _collection.media_ directory found at:
 
 - **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/_my-custom-style.css`.
 - **Windows:** `?`
 
-_Note: `[username]` is your Anki profile name. The default username is `User 1`._
+> Note: `[username]` is your Anki profile name. The default username is `User 1`.
 
-### Install Advance Inputs
+## How To Use
 
-### Install Advance Comparisons
-
-### Install Global Styles
-
-#### Step 1: Download the files
+| Index                                   |
+| :-------------------------------------- |
+| [How to Use The Advance Inputs](#)      |
+| [How to Use The Advance Comparisons](#) |
+| [How to Use The Global Card Designs](#) |
 
 #### Step 3: Create your note types
 
@@ -117,14 +117,6 @@ _Note: `[username]` is your Anki profile name. The default username is `User 1`.
 #### Step 5: Night Mode Styles
 
 - Using nightmode? Here's how to style your cards:
-
-## How To Use
-
-| Index                                   |
-| :-------------------------------------- |
-| [How to Use The Advance Inputs](#)      |
-| [How to Use The Advance Comparisons](#) |
-| [How to Use The Global Card Designs](#) |
 
 ## FAQs
 
