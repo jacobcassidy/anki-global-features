@@ -92,7 +92,7 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 ### Step 1: If you don't have AnkiPC installed, install it now:
 
-- Visit [AnkiPC](https://apps.ankiweb.net/) and click the download button (for macOS, Windows, or Linux).
+- Visit [Anki](https://apps.ankiweb.net/) and click the download button (for macOS, Windows, or Linux).
 
 ### Step 2: Download this repository's [collection.media](https://github.com/jacobcassidy/anki-advance-typed-cards/tree/main/collection.media) directory files:
 
@@ -123,6 +123,8 @@ Anki only allows one comparison answer per card, even if you have multiple input
 | [How to Use The Advance Comparison Answers](#)                 |
 | [How to Use The Global Card Designs](#)                        |
 | [How to Sync The Features and Designs Across All Anki Apps](#) |
+
+### Overview
 
 Create your note types:
 
