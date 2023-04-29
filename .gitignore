@@ -12,3 +12,5 @@
 !_global.css
 !_global.js
 !_inconsolata-regular.*
+!screenshots/
+!screenshots/**
