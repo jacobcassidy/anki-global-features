@@ -10,7 +10,7 @@
 
 ## About
 
-Anki Advance Typed Cards provides a way to add and sync advance features and global card designs across all Anki apps.
+Anki Advance Typed Cards adds and syncs [advance features](#features) and [global card designs](#global-card-designs) across all Anki apps.
 
 Anki apps are available for the following devices:
 
@@ -19,7 +19,7 @@ Anki apps are available for the following devices:
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
 
-> Note: Anki Advance Typed Cards requires the use of the free AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them.
+> Note: Anki Advance Typed Cards requires use of the free AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them.
 
 ## Features
 
@@ -92,10 +92,10 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 ### Step 2: Add the files you downloaded to your Anki _collection.media_ directory found at:
 
-- **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/_my-custom-style.css`.
+- **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/`.
 - **Windows:** `?`
 
-> Note: `[username]` is your Anki profile name. The default username is `User 1`.
+> Note: `[username]` is your Anki profile name. The default profile name is `User 1`.
 
 ## How To Use
 
