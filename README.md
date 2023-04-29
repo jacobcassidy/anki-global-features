@@ -11,7 +11,7 @@
 
 ## About
 
-_Anki Advance Typed Cards_ adds and syncs [advance features](#features) and [global card designs](#global-card-designs) across all Anki apps.
+_Anki Advance Typed Cards_ adds and syncs [advance input features](#features) and [global card designs](#global-card-designs) across all Anki apps. It was developed specificlly for programming reviews but can be used for any topic you're studying.
 
 If you're unfamiliar with [Anki](https://apps.ankiweb.net/), in a nutshell, it's a digital flashcard system that uses [spaced-repetition](https://en.wikipedia.org/wiki/Spaced_repetition) to help you retain knowledge in your long-term memory.
 
@@ -22,9 +22,9 @@ Anki apps are available for the following devices:
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
 
-> Note: _Anki Advance Typed Cards_ requires use of the free AnkiPC app to set up the advance features and global card designs. You will also need a free AnkiWeb account if you want to sync the designs and features across all Anki apps.
+> Note: _Anki Advance Typed Cards_ requires use of the free AnkiPC app to set up the advance input features and global card designs. You will also need a free AnkiWeb account if you want to sync the designs and features across all Anki apps.
 >
->_Anki Advance Typed Cards_ is not affiliated with Anki apps. This is an independent project created to solve my own needs for upgrades to the Anki apps.
+> _Anki Advance Typed Cards_ is not affiliated with Anki apps. This is an independent project created to solve my own needs for upgrades to the Anki apps.
 
 ## Features
 
@@ -33,7 +33,7 @@ Anki apps are available for the following devices:
 | [Multiline Typed Inputs](#multiline-typed-inputs)                 |
 | [Infinity Typed Inputs](#infinity-typed-inputs)                   |
 | [Streamlined Comparison Answers](#streamlined-comparison-answers) |
-| [Multiple Comparison Answers](#multiple-comparison-answers)       |
+| [Unlimited Comparison Answers](#unlimited-comparison-answers)     |
 | [Global Card Designs](#global-card-designs)                       |
 
 <!-- ### The Main Features
@@ -47,17 +47,19 @@ Anki apps are available for the following devices:
 
 **Example:**
 
-[ADD GIF SCREENSHOT EXAMPLE]
+<!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
 ---
 
 ### Infinity Typed Inputs
 
-> Note: While this feature gives you the ability to add as many typed inputs on a single card as you want, you'll get the most benefit from your study by keeping your cards simple. Which mean only using an extra input or two when it makes sense - such as having a short bonus question with a typed input related the original question.
+> Note: While the _Infinity Typed Inputs_ feature gives you the ability to add as many inputs as you want on a single card, you'll get the most benefit from your reviews by keeping your cards simple.
+>
+> For me, that means having only one extra optional input per card which can be used for a quick follow-up question.
 
 **Example:**
 
-[ADD GIF SCREENSHOT EXAMPLE]
+<!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
 ---
 
@@ -67,17 +69,17 @@ Anki currently uses different comparison algorithms for its different Anki apps.
 
 **Example:**
 
-[ADD GIF SCREENSHOT EXAMPLE]
+<!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
 ---
 
-### Multiple Comparison Answers
+### Unlimited Comparison Answers
 
-Anki only allows one comparison answer per card, even if you have multiple inputs for which you would like comparison answers for. _Anki Advance Typed Cards_ allows you to have comparison answers for all your multiline typed inputs.
+Anki limits the comparison answers to just one per card, even if you have multiple inputs for which you would like comparison answers for. _Anki Advance Typed Cards_ allows you to have unlimited comparison answers per card so you can compare all your multiline typed inputs.
 
 **Example:**
 
-[ADD GIF SCREENSHOT EXAMPLE]
+<!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
 ---
 
@@ -85,21 +87,30 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 **Example:**
 
-[ADD GIF SCREENSHOT EXAMPLE]
+<!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
 ## Installation
 
-| Installation Index                                                                                                                        |
-| :---------------------------------------------------------------------------------------------------------------------------------------- |
-| [Step 1: Install AnkiPC](#step-1-if-you-dont-have-ankipc-installed-install-it-now)                                                        |
-| [Step 2: Download repo files](#step-2-download-this-repositorys-collectionmedia-directory-files)                                          |
-| [Step 3: Move files to your local directory](#step-3-move-the-files-you-downloaded-to-your-local-anki-collectionmedia-directory-found-at) |
+| Installation Index                                                                                                                            |
+| :-------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Step 1: Install AnkiPC](#step-1-if-you-dont-have-ankipc-installed-install-it-now)                                                            |
+| [Step 2: Download the _Anki Advance Typed Cards_ files](#step-2-download-this-repositorys-collectionmedia-directory-files)                                          |
+| [Step 3: Move the files to your local _collection.media_ directory](#step-3-move-the-files-you-downloaded-to-your-local-anki-collectionmedia-directory-found-at) |
 
-### Step 1: If you don't have AnkiPC installed, install it now:
+### Step 1: Install AnkiPC
 
-- Visit [Anki](https://apps.ankiweb.net/) and click the download button (for macOS, Windows, or Linux).
+If you don't already have AnkiPC installed, install it now by visiting [Anki](https://apps.ankiweb.net/) and clicking the download button (for macOS, Windows, or Linux).
 
-### Step 2: Download this repository's [collection.media](https://github.com/jacobcassidy/anki-advance-typed-cards/tree/main/collection.media) directory files:
+### Step 2: Download the _Anki Advance Typed Cards_ files
+
+You can either download the files you need individually or grab the entire repo at once (which includes files you do not need, such as CHANGELOG.md and README.md).
+
+To download the entire repo, [click here for the zip](https://github.com/jacobcassidy/anki-advance-typed-cards/archive/refs/heads/main.zip). If you prefer to download the files you need individually, grab the files contained in the [collection.media](https://github.com/jacobcassidy/anki-advance-typed-cards/tree/main/collection.media) directory.
+
+You can download individual files by going to the file's page and clicking the small download button that looks like this:
+
+![Download Buton Screenshot](https://raw.githubusercontent.com/jacobcassidy/anki-advance-typed-cards/main/assets/screenshots/download-file-button.png?token=GHSAT0AAAAAAB2NXSC3MMNS4M3IWZOKXWTWZCNKL2A)
+
 
 - [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
 - [\_global.css](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.css)
@@ -109,7 +120,9 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 > Note: The above files are prefixed with an underscore `_` to keep them from being added to the delete files list in AnkiPC's "Check Media..." tool.
 
-### Step 3: Move the files you downloaded to your local Anki _collection.media_ directory found at:
+### Step 3: Move the files to your local _collection.media_ directory
+
+After you download the above files, you will need to move them to your local Anki _collection.media_ directory found at:
 
 - **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/`
 - **Windows:** `APPDATA\Anki2`
@@ -161,4 +174,3 @@ Anki plugins only work with the AnkiPC app and are not currently compatible acro
 ### I found a bug, how can I report it?
 
 If you came across a bug, please [open an issue](https://github.com/jacobcassidy/anki-advance-typed-cards/issues) and provide as much detail as you can so I can replicate the problem and fix it. Screenshots and/or screencasts of the issue are extra helpful.
-
