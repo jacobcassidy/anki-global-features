@@ -84,9 +84,9 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 #### Step 1: Download the following files:
 
-- [`_global.css`](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.css)
-- [`_global.js`](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.js)
-- [`_diff_match_patch.js`](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
+- [_global.css](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.css)
+- [_global.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.js)
+- [_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
 
 _Note: The above files are prefixed with an underscore `_` because that keeps them from being added to the list of files to be deleted in Anki's "Check Media..." tool.\_
 
