@@ -12,6 +12,8 @@
 
 _Anki Advance Typed Cards_ adds and syncs [advance features](#features) and [global card designs](#global-card-designs) across all Anki apps.
 
+If you're unfamiliar with [Anki](https://apps.ankiweb.net/), in a nutshell, it's a digital flashcard system that uses [spaced-repetition](https://en.wikipedia.org/wiki/Spaced_repetition) to help you retain knowledge in your long-term memory.
+
 Anki apps are available for the following devices:
 
 - [AnkiPC](https://apps.ankiweb.net/) (Windows, Mac, or Linux - Free)
@@ -153,4 +155,4 @@ Anki plugins only work with the AnkiPC app and are not currently compatible acro
 
 ### I found a bug, how can I report it?
 
-If you came across a bug, please [open an issue](https://github.com/jacobcassidy/anki-advance-typed-cards/issues) and provide as much detail as you can so I can replicate the problem and fix it. Screenshots and/or screencasts of the problem are extra helpful.
+If you came across a bug, please [open an issue](https://github.com/jacobcassidy/anki-advance-typed-cards/issues) and provide as much detail as you can so I can replicate the problem and fix it. Screenshots and/or screencasts of the issue are extra helpful.
