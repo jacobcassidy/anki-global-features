@@ -1,11 +1,12 @@
 # Anki Advance Typed Cards
 
-| Table of Content              |
-| ----------------------------- |
-| [About](#about)               |
-| [Features](#features)         |
-| [Installation](#installation) |
-| [FAQs](#faqs)                 |
+| Table of Content                                |
+| :---------------------------------------------- |
+| [About](#about)                                 |
+| [Features](#features)                           |
+| [Installation](#installation)                   |
+| [How To Use The Features](#how-to-use-features) |
+| [FAQs](#faqs)                                   |
 
 ## About
 
@@ -18,12 +19,12 @@ Anki apps are available for the following devices:
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
 
-_Note: Anki Advance Typed Cards requires the use of the free AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them._
+> _Note: Anki Advance Typed Cards requires the use of the free AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them._
 
 ## Features
 
 | Advance Features Index                                                 |
-| ---------------------------------------------------------------------- |
+| :--------------------------------------------------------------------- |
 | 1. [Multiline Typed Inputs](#1-multiline-typed-inputs)                 |
 | 2. [Infinity Typed Inputs](#2-infinity-typed-inputs)                   |
 | 3. [Streamlined Comparison Answers](#3-streamlined-comparison-answers) |
@@ -81,22 +82,13 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 ## Installation
 
-| Install Guide Index                                    |
-| ------------------------------------------------------ |
-| [Install All Features & Styles](#install-all-features) |
-| [Install Advance Inputs](#advance-inputs)              |
-| [Install Advance Comparisons](#advance-comparisons)    |
-| [Install Global Styles](#global-styles)                |
-
-### Install All Features
-
 #### Step 1: Download the following files:
 
 - [`_global.css`](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.css)
 - [`_global.js`](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.js)
 - [`_diff_match_patch.js`](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
 
-_Note: The above files are prefixed with an underscore `_` because that keeps them from being added to the list of files to be deleted in Anki's "Check Media..." tool._
+_Note: The above files are prefixed with an underscore `_` because that keeps them from being added to the list of files to be deleted in Anki's "Check Media..." tool.\_
 
 #### Step 2: Add the files you just downloaded to your Anki `collection.media` directory found at:
 
@@ -125,6 +117,14 @@ _Note: `[username]` is your Anki profile name. The default username is `User 1`.
 #### Step 5: Night Mode Styles
 
 - Using nightmode? Here's how to style your cards:
+
+## How To Use The Features
+
+| Index                               |
+| :----------------------------------------------------- |
+| [How to Use the Advance Inputs](#advance-inputs)              |
+| [How to Use the Advance Comparisons](#advance-comparisons)    |
+| [How to Use the Global Styles](#global-styles)                |
 
 ## FAQs
 
