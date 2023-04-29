@@ -18,14 +18,14 @@ Anki apps are available for the following devices:
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
 
-_Note: Anki Advance Typed Cards requires the use of the AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them._
+_Note: Anki Advance Typed Cards requires the use of the free AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them._
 
 ## Features
 
 | Advance Features Index                                                 |
 | ---------------------------------------------------------------------- |
-| 1. [Multiline Inputs](#1-multiline-inputs)                             |
-| 2. [Infinity Inputs](#2-infinity-inputs)                               |
+| 1. [Multiline Typed Inputs](#1-multiline-typed-inputs)                 |
+| 2. [Infinity Typed Inputs](#2-infinity-typed-inputs)                   |
 | 3. [Streamlined Comparison Answers](#3-streamlined-comparison-answers) |
 | 4. [Multiple Comparison Answers](#4-multiple-comparison-answers)       |
 | 5. [Global Card Designs](#5-global-card-designs)                       |
@@ -37,7 +37,7 @@ _Note: Anki Advance Typed Cards requires the use of the AnkiPC app to set up the
 4. Streamlined comparison answers that work with multiline inputs across all Anki apps.
 5. No limit to how many comparison answers you can have per card. -->
 
-### 1. Multiline Inputs
+### 1. Multiline Typed Inputs
 
 **Purpose:**
 
@@ -45,7 +45,7 @@ _Note: Anki Advance Typed Cards requires the use of the AnkiPC app to set up the
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
-### 2. Infinity Inputs
+### 2. Infinity Typed Inputs
 
 **Purpose:**
 
@@ -57,7 +57,7 @@ _Note: While this feature gives you the ability to add as many typed inputs on a
 
 ### 3. Streamlined Comparison Answers
 
-**Purpose:** Anki currently uses different comparison algorithms for different Anki apps. This gives you different results depending on which device you're using. Anki Advance Typed Cards uses a single comparison algorithm which is synced across all Anki apps to produce matching results no matter which device you are using.
+Anki currently uses different comparison algorithms for its different Anki apps. This gives you different results depending on which device you're using. Anki Advance Typed Cards steamlines this by using a single comparison algorithm which is synced across all Anki apps to produce the same comparison results no matter which device you are using.
 
 **Example:**
 
@@ -65,9 +65,7 @@ _Note: While this feature gives you the ability to add as many typed inputs on a
 
 ### 4. Multiple Comparison Answers
 
-**Purpose:**
-
-Anki only allows one comparison answer per card, even if you have multiple inputs you would like comparison answers for. Anki Advance Typed Cards allows you to have comparison answers for all your multiline typed inputs.
+Anki only allows one comparison answer per card, even if you have multiple inputs for which you would like comparison answers for. Anki Advance Typed Cards allows you to have comparison answers for all your multiline typed inputs.
 
 **Example:**
 
@@ -83,7 +81,7 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 ## Installation
 
-| Install Guide Index                              |
+| Install Guide Index                                    |
 | ------------------------------------------------------ |
 | [Install All Features & Styles](#install-all-features) |
 | [Install Advance Inputs](#advance-inputs)              |
@@ -99,7 +97,6 @@ Anki only allows one comparison answer per card, even if you have multiple input
 - [`_diff_match_patch.js`](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
 
 _Note: The above files are prefixed with an underscore `_` because that keeps them from being added to the list of files to be deleted in Anki's "Check Media..." tool._
-
 
 #### Step 2: Add the files you just downloaded to your Anki `collection.media` directory found at:
 
