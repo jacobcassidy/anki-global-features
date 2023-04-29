@@ -5,7 +5,7 @@
 | [About](#about)                                 |
 | [Features](#features)                           |
 | [Installation](#installation)                   |
-| [How To Use The Features](#how-to-use-features) |
+| [How To Use](#how-to-use) |
 | [FAQs](#faqs)                                   |
 
 ## About
@@ -122,9 +122,9 @@ _Note: `[username]` is your Anki profile name. The default username is `User 1`.
 
 | Index                               |
 | :----------------------------------------------------- |
-| [How to Use the Advance Inputs](#advance-inputs)              |
-| [How to Use the Advance Comparisons](#advance-comparisons)    |
-| [How to Use the Global Styles](#global-styles)                |
+| [How to Use the Advance Inputs](#)              |
+| [How to Use the Advance Comparisons](#)    |
+| [How to Use the Global Card Designs](#)                |
 
 ## FAQs
 
