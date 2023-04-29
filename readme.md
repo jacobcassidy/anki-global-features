@@ -25,11 +25,11 @@ Anki apps are available for the following devices:
 
 | Index                                                                  |
 | :--------------------------------------------------------------------- |
-| 1. [Multiline Typed Inputs](#1-multiline-typed-inputs)                 |
-| 2. [Infinity Typed Inputs](#2-infinity-typed-inputs)                   |
-| 3. [Streamlined Comparison Answers](#3-streamlined-comparison-answers) |
-| 4. [Multiple Comparison Answers](#4-multiple-comparison-answers)       |
-| 5. [Global Card Designs](#5-global-card-designs)                       |
+| [Multiline Typed Inputs](#multiline-typed-inputs)                 |
+| [Infinity Typed Inputs](#infinity-typed-inputs)                   |
+| [Streamlined Comparison Answers](#streamlined-comparison-answers) |
+| [Multiple Comparison Answers](#multiple-comparison-answers)       |
+| [Global Card Designs](#global-card-designs)                       |
 
 <!-- ### The Main Features
 1. The ability to quickly modify the design of your cards globally with CSS and have the styles sync across all Anki apps.
@@ -38,25 +38,25 @@ Anki apps are available for the following devices:
 4. Streamlined comparison answers that work with multiline inputs across all Anki apps.
 5. No limit to how many comparison answers you can have per card. -->
 
-### 1. Multiline Typed Inputs
+### Multiline Typed Inputs
 
-**Purpose:**
 
-**Example:**
-
-[ADD GIF SCREENSHOT EXAMPLE]
-
-### 2. Infinity Typed Inputs
-
-**Purpose:**
-
-_Note: While this feature gives you the ability to add as many typed inputs on a single card as you want, you'll get the most benefit from your study by keeping your cards simple. Which mean only using an extra input or two when it makes sense - such as having a short bonus question with a typed input related the original question._
 
 **Example:**
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
-### 3. Streamlined Comparison Answers
+### Infinity Typed Inputs
+
+
+
+> Note: While this feature gives you the ability to add as many typed inputs on a single card as you want, you'll get the most benefit from your study by keeping your cards simple. Which mean only using an extra input or two when it makes sense - such as having a short bonus question with a typed input related the original question.
+
+**Example:**
+
+[ADD GIF SCREENSHOT EXAMPLE]
+
+### Streamlined Comparison Answers
 
 Anki currently uses different comparison algorithms for its different Anki apps. This gives you different results depending on which device you're using. Anki Advance Typed Cards steamlines this by using a single comparison algorithm which is synced across all Anki apps to produce the same comparison results no matter which device you are using.
 
@@ -64,7 +64,7 @@ Anki currently uses different comparison algorithms for its different Anki apps.
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
-### 4. Multiple Comparison Answers
+### Multiple Comparison Answers
 
 Anki only allows one comparison answer per card, even if you have multiple inputs for which you would like comparison answers for. Anki Advance Typed Cards allows you to have comparison answers for all your multiline typed inputs.
 
@@ -72,9 +72,9 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
-### 5. Global Card Designs
+### Global Card Designs
 
-**Purpose:**
+
 
 **Example:**
 
@@ -90,7 +90,7 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 > Note: The above files are prefixed with an underscore `_` to keep them from being added to the delete files list in Anki's "Check Media..." tool.
 
-### Step 2: Add the files you just downloaded to your Anki _collection.media_ directory found at:
+### Step 2: Add the files you downloaded to your Anki _collection.media_ directory found at:
 
 - **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/_my-custom-style.css`.
 - **Windows:** `?`
