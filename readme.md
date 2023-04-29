@@ -23,7 +23,7 @@ Anki apps are available for the following devices:
 
 ## Features
 
-| Features Index                                                             |
+| Features Index                                                    |
 | :---------------------------------------------------------------- |
 | [Multiline Typed Inputs](#multiline-typed-inputs)                 |
 | [Infinity Typed Inputs](#infinity-typed-inputs)                   |
@@ -82,15 +82,19 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
----
-
 ## Installation
+
+| Installation Index                                                                                                                        |
+| :---------------------------------------------------------------------------------------------------------------------------------------- |
+| [Step 1: Install AnkiPC](#step-1-if-you-dont-have-ankipc-installed-install-it-now)                                                        |
+| [Step 2: Download repo files](#step-2-download-this-repositorys-collectionmedia-directory-files)                                          |
+| [Step 3: Move files to your local directory](#step-3-move-the-files-you-downloaded-to-your-local-anki-collectionmedia-directory-found-at) |
 
 ### Step 1: If you don't have AnkiPC installed, install it now:
 
 - Visit [AnkiPC](https://apps.ankiweb.net/) and click the download button (for macOS, Windows, or Linux).
 
-### Step 2: Download this repo's [collection.media](https://github.com/jacobcassidy/anki-advance-typed-cards/tree/main/collection.media) directory files. Which consist of the following files:
+### Step 2: Download this repository's [collection.media](https://github.com/jacobcassidy/anki-advance-typed-cards/tree/main/collection.media) directory files:
 
 - [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
 - [\_global.css](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.css)
@@ -112,8 +116,9 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 ## How To Use
 
-| How To Index                                                          |
+| How To Index                                                   |
 | :------------------------------------------------------------- |
+| [Overview](#)                                                  |
 | [How to Use The Advance Typed Inputs](#)                       |
 | [How to Use The Advance Comparison Answers](#)                 |
 | [How to Use The Global Card Designs](#)                        |
