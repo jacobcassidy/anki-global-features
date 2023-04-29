@@ -10,21 +10,21 @@
 
 ## About
 
-Anki Advance Typed Cards adds and syncs [advance features](#features) and [global card designs](#global-card-designs) across all Anki apps.
+_Anki Advance Typed Cards_ adds and syncs [advance features](#features) and [global card designs](#global-card-designs) across all Anki apps.
 
 Anki apps are available for the following devices:
 
-- [AnkiPC](https://apps.ankiweb.net/) (Windows, Mac, or Linus - Free)
+- [AnkiPC](https://apps.ankiweb.net/) (Windows, Mac, or Linux - Free)
 - [AnkiWeb](https://ankiweb.net) (Web - Free)
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
 
-> Note: Anki Advance Typed Cards requires use of the free AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them.
+> Note: _Anki Advance Typed Cards_ requires use of the free AnkiPC app to set up the advance features. After the initial setup, you may use any of the Anki apps with the features synced across all of them.
 
 ## Features
 
-| Index                                                                  |
-| :--------------------------------------------------------------------- |
+| Index                                                             |
+| :---------------------------------------------------------------- |
 | [Multiline Typed Inputs](#multiline-typed-inputs)                 |
 | [Infinity Typed Inputs](#infinity-typed-inputs)                   |
 | [Streamlined Comparison Answers](#streamlined-comparison-answers) |
@@ -40,15 +40,11 @@ Anki apps are available for the following devices:
 
 ### Multiline Typed Inputs
 
-
-
 **Example:**
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
 ### Infinity Typed Inputs
-
-
 
 > Note: While this feature gives you the ability to add as many typed inputs on a single card as you want, you'll get the most benefit from your study by keeping your cards simple. Which mean only using an extra input or two when it makes sense - such as having a short bonus question with a typed input related the original question.
 
@@ -58,7 +54,7 @@ Anki apps are available for the following devices:
 
 ### Streamlined Comparison Answers
 
-Anki currently uses different comparison algorithms for its different Anki apps. This gives you different results depending on which device you're using. Anki Advance Typed Cards steamlines this by using a single comparison algorithm which is synced across all Anki apps to produce the same comparison results no matter which device you are using.
+Anki currently uses different comparison algorithms for its different Anki apps. This gives you different results depending on which device you're using. _Anki Advance Typed Cards_ steamlines this by using a single comparison algorithm which is synced across all Anki apps to produce the same comparison results no matter which device you are using.
 
 **Example:**
 
@@ -66,7 +62,7 @@ Anki currently uses different comparison algorithms for its different Anki apps.
 
 ### Multiple Comparison Answers
 
-Anki only allows one comparison answer per card, even if you have multiple inputs for which you would like comparison answers for. Anki Advance Typed Cards allows you to have comparison answers for all your multiline typed inputs.
+Anki only allows one comparison answer per card, even if you have multiple inputs for which you would like comparison answers for. _Anki Advance Typed Cards_ allows you to have comparison answers for all your multiline typed inputs.
 
 **Example:**
 
@@ -74,36 +70,44 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 ### Global Card Designs
 
-
-
 **Example:**
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
 ## Installation
 
-### Step 1: Download the following files:
+### Step 1: If you don't have AnkiPC installed, install it now:
 
+- Visit [AnkiPC](https://apps.ankiweb.net/) and click the download button (for macOS, Windows, or Linux).
+
+### Step 2: Download this repo's [collection.media](https://github.com/jacobcassidy/anki-advance-typed-cards/tree/main/collection.media) directory files. Which consist of the following files:
+
+- [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
 - [\_global.css](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.css)
 - [\_global.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.js)
-- [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
+- [\_inconsolata-regular.woff](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_inconsolata-regular.woff)
+- [\_inconsolata-regular.woff2](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_inconsolata-regular.woff2)
 
-> Note: The above files are prefixed with an underscore `_` to keep them from being added to the delete files list in Anki's "Check Media..." tool.
+> Note: The above files are prefixed with an underscore `_` to keep them from being added to the delete files list in AnkiPC's "Check Media..." tool.
 
-### Step 2: Add the files you downloaded to your Anki _collection.media_ directory found at:
+### Step 3: Add the files you downloaded to your local Anki collection.media directory found at:
 
-- **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/`.
-- **Windows:** `?`
+- **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/`
+- **Windows:** `APPDATA\Anki2`
+- **Linus:** `~/.local/share/Anki2/[username]/collection.media/`
 
 > Note: `[username]` is your Anki profile name. The default profile name is `User 1`.
 
+**You are now ready to start using _Anki Advance Typed Cards_!**
+
 ## How To Use
 
-| Index                                   |
-| :-------------------------------------- |
-| [How to Use The Advance Inputs](#)      |
-| [How to Use The Advance Comparisons](#) |
-| [How to Use The Global Card Designs](#) |
+| Index                                                         |
+| :------------------------------------------------------------ |
+| [How to Use The Advance Inputs](#)                            |
+| [How to Use The Advance Comparisons](#)                       |
+| [How to Use The Global Card Designs](#)                       |
+| [How to Sync The Features and Designs Across All Anki Apps](#) |
 
 #### Step 3: Create your note types
 
