@@ -23,7 +23,7 @@ Anki apps are available for the following devices:
 
 ## Features
 
-| Index                                                             |
+| Features Index                                                             |
 | :---------------------------------------------------------------- |
 | [Multiline Typed Inputs](#multiline-typed-inputs)                 |
 | [Infinity Typed Inputs](#infinity-typed-inputs)                   |
@@ -64,6 +64,8 @@ Anki currently uses different comparison algorithms for its different Anki apps.
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
+---
+
 ### Multiple Comparison Answers
 
 Anki only allows one comparison answer per card, even if you have multiple inputs for which you would like comparison answers for. _Anki Advance Typed Cards_ allows you to have comparison answers for all your multiline typed inputs.
@@ -72,11 +74,15 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 [ADD GIF SCREENSHOT EXAMPLE]
 
+---
+
 ### Global Card Designs
 
 **Example:**
 
 [ADD GIF SCREENSHOT EXAMPLE]
+
+---
 
 ## Installation
 
@@ -106,7 +112,7 @@ Anki only allows one comparison answer per card, even if you have multiple input
 
 ## How To Use
 
-| Index                                                          |
+| How To Index                                                          |
 | :------------------------------------------------------------- |
 | [How to Use The Advance Typed Inputs](#)                       |
 | [How to Use The Advance Comparison Answers](#)                 |
