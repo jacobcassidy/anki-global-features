@@ -4,12 +4,10 @@
 # KEEP THE FOLLOWING ROOT COLLECTION.MEDIA FILES
 !README.md
 !CHANGELOG.md
+!LICENSE
 !.gitignore
-!assets/
-!assets/**
 !collection.media/
 !_diff_match_patch.js
-!_global.css
 !_global.js
 !_inconsolata-regular.*
 
