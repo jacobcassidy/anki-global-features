@@ -12,8 +12,6 @@
 !_global.css
 !_global.js
 !_inconsolata-regular.*
-!screenshots/
-!screenshots/**
 
-# IGNORE OS FILES
+# EXCLUDE
 .DS_Store
