@@ -6,6 +6,9 @@
 !CHANGELOG.md
 !LICENSE
 !.gitignore
+!assets/
+!assets/note-types/
+!assets/note-types/*
 !collection.media/
 !_diff_match_patch.js
 !_global.js
