@@ -80,7 +80,7 @@ code,
 input,
 pre,
 textarea {
-  border-radius: 5px;
+  border-radius: 6px;
   font-family: var(--font-family-mono);
   font-size: 20px;
 }
@@ -93,7 +93,7 @@ input,
 pre,
 textarea {
   line-height: 1.333;
-  margin: 10px auto 30px;
+  margin: 12px auto 32px;
   outline: none;
   width: 100%;
 }
@@ -109,7 +109,7 @@ textarea {
 }
 pre,
 textarea {
-  padding: 20px;
+  padding: 24px;
 }
 code {
   background-color: var(--bg-secondary);
@@ -118,12 +118,12 @@ code {
   margin: 0;
 }
 input {
-  padding: 10px;
+  padding: 12px;
 }
 pre {
   background-color: var(--pre-bg);
   color: var(--pre-color);
-  padding: 20px;
+  padding: 24px;
   text-align: left;
   white-space: pre-wrap;
 }
@@ -135,7 +135,7 @@ pre code {
 }
 textarea {
   display: block;
-  height: 150px;
+  height: 156px;
 }
 textarea::placeholder {
   color: var(--color-tertiary);
@@ -145,9 +145,9 @@ textarea::placeholder {
 }
 textarea.has-title {
   border-top: 0;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 6px 6px;
   margin-top: 0;
-  padding: 15px 20px;
+  padding: 16px 24px;
 }
 table {
   max-width: 680px;
@@ -175,19 +175,22 @@ table pre {
 
 .topic {
   background-color: var(--bg-tertiary);
+  border-radius: 24px;
   color: var(--color-tertiary);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 40px;
+  margin: 0 12px;
+  width: calc(100% - 24px);
 }
 
 .card-inner {
-  padding: 30px calc(50% - 360px);
+  padding: 32px calc(50% - 360px);
 }
 @media only screen and (max-width: 680px) {
   .card-inner {
-    padding: 30px 20px;
+    padding: 32px 24px;
   }
 }
 
@@ -197,14 +200,14 @@ table pre {
 }
 
 .question {
-  padding-bottom: 10px;
+  padding-bottom: 12px;
 }
 
 .type-hint {
   color: var(--color-tertiary);
   font-size: 12px;
   font-style: italic;
-  padding-bottom: 5px;
+  padding-bottom: 6px;
 }
 .type-hint code {
   font-size: 12px;
@@ -214,7 +217,7 @@ table pre {
 .input-title,
 .output-title,
 .notes-title {
-  border-radius: 5px 5px 0 0;
+  border-radius: 6px 6px 0 0;
   color: var(--color-tertiary);
   font-size: 12px;
   font-weight: bold;
@@ -224,10 +227,10 @@ table pre {
 .input-title,
 .output-title {
   background-color: var(--bg-tertiary);
-  padding: 4px 20px;
+  padding: 4px 24px;
 }
 .is-primary .input-title {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 .output-title.is-inner {
   border-radius: 0;
@@ -235,13 +238,13 @@ table pre {
 
 /* INPUT STYLES */
 .input-wrap {
-  margin: 0 auto 45px;
+  margin: 0 auto 48px;
   max-width: 600px;
 }
 .input-textarea-wrap,
 .input-textarea-wrap textarea {
-  border-radius: 0 0 5px 5px;
-  height: 100px;
+  border-radius: 0 0 6px 6px;
+  height: 132px;
   margin: 0 auto;
   overflow: hidden;
   width: 100%;
@@ -259,16 +262,16 @@ table pre {
 @media only screen and (max-width: 600px) {
   .input-textarea-wrap,
   .input-textarea-wrap textarea {
-    height: 150px;
+    height: 156px;
   }
 }
 .input-faux-placeholder {
   position: absolute;
-  border-radius: 0 0  5px 5px;
+  border-radius: 0 0 6px 6px;
   color: var(--color-tertiary);
   font-family: var(--font-family-primary);
   font-size: 18px;
-  padding: 15px 20px;
+  padding: 16px 24px;
   text-align: left;
 }
 .input-faux-placeholder code {
@@ -292,17 +295,17 @@ table pre {
 .output-wrap {
   background-color: var(--bg-secondary);
   border: 1px solid var(--bg-tertiary);
-  border-radius: 5px;
+  border-radius: 6px;
   color: var(--color-secondary);
   font-size: 18px;
-  margin: 10px auto 45px;
+  margin: 12px auto 48px;
 }
 .output-wrap.is-primary {
   font-size: 20px;
 }
 
 :not(.is-primary) > .output-comparison {
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 6px 6px;
 }
 .output-comparison {
   margin: 0;
@@ -313,7 +316,7 @@ table pre {
 }
 .output-data,
 .output-answer {
-  padding: 20px;
+  padding: 24px;
 }
 
 .output-data,
@@ -326,16 +329,16 @@ table pre {
 .notes-wrap {
   background-color: var(--notes-bg);
   border: 1px solid var(--bg-secondary);
-  border-radius: 5px;
+  border-radius: 6px;
   color: var(--color-tertiary);
   font-size: 18px;
-  margin: 10px auto 30px;
+  margin: 12px auto 32px;
 }
 .notes-title {
-  padding: 10px 20px 0;
+  padding: 12px 24px 0;
 }
 .notes-content {
-  padding: 10px 20px 20px;
+  padding: 12px 24px 24px;
 }
 .notes-content code {
   color: var(--color-tertiary);
@@ -346,7 +349,7 @@ table pre {
   text-align: left;
 }
 .replay-button {
-  margin: 10px;
+  margin: 12px;
 }
 
 /* TOGGLE VIEWS */
@@ -376,8 +379,8 @@ code#typeans {
   border: none;
   color: var(--pre-color);
   display: block;
-  margin: 10px auto 45px;
-  padding: 20px;
+  margin: 12px auto 48px;
+  padding: 24px;
   text-align: left;
 }
 
@@ -396,7 +399,7 @@ hr#answer {
   border-width: 2px;
   border-style: solid;
   border-top: 0;
-  margin: 20px 0;
+  margin: 24px 0;
 }
 
 #typearrow {
@@ -431,7 +434,7 @@ div#qa-box {
 }
 nav.navbar {
   margin: 0;
-  padding: 10px 20px;
+  padding: 12px 24px;
 }
 @media (min-width: 1200px) {
   nav.navbar .container {
@@ -467,7 +470,7 @@ div#study-menu-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px calc(50% - 600px);
+  padding: 12px calc(50% - 600px);
 }
 span#leftStudyMenu,
 span#rightStudyMenu {
@@ -475,7 +478,7 @@ span#rightStudyMenu {
 }
 @media (max-width: 1240px) {
   div#study-menu-wrap {
-    padding: 10px 20px;
+    padding: 12px 24px;
   }
 }
 div.pt-1,
@@ -520,7 +523,7 @@ button.navbar-toggler-right {
 .kc,
 .n,
 .no {
-  color: #78DCE8;
+  color: #8fe2e1;
 }
 
 /* GRAY */
@@ -528,7 +531,7 @@ button.navbar-toggler-right {
 .cm,
 .c1,
 .sd {
-  color: #646464;
+  color: #707070;
   font-style: italic;
 }
 
@@ -538,41 +541,41 @@ button.navbar-toggler-right {
 .nc,
 .nd,
 .s {
-  color: #A9DC76;
+  color: #93d185;
 }
 
 /* ORANGE */
 .cp {
-  color: #FC9867;
+  color: #edb068;
 }
 
 /* PINK */
 .nb,
 .nv {
-  color: #F3B4C5;
+  color: #ffbbcf;
 }
 
 /* PURPLE */
 .mi,
 .kt {
-  color: #AB9DF2;
+  color: #cfabf9;
 }
 
 /* RED */
 .k,
 .nt {
-  color: #FF6188;
+  color: #f4877f;;
 }
 
 /* RED ERROR */
 .err {
-  color: #f00;
+  color: #ff7e77;
 }
 
 /* YELLOW */
 .s1,
 .s2 {
-  color: #E6DB74;
+  color: #f6e3b3;
 }
 
 /* NIGHTMODE STYLES */
