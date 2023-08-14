@@ -1,19 +1,23 @@
 # Anki Advance Typed Cards
 
-| Table of Content              |
-| :---------------------------- |
-| [About](#about)               |
-| [Features](#features)         |
-| [Installation](#installation) |
-| [How To Use](#how-to-use)     |
-| [What's New?](#whats-new)     |
-| [FAQs](#faqs)                 |
+| **Table of Content**                                                         |
+| :--------------------------------------------------------------------------- |
+| [About](#about)                                                              |
+| _Feature:_ [Multiline Typed Inputs](#multiline-typed-inputs)                 |
+| _Feature:_ [Infinity Typed Inputs](#infinity-typed-inputs)                   |
+| _Feature:_ [Streamlined Comparison Answers](#streamlined-comparison-answers) |
+| _Feature:_ [Unlimited Comparison Answers](#unlimited-comparison-answers)     |
+| _Bonus:_ [Global Card Designs](#global-card-designs)                         |
+| [Installation](#installation)                                                |
+| [How To Use](#how-to-use)                                                    |
+| [What's New?](#whats-new)                                                    |
+| [FAQs](#faqs)                                                                |
 
 ## About
 
-_Anki Advance Typed Cards_ adds and syncs [advance input features](#features) and [global card designs](#global-card-designs) across all Anki apps. It was developed specificlly for programming reviews but can be used for any topic you're studying.
+_Anki Advance Typed Cards_ adds and syncs advanced input fields to your Anki flashcards across all Anki apps so you have more options for typing answers (see [features](#features)). It was developed specifically for programming reviews but can be used for any topic you're studying.
 
-If you're unfamiliar with [Anki](https://apps.ankiweb.net/), in a nutshell, it's a digital flashcard system that uses [spaced-repetition](https://en.wikipedia.org/wiki/Spaced_repetition) to help you retain knowledge in your long-term memory.
+If you're unfamiliar with [Anki](https://apps.ankiweb.net/), in a nutshell, it's an open-source digital flashcard system that uses [spaced-repetition](https://en.wikipedia.org/wiki/Spaced_repetition) to help you retain knowledge in your long-term memory.
 
 Anki apps are available for the following devices:
 
@@ -22,9 +26,6 @@ Anki apps are available for the following devices:
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
 
-> Note: _Anki Advance Typed Cards_ requires use of the free AnkiPC app to set up the advance input features and global card designs. You will also need a free AnkiWeb account if you want to sync the designs and features across all Anki apps.
->
-> _Anki Advance Typed Cards_ is not affiliated with Anki apps. This is an independent project created to solve my own needs for upgrades to the Anki apps.
 
 ## Features
 
@@ -91,10 +92,12 @@ Anki limits the comparison answers to just one per card, even if you have multip
 
 ## Installation
 
-| Installation Index                                                                                                                            |
-| :-------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Step 1: Install AnkiPC](#step-1-if-you-dont-have-ankipc-installed-install-it-now)                                                            |
-| [Step 2: Download the _Anki Advance Typed Cards_ files](#step-2-download-this-repositorys-collectionmedia-directory-files)                                          |
+Note: _Anki Advance Typed Cards_ requires use of the free [AnkiPC](https://apps.ankiweb.net/) app to set up the advance input features. You will also need a free [AnkiWeb](https://ankiweb.net) account if you want to sync the features across all Anki apps.
+
+| Installation Index                                                                                                                                               |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Step 1: Install AnkiPC](#step-1-if-you-dont-have-ankipc-installed-install-it-now)                                                                               |
+| [Step 2: Download the _Anki Advance Typed Cards_ files](#step-2-download-this-repositorys-collectionmedia-directory-files)                                       |
 | [Step 3: Move the files to your local _collection.media_ directory](#step-3-move-the-files-you-downloaded-to-your-local-anki-collectionmedia-directory-found-at) |
 
 ### Step 1: Install AnkiPC
@@ -110,7 +113,6 @@ To download the entire repo, [click here for the zip](https://github.com/jacobca
 You can download individual files by going to the file's page and clicking the small download button that looks like this:
 
 ![Download Buton Screenshot](https://raw.githubusercontent.com/jacobcassidy/anki-advance-typed-cards/main/assets/screenshots/download-file-button.png?token=GHSAT0AAAAAAB2NXSC3MMNS4M3IWZOKXWTWZCNKL2A)
-
 
 - [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
 - [\_global.css](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.css)
