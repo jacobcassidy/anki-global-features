@@ -1,17 +1,12 @@
 # Anki Advance Typed Cards
 
-| **Table of Content**                                                         |
-| :--------------------------------------------------------------------------- |
-| [About](#about)                                                              |
-| _Feature:_ [Multiline Typed Inputs](#multiline-typed-inputs)                 |
-| _Feature:_ [Infinity Typed Inputs](#infinity-typed-inputs)                   |
-| _Feature:_ [Streamlined Comparison Answers](#streamlined-comparison-answers) |
-| _Feature:_ [Unlimited Comparison Answers](#unlimited-comparison-answers)     |
-| _Bonus:_ [Global Card Designs](#global-card-designs)                         |
-| [Installation](#installation)                                                |
-| [How To Use](#how-to-use)                                                    |
-| [What's New?](#whats-new)                                                    |
-| [FAQs](#faqs)                                                                |
+| Information                   |     | Features                                                          |
+| ----------------------------- | --- | ----------------------------------------------------------------- |
+| [About](#about)               |     | [Multiline Typed Inputs](#multiline-typed-inputs)                 |
+| [Installation](#installation) |     | [Infinity Typed Inputs](#infinity-typed-inputs)                   |
+| [How to Use](#how-to-use)     |     | [Streamlined Comparison Answers](#streamlined-comparison-answers) |
+| [What's New?](#whats-new)     |     | [Unlimited Comparison Answers](#unlimited-comparison-answers)     |
+| [FAQs](#faqs)                 |     | [Global Card Designs](#global-card-designs)                       |
 
 ## About
 
@@ -25,7 +20,6 @@ Anki apps are available for the following devices:
 - [AnkiWeb](https://ankiweb.net) (Web - Free)
 - [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
 - [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
-
 
 ## Features
 
@@ -112,7 +106,7 @@ To download the entire repo, [click here for the zip](https://github.com/jacobca
 
 You can download individual files by going to the file's page and clicking the small download button that looks like this:
 
-![Download Buton Screenshot](https://raw.githubusercontent.com/jacobcassidy/anki-advance-typed-cards/main/assets/screenshots/download-file-button.png?token=GHSAT0AAAAAAB2NXSC3MMNS4M3IWZOKXWTWZCNKL2A)
+![Download Button Screenshot](https://raw.githubusercontent.com/jacobcassidy/anki-advance-typed-cards/main/assets/screenshots/download-file-button.png?token=GHSAT0AAAAAAB2NXSC3MMNS4M3IWZOKXWTWZCNKL2A)
 
 - [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)
 - [\_global.css](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.css)
