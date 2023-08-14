@@ -49,6 +49,20 @@
   --type-bad-bg--nightmode: hsla(0, 100%, 80%, .75);
   --type-good-bg--nightmode:hsla(120, 100%, 85%, .75);
   --type-missed-bg--nightmode: hsla(0, 0%, 82%, .75);
+
+  /* CASSIDY DARK SYNTAX COLORS */
+  --syntax-blue: #89c3ff;
+  --syntax-cyan: #8cd9d9;
+  --syntax-gray-dark: #707070;    /* comments */
+  --syntax-gray-medium: #a3a3a3;  /* punctuation */
+  --syntax-gray-white: #f5f5f5;   /* text */
+  --syntax-green: #91d283;
+  --syntax-orange: #edb068;
+  --syntax-pink: #ffbbcf;
+  --syntax-purple: #cfabf9;
+  --syntax-red: #f4877f;
+  --syntax-red-error: #ff7e77;
+  --syntax-yellow: #f6e3b3;
 }
 
 /* DEFAULT STYLES */
@@ -114,7 +128,7 @@ textarea {
 code {
   background-color: var(--bg-secondary);
   border: 1px solid var(--bg-tertiary);
-  padding: 2px 4px;
+  padding: 1px 4px 2px;
   margin: 0;
 }
 input {
@@ -509,73 +523,81 @@ button.navbar-toggler-right {
 
 /* CODE SYNTAX HIGHLIGHTING ADD-ON STYLES */
 
-/* OFF-WHITE */
-.p,
-.o,
-.ow,
-.x {
-  color: var(--pre-color);
-}
-
-/* BLUE */
-.nx,
-.kd,
-.kc,
-.n,
-.no {
-  color: #8fe2e1;
-}
-
-/* GRAY */
+/* GRAY-DARK */
 .c,
 .cm,
 .c1,
 .sd {
-  color: #707070;
+  color: var(--syntax-gray-dark);
   font-style: italic;
 }
 
+/* GRAY-MEDIUM */
+.p,
+.o {
+  color: var(--syntax-gray-medium);
+}
+
+/* GRAY-WHITE */
+.ow,
+.x {
+  color: var(--syntax-gray-white);
+}
+
+/* BLUE */
+.kd,
+.kr {
+  color: var(--syntax-blue);
+}
+
+/* CYAN */
+.kc,
+.n,
+.no {
+  color: var(--syntax-cyan);
+}
+
 /* GREEN */
-.kr,
 .na,
 .nc,
 .nd,
 .s {
-  color: #93d185;
+ color: var(--syntax-green);
 }
 
 /* ORANGE */
 .cp {
-  color: #edb068;
+  color: var(--syntax-orange);
 }
 
 /* PINK */
 .nb,
-.nv {
-  color: #ffbbcf;
+.nv,
+.nx {
+  color: var(--syntax-pink);
 }
 
 /* PURPLE */
 .mi,
 .kt {
-  color: #cfabf9;
+  color: var(--syntax-purple);
 }
 
 /* RED */
 .k,
 .nt {
-  color: #f4877f;;
+  color: var(--syntax-red);
 }
 
 /* RED ERROR */
 .err {
-  color: #ff7e77;
+  color: var(--syntax-red-error);
 }
 
 /* YELLOW */
 .s1,
 .s2 {
-  color: #f6e3b3;
+  color: var(--syntax-yellow);
 }
 
 /* NIGHTMODE STYLES */
