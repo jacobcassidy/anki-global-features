@@ -1,12 +1,12 @@
 # Anki Advance Typed Cards
 
 | Information                   |     | Features                                                          |
-| ----------------------------- | --- | ----------------------------------------------------------------- |
+| :---------------------------- | --- | :---------------------------------------------------------------- |
 | [About](#about)               |     | [Multiline Typed Inputs](#multiline-typed-inputs)                 |
 | [Installation](#installation) |     | [Infinity Typed Inputs](#infinity-typed-inputs)                   |
 | [How to Use](#how-to-use)     |     | [Streamlined Comparison Answers](#streamlined-comparison-answers) |
 | [What's New?](#whats-new)     |     | [Unlimited Comparison Answers](#unlimited-comparison-answers)     |
-| [FAQs](#faqs)                 |     | [Global Card Designs](#global-card-designs)                       |
+| [FAQs](#faqs)                 |     | _Bonus:_ [Global Card Designs](#global-card-designs)                       |
 
 ## About
 
