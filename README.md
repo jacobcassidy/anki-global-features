@@ -69,14 +69,7 @@ Anki limits the comparison answers to just one per card, even if you have multip
 
 ## Installation
 
-_Note: Anki Advance Typed Cards requires the use of the free [AnkiPC](https://apps.ankiweb.net/) app to set up the advanced input features. This means you'll need to use a PC or Mac for the initial setup. Once you're set up, you can use the features on any of the Anki apps across all devices._
-
-| Installation Index                                                                                                                                               |
-| :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Step 1: Install AnkiPC](#step-1-if-you-dont-have-ankipc-installed-install-it-now)                                                                               |
-| [Step 2: Download the _Anki Advance Typed Cards_ files](#step-2-download-this-repositorys-collectionmedia-directory-files)                                       |
-| [Step 3: Move the files to your local _collection.media_ directory](#step-3-move-the-files-you-downloaded-to-your-local-anki-collectionmedia-directory-found-at) |
-| [Step 4: Sync the files to use on all devices]()                                                                                                                 |
+>_Note: The Anki Advance Typed Cards setup requires the use of the free [AnkiPC](https://apps.ankiweb.net/) app to set up the advanced input features. This means you'll need to use a PC or Mac for the initial setup. Once you're set up, you can use the features on any of the Anki apps across all devices._
 
 ### Step 1: Install AnkiPC
 
@@ -84,7 +77,7 @@ If you don't already have AnkiPC installed, install it now by visiting [Anki](ht
 
 ### Step 2: Download the _Anki Advance Typed Cards_ files
 
-You can either download the files you need individually or grab the entire repo at once (which includes files you do not need, such as CHANGELOG.md and README.md).
+You can either download the files you need individually or clone the entire repo (which includes files you do not need, such as CHANGELOG.md and README.md).
 
 To download the entire repo, [click here for the zip](https://github.com/jacobcassidy/anki-advance-typed-cards/archive/refs/heads/main.zip). If you prefer to download the files you need individually, grab the files contained in the [collection.media](https://github.com/jacobcassidy/anki-advance-typed-cards/tree/main/collection.media) directory.
 
@@ -101,15 +94,17 @@ You can download individual files by going to the file's page and clicking the s
 
 ### Step 3: Move the files to your local _collection.media_ directory
 
-After you download the above files, you will need to move them to your local Anki _collection.media_ directory found at:
+After you download the above files, you will need to move them to your [local Anki _collection.media_ directory](https://docs.ankiweb.net/files.html#file-locations):
 
-- **macOS:** `~/Library/Application Support/Anki2/[username]/collection.media/`
-- **Windows:** `APPDATA\Anki2`
-- **Linus:** `~/.local/share/Anki2/[username]/collection.media/`
+| OS          | Location                                                           |
+| ----------- | ------------------------------------------------------------------ |
+| **macOS**   | `~/Library/Application Support/Anki2/[username]/collection.media/` |
+| **Windows** | `APPDATA\Anki2\[username]\collection.media\`                                                    |
+| **Linux**   | `~/.local/share/Anki2/[username]/collection.media/`                |
 
-> Note: `[username]` is your Anki profile name. The default profile name is `User 1`.
+_Note: `[username]` is your Anki profile name. The default profile name is `User 1`._
 
-### Step 4:
+### Step 4: Sync the files to use on all devices
 
 **You are now ready to start using _Anki Advance Typed Cards_!**
 
