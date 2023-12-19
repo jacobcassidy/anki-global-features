@@ -1,4 +1,4 @@
-# Anki Advance Typed Cards
+# Anki Global Advanced Inputs
 
 | Information                   |     | Features                                                          |
 | :---------------------------- | --- | :---------------------------------------------------------------- |
@@ -11,7 +11,7 @@
 
 ## About
 
-The _Anki Advance Typed Cards_ setup adds and syncs advanced input fields to your Anki flashcards across all Anki apps. This gives you more options for typing answers when answering a card question (see [features](#features) below). This setup was developed specifically for programming reviews but can be used for any topic you're studying.
+The _Anki Advanced Typed Cards_ setup adds and syncs advanced input fields to your Anki flashcards across all Anki apps. This gives you more options for typing answers when answering a card question (see [features](#features) below). This setup was developed specifically for programming reviews but can be used for any topic you're studying.
 
 If you're unfamiliar with [Anki](https://apps.ankiweb.net/), in a nutshell, it's an open-source digital flashcard system that uses [spaced-repetition](https://en.wikipedia.org/wiki/Spaced_repetition) to help you retain knowledge in your long-term memory.
 
