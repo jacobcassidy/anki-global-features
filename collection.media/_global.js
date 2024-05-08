@@ -52,9 +52,7 @@ function showInputs() {
         inputWrap.classList.add('active');
       }
       // Show input if the faux textarea placeholder contains content
-      const inputPlaceholder = inputWrap.querySelector(
-        '.input-faux-placeholder'
-      );
+      const inputPlaceholder = inputWrap.querySelector('.input-faux-placeholder');
       if (inputPlaceholder !== null && inputPlaceholder.innerText !== '') {
         const inputTitle = inputWrap.querySelector('.input-title'),
           inputTextarea = inputWrap.querySelector('textarea');
@@ -63,8 +61,7 @@ function showInputs() {
           // For comparison inputs, show a forward slash
           const hasDataCompare = inputTitle.getAttribute('data-compare');
           if (hasDataCompare !== '') {
-            inputTitle.innerHTML +=
-              '<span class="input-comparison">&nbsp; &#47; &nbsp;</span>';
+            inputTitle.innerHTML += '<span class="input-comparison">&nbsp; &#47; &nbsp;</span>';
           }
           // Show type hint text in input title if it exists
           const hasDataTypeHint = inputTitle.getAttribute('data-type-hint');
@@ -168,8 +165,7 @@ function showOutputs() {
     outputWrapList.forEach((outputWrap, outputIndex) => {
       const outputAnswer = outputWrap.querySelector('.output-answer'),
         outputClozeList = outputWrap.querySelectorAll('.cloze');
-      (outputData = outputWrap.querySelector('.output-data')),
-        (hasCompare = outputData.getAttribute('data-compare'));
+      (outputData = outputWrap.querySelector('.output-data')), (hasCompare = outputData.getAttribute('data-compare'));
       // Show output-wrap if it contains an answer
       if (outputAnswer !== null && outputAnswer.innerHTML !== '') {
         outputWrap.classList.add('active');
@@ -195,11 +191,8 @@ function showOutputs() {
         const preEl = document.createElement('pre');
         preEl.classList.add('output-comparison');
         // Hide output-wrap inner elements not wanted during comparison
-        const outputTitleInnerList = outputWrap.querySelectorAll(
-            '.output-title.is-inner'
-          ),
-          outputTitleSpanList =
-            outputWrap.querySelectorAll('.output-title span');
+        const outputTitleInnerList = outputWrap.querySelectorAll('.output-title.is-inner'),
+          outputTitleSpanList = outputWrap.querySelectorAll('.output-title span');
         if (outputWrap.classList.contains('is-primary')) {
           outputWrap.querySelector('.output-title').classList.add('inactive');
         }
@@ -210,14 +203,10 @@ function showOutputs() {
           outputData.classList.add('inactive');
         }
         if (outputTitleInnerList !== 0) {
-          outputTitleInnerList.forEach((outputTitleInner) =>
-            outputTitleInner.classList.add('inactive')
-          );
+          outputTitleInnerList.forEach((outputTitleInner) => outputTitleInner.classList.add('inactive'));
         }
         if (outputTitleSpanList !== 0) {
-          outputTitleSpanList.forEach((outputTitleSpan) =>
-            outputTitleSpan.classList.add('inactive')
-          );
+          outputTitleSpanList.forEach((outputTitleSpan) => outputTitleSpan.classList.add('inactive'));
         }
         // Don't compare user's answer to card's answer if the user did NOT input an answer
         if (
@@ -229,9 +218,7 @@ function showOutputs() {
           const cardAnswerCharArr = outputAnswer.innerText.split(''),
             cardAnswerComparisonArr = [];
           cardAnswerCharArr.forEach((cardAnswerChar) => {
-            cardAnswerComparisonArr.push(
-              '<span class="typeMissed">' + cardAnswerChar + '</span>'
-            );
+            cardAnswerComparisonArr.push('<span class="typeMissed">' + cardAnswerChar + '</span>');
           });
           preEl.innerHTML = '\n&darr;\n' + cardAnswerComparisonArr.join('');
           outputWrap.append(preEl);
@@ -290,15 +277,10 @@ function showOutputs() {
               // Insert dashes in typed answer if needed to align correct matches to card answer
               if (typedComparisonArr.length < cardComparisonArr.length) {
                 const dashesStr = '<span class="typeBad">-</span>';
-                let dashesNeeded =
-                    cardComparisonArr.length - typedComparisonArr.length,
+                let dashesNeeded = cardComparisonArr.length - typedComparisonArr.length,
                   dashesAdded = 0;
                 while (dashesNeeded > dashesAdded) {
-                  typedComparisonArr.splice(
-                    lastCorrectMatchIndex + 1,
-                    0,
-                    dashesStr
-                  );
+                  typedComparisonArr.splice(lastCorrectMatchIndex + 1, 0, dashesStr);
                   dashesAdded++;
                 }
               }
@@ -329,10 +311,7 @@ function showOutputs() {
               cardComparisonArr.push(wrapCardChar);
             }
             // Transform comparison arrays into strings and add them to the <pre> element
-            preEl.innerHTML =
-              typedComparisonArr.join('') +
-              '\n&darr;\n' +
-              cardComparisonArr.join('');
+            preEl.innerHTML = typedComparisonArr.join('') + '\n&darr;\n' + cardComparisonArr.join('');
             outputWrap.append(preEl);
           }
         }
