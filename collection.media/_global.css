@@ -188,14 +188,11 @@ table pre {
 
 .topic {
   background-color: var(--bg-tertiary);
-  border-radius: 24px;
   color: var(--color-tertiary);
   display: flex;
   align-items: center;
   justify-content: center;
   height: 40px;
-  margin: 0 12px;
-  width: calc(100% - 24px);
 }
 
 .card-inner {
