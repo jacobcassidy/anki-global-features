@@ -1,0 +1,15 @@
+@import url('_global.css');
+
+:root {
+  /* PYTHON BRAND COLOR #3776ab */
+  --brand-color-h: 207;
+  --brand-color-s: 51%;
+  --brand-color-l: 44%;
+
+  /* DEFAULT VARIABLES */
+  --input-bg: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 55%)
+  );
+}
