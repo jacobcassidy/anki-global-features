@@ -1,0 +1,722 @@
+:root {
+  --brand-color-h: 0;
+  --brand-color-s: 0%;
+  --brand-color-l: 50%;
+
+  /* DEFAULT VARIABLES */
+  --bg-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 45% ));
+  --bg-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 40% ));
+  --bg-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 35% ));
+  --bg-quaternary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 30% ));
+
+  --color-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20% ));
+  --color-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 10% ));
+  --color-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 10% ));
+
+  --input-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 50% ));
+  --notes-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 42.5% ));
+  --pre-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 30% ));
+
+  --pre-color: hsl(0, 0%, 75%);
+  --type-color: hsl(0, 0%, 40%);
+  --cloze-color: hsl(240, 100%, 50%);
+
+  --type-bad-bg: hsl(0, 100%, 80%);
+  --type-good-bg:hsl(120, 100%, 85%);
+  --type-missed-bg: hsl(0, 0%, 82%);
+
+  --font-family-primary: arial, sans-serif;
+  --font-family-mono: 'Inconsolata', 'monospace', monospace;
+
+  /* NIGHTMODE VARIABLES */
+  --bg-primary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 35% ));
+  --bg-secondary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 27.5% ));
+  --bg-tertiary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20% ));
+  --bg-quaternary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 12.5% ));
+
+  --color-primary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 25% ));
+  --color-secondary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 20% ));
+  --color-tertiary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 15% ));
+
+  --input-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 12.5% ));
+  --notes-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 31.25% ));
+  --pre-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 40% ));
+
+  --pre-color--nightmode: hsla(0, 0%, 75%, .75);
+  --type-color--nightmode: hsl(0, 0%, 30%);
+  --cloze-color--nightmode: hsl(240, 100%, 30%);
+
+  --type-bad-bg--nightmode: hsla(0, 100%, 80%, .75);
+  --type-good-bg--nightmode:hsla(120, 100%, 85%, .75);
+  --type-missed-bg--nightmode: hsla(0, 0%, 82%, .75);
+
+  /* CASSIDY DARK SYNTAX COLORS */
+  --syntax-blue: #89c3ff;
+  --syntax-cyan: #8cd9d9;
+  --syntax-gray-dark: #707070;    /* comments */
+  --syntax-gray-medium: #a3a3a3;  /* punctuation */
+  --syntax-gray-white: #f5f5f5;   /* text */
+  --syntax-green: #91d283;
+  --syntax-orange: #edb068;
+  --syntax-pink: #ffbbcf;
+  --syntax-purple: #cfabf9;
+  --syntax-red: #f4877f;
+  --syntax-red-error: #ff7e77;
+  --syntax-yellow: #f6e3b3;
+}
+
+/* DEFAULT STYLES */
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('_inconsolata-regular.woff2') format('woff2'),
+       url('_inconsolata-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+div {
+  margin: 0 auto;
+  width: 100%;
+}
+
+a {
+  text-decoration: underline;
+}
+
+code,
+input,
+pre,
+textarea {
+  border-radius: 6px;
+  font-family: var(--font-family-mono);
+  font-size: 20px;
+}
+code,
+input,
+textarea {
+  color: var(--color-secondary);
+}
+input,
+pre,
+textarea {
+  line-height: 1.333;
+  margin: 12px auto 32px;
+  outline: none;
+  width: 100%;
+}
+code,
+pre {
+  font-style: normal;
+}
+input,
+textarea {
+  background-color: var(--input-bg);
+  border: 1px solid var(--bg-tertiary);
+  max-width: 600px;
+}
+pre,
+textarea {
+  padding: 24px;
+}
+code {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  padding: 1px 4px 2px;
+  margin: 0;
+}
+input {
+  padding: 12px;
+}
+pre {
+  background-color: var(--pre-bg);
+  color: var(--pre-color);
+  padding: 24px;
+  text-align: left;
+  white-space: pre-wrap;
+}
+pre code {
+  background: transparent;
+  border: none;
+  color: var(--pre-color);
+  padding: 0;
+}
+textarea {
+  display: block;
+  height: 156px;
+}
+textarea::placeholder {
+  color: var(--color-tertiary);
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  line-height: 1.4;
+}
+textarea.has-title {
+  border-top: 0;
+  border-radius: 0 0 6px 6px;
+  margin-top: 0;
+  padding: 16px 24px;
+}
+table {
+  max-width: 680px;
+  width: 100% !important;
+}
+table pre {
+  margin: 0;
+}
+
+.card {
+  background-color: var(--bg-primary);
+  color: var(--color-primary);
+  flex-grow: 1;
+  font-family: var(--font-family-primary);
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+:not(.card-inner):not(.topic) {
+  zoom: 1 !important;
+}
+
+.topic {
+  background-color: var(--bg-tertiary);
+  border-radius: 24px;
+  color: var(--color-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  margin: 0 12px;
+  width: calc(100% - 24px);
+}
+
+.card-inner {
+  padding: 32px calc(50% - 360px);
+}
+@media only screen and (max-width: 680px) {
+  .card-inner {
+    padding: 32px 24px;
+  }
+}
+
+.cloze {
+  color: var(--cloze-color);
+  font-weight: bold;
+}
+
+.question {
+  padding-bottom: 12px;
+}
+
+.type-hint {
+  color: var(--color-tertiary);
+  font-size: 12px;
+  font-style: italic;
+  padding-bottom: 6px;
+}
+.type-hint code {
+  font-size: 12px;
+}
+
+/* TITLE STYLES */
+.input-title,
+.output-title,
+.notes-title {
+  border-radius: 6px 6px 0 0;
+  color: var(--color-tertiary);
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+.input-title,
+.output-title {
+  background-color: var(--bg-tertiary);
+  padding: 4px 24px;
+}
+.is-primary .input-title {
+  margin-top: 12px;
+}
+.output-title.is-inner {
+  border-radius: 0;
+}
+
+/* INPUT STYLES */
+.input-wrap {
+  margin: 0 auto 48px;
+  max-width: 600px;
+}
+.input-textarea-wrap,
+.input-textarea-wrap textarea {
+  border-radius: 0 0 6px 6px;
+  height: 132px;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100%;
+}
+.input-textarea-wrap {
+  position: relative;
+  background-color: var(--input-bg);
+}
+.input-textarea-wrap textarea {
+  position: absolute;
+  background: transparent;
+  left: 0;
+  z-index: 1;
+}
+@media only screen and (max-width: 600px) {
+  .input-textarea-wrap,
+  .input-textarea-wrap textarea {
+    height: 156px;
+  }
+}
+.input-faux-placeholder {
+  position: absolute;
+  border-radius: 0 0 6px 6px;
+  color: var(--color-tertiary);
+  font-family: var(--font-family-primary);
+  font-size: 18px;
+  padding: 16px 24px;
+  text-align: left;
+}
+.input-faux-placeholder code {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--bg-secondary);
+  color: var(--color-tertiary);
+}
+.input-comparison,
+.input-type-hint {
+  font-weight: normal;
+  text-transform: none;
+}
+/* .input-comparison:before,
+.input-type-hint:before {
+  content: '|';
+  margin: 0 8px;
+  color: var(--bg-quaternary);
+} */
+
+/* OUTPUT STYLES */
+.output-wrap {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 6px;
+  color: var(--color-secondary);
+  font-size: 18px;
+  margin: 12px auto 48px;
+}
+.output-wrap.is-primary {
+  font-size: 20px;
+}
+
+:not(.is-primary) > .output-comparison {
+  border-radius: 0 0 6px 6px;
+}
+.output-comparison {
+  margin: 0;
+}
+.output-wrap code {
+  background-color: var(--bg-tertiary);
+  border-color: var(--bg-quaternary);
+}
+.output-data,
+.output-answer {
+  padding: 24px;
+}
+
+.output-data,
+.output-answer,
+.notes-content {
+  white-space: pre-line;
+}
+
+/* NOTES STYLES */
+.notes-wrap {
+  background-color: var(--notes-bg);
+  border: 1px solid var(--bg-secondary);
+  border-radius: 6px;
+  color: var(--color-tertiary);
+  font-size: 18px;
+  margin: 12px auto 32px;
+}
+.notes-title {
+  padding: 12px 24px 0;
+}
+.notes-content {
+  padding: 12px 24px 24px;
+}
+.notes-content code {
+  color: var(--color-tertiary);
+}
+
+/* OTHER STYLES */
+.long-content {
+  text-align: left;
+}
+.replay-button {
+  margin: 12px;
+}
+
+/* TOGGLE VIEWS */
+.type-hint,
+.input-wrap,
+.is-primary .input-title,
+.output-wrap,
+.notes-wrap,
+.input-faux-placeholder.inactive,
+.output-title.inactive,
+.output-title span.inactive,
+.output-data.inactive,
+.output-answer.inactive {
+  display: none;
+}
+.type-hint.active,
+.input-wrap.active,
+.is-primary .input-title.active,
+.output-wrap.active,
+.notes-wrap.active {
+  display: block;
+}
+
+/* DEFAULT ANKI OUTPUT ELEMENTS */
+code#typeans {
+  background-color: var(--pre-bg);
+  border: none;
+  color: var(--pre-color);
+  display: block;
+  margin: 12px auto 48px;
+  padding: 24px;
+  text-align: left;
+}
+
+input#typeans {
+  background-color: var(--input-bg);
+  border: 1px solid var(--bg-tertiary);
+  color: var(--color-secondary);
+}
+.nightMode input#typeans {
+  background-color: var(---input-bg--nightmode);
+  color: var(--color-secondary--nightmode);
+}
+
+hr#answer {
+  border-color: var(--bg-secondary);
+  border-width: 2px;
+  border-style: solid;
+  border-top: 0;
+  margin: 24px 0;
+}
+
+#typearrow {
+  color: var(--pre-color);
+  padding: 4px 0;
+}
+
+.typeBad,
+.typeGood,
+.typeMissed {
+  color: 	var(--type-color);
+}
+.typeBad {
+  background: var(--type-bad-bg);
+}
+.typeGood {
+  background: var(--type-good-bg);
+}
+.typeMissed {
+  background: var(--type-missed-bg);
+}
+
+/* DEFAULT ANKIWEB ELEMENTS */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+div#qa-box {
+  height: 100%;
+}
+nav.navbar {
+  margin: 0;
+  padding: 12px 24px;
+}
+@media (min-width: 1200px) {
+  nav.navbar .container {
+    width: 1200px;
+    padding: 0;
+  }
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  text-decoration: none;
+}
+.navbar-brand span {
+  margin-right: 4px;
+}
+
+main.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+div#quiz {
+  display: flex !important;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100vh;
+}
+div#study-menu-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px calc(50% - 600px);
+}
+span#leftStudyMenu,
+span#rightStudyMenu {
+  float: none;
+}
+@media (max-width: 1240px) {
+  div#study-menu-wrap {
+    padding: 12px 24px;
+  }
+}
+div.pt-1,
+div.pt-3 {
+  padding: 0 !important;
+}
+div#qa {
+  margin: 0;
+}
+div.form-group {
+  margin: 0;
+}
+div#ansarea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+  z-index: 2;
+}
+button.navbar-toggler-right {
+  right: 0;
+}
+
+/* DEFAULT ANKIDROID ELEMENTS */
+#content {
+  margin: 0;
+}
+
+/* CODE SYNTAX HIGHLIGHTING ADD-ON STYLES */
+
+/* GRAY-DARK */
+.c,
+.cm,
+.c1,
+.sd {
+  color: var(--syntax-gray-dark);
+  font-style: italic;
+}
+
+/* GRAY-MEDIUM */
+.p,
+.o {
+  color: var(--syntax-gray-medium);
+}
+
+/* GRAY-WHITE */
+.ow,
+.x {
+  color: var(--syntax-gray-white);
+}
+
+/* BLUE */
+.kd,
+.kr {
+  color: var(--syntax-blue);
+}
+
+/* CYAN */
+.kc,
+.n,
+.no {
+  color: var(--syntax-cyan);
+}
+
+/* GREEN */
+.na,
+.nc,
+.nd,
+.s {
+ color: var(--syntax-green);
+}
+
+/* ORANGE */
+.cp {
+  color: var(--syntax-orange);
+}
+
+/* PINK */
+.nb,
+.nv,
+.nx {
+  color: var(--syntax-pink);
+}
+
+/* PURPLE */
+.mi,
+.kt {
+  color: var(--syntax-purple);
+}
+
+/* RED */
+.k,
+.nt {
+  color: var(--syntax-red);
+}
+
+/* RED ERROR */
+.err {
+  color: var(--syntax-red-error);
+}
+
+/* YELLOW */
+.s1,
+.s2 {
+  color: var(--syntax-yellow);
+}
+
+/* NIGHTMODE STYLES */
+body.nightMode,
+.nightMode.card {
+  background-color: var(--bg-primary--nightmode);
+  color: var(--color-primary--nightmode);
+}
+
+.nightMode .topic {
+  background-color: var(--bg-tertiary--nightmode);
+  color: var(--color-tertiary--nightmode);
+}
+
+.nightMode .cloze {
+  color: var(--cloze-color--nightmode);
+}
+
+.nightMode .type-hint {
+  color: var(--color-tertiary--nightmode);
+}
+
+.nightMode input,
+.nightMode textarea,
+.nightMode input#typeans {
+  background-color: var(--input-bg--nightmode);
+  border-color: var(--bg-tertiary--nightmode);
+  border: 0;
+}
+.nightMode .input-textarea-wrap textarea {
+  background-color: transparent;
+}
+.nightMode code,
+.nightMode input,
+.nightMode textarea,
+.nightMode input#typeans {
+  color: var(--color-secondary--nightmode);
+}
+.nightMode code,
+.nightMode code#typeans {
+  background-color: var(--bg-tertiary--nightmode);
+  border: 0;
+}
+.nightMode pre {
+  background-color: var(--pre-bg--nightmode);
+  color: var(--pre-color--nightmode);
+}
+.nightMode pre code,
+.nightMode code#typeans {
+  color: var(--pre-color--nightmode);
+}
+.nightMode textarea::placeholder {
+  color: var(--color-tertiary--nightmode);
+}
+
+.nightMode .input-textarea-wrap {
+  background-color: var(--input-bg--nightmode);
+}
+.nightMode .input-faux-placeholder {
+  color: var(--color-secondary--nightmode);
+}
+.nightMode .input-faux-placeholder code {
+  background-color: var(--bg-tertiary--nightmode);
+  border: 0;
+  color: var(--color-secondary--nightmode);
+}
+
+.nightMode .output-wrap {
+  background-color: var(--bg-secondary--nightmode);
+  border: 0;
+  color: var(--color-secondary--nightmode);
+}
+.nightMode .output-wrap code {
+  background-color: var(--bg-tertiary--nightmode);
+  border-color: var(--bg-quaternary--nightmode);
+}
+
+.nightMode .notes-wrap {
+  background-color: var(--notes-bg--nightmode);
+  border: 0;
+  color: var(--color-tertiary--nightmode);
+}
+.nightMode .notes-content code {
+  color: var(--color-tertiary--nightmode);
+}
+
+.nightMode .input-title,
+.nightMode .output-title,
+.nightMode .notes-title {
+  color: var(--color-tertiary--nightmode);
+}
+.nightMode .input-title,
+.nightMode .output-title {
+  background-color: var(--bg-tertiary--nightmode);
+}
+
+.nightMode .input-comparison:before,
+.nightMode .input-type-hint:before {
+  color: var(--bg-quaternary--nightmode);
+}
+
+.nightMode hr#answer {
+  border-color: var(--bg-secondary--nightmode);
+}
+.nightMode #typearrow {
+  background-color: transparent;
+  color: var(--pre-color--nightmode)
+}
+.nightMode .typeBad,
+.nightMode .typeGood,
+.nightMode .typeMissed {
+  color: 	var(--type-color--nightmode);
+}
+.nightMode .typeBad {
+  background: var(--type-bad-bg--nightmode);
+}
+.nightMode .typeGood {
+  background: var(--type-good-bg--nightmode);
+}
+.nightMode .typeMissed {
+  background: var(--type-missed-bg--nightmode);
+}
