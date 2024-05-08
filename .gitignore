@@ -7,10 +7,13 @@
 !LICENSE
 !.gitignore
 !assets/
+!assets/card-styles/
+!assets/card-styles/*
 !assets/note-types/
 !assets/note-types/*
 !collection.media/
 !_diff_match_patch.js
+!_global.css
 !_global.js
 !_inconsolata-regular.*
 !_mesloLGL-NF.*
