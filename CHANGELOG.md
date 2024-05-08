@@ -16,6 +16,11 @@ All notable changes to this project are documented in this file.
   - Added `collection.media/_global.css` file
   - Added `collection.media/_inconsolata*` files
 
+### Updated
+
+- Formatted JS and CSS files.
+- Updated global CSS topic header to remove spacing and rounding.
+
 ## [0.1.1] - 2023-08-14
 
 ### Added
