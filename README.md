@@ -132,11 +132,11 @@ Create your note types:
 
 ### Why not create an Anki plugin to release these features?
 
-Anki plugins only work with the AnkiPC app and are not currently compatible across all devices. If that changes, please let me know by opening an [issue](https://github.com/jacobcassidy/anki-advance-typed-cards/issues).
+Anki plugins only work with the AnkiPC app and are incompatible across other devices such as mobile. If that changes, please let me know by opening an [issue](https://github.com/jacobcassidy/anki-advance-typed-cards/issues).
 
 ### Why are the files in the collection.media directory prefixed with an underscore?
 
-Anki has a feature called [Check Media](https://docs.ankiweb.net/media.html#checking-media) which can delete unused media files that are not contained in any cards. Adding the leading underscore, such as `_global.js`, makes Anki ignore that file so it won't be deleted.
+Anki has a [Check Media](https://docs.ankiweb.net/media.html#checking-media) feature, which can delete unused media files not contained in any cards. Adding the leading underscore, such as `_global.js`, makes Anki ignore that file so it won't be deleted when using the Check Media feature.
 
 ## Updates
 
