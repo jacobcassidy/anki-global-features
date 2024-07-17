@@ -1,7 +1,7 @@
 @import url('_global.css');
 
 :root {
-  /* COMMAND LINE BRAND COLOR #f0db4f */
+  /* COMMAND LINE BRAND COLOR #242424 */
   --brand-color-h: 0;
   --brand-color-s: 0%;
   --brand-color-l: 14%;
@@ -15,7 +15,7 @@
   --bg-secondary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 20%)
+    calc(var(--brand-color-l) + 50%)
   );
   --bg-tertiary: hsl(
     var(--brand-color-h),
@@ -25,18 +25,18 @@
   --bg-quaternary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 10%)
+    calc(var(--brand-color-l) + 35%)
   );
 
   --color-primary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 10%)
+    calc(var(--brand-color-l) + 15%)
   );
   --color-secondary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 5%)
+    calc(var(--brand-color-l) + 10%)
   );
   --color-tertiary: hsl(
     var(--brand-color-h),
@@ -47,12 +47,12 @@
   --input-bg: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 50%)
+    calc(var(--brand-color-l) + 65%)
   );
   --notes-bg: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 45%)
+    calc(var(--brand-color-l) + 55%)
   );
   --pre-bg: hsl(
     var(--brand-color-h),
@@ -69,17 +69,17 @@
   --bg-secondary--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 50%)
+    calc(var(--brand-color-l) + 5%)
   );
   --bg-tertiary--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 15%)
+    calc(var(--brand-color-l) + 10%)
   );
   --bg-quaternary--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 40%)
+    calc(var(--brand-color-l) + 50%)
   );
 
   --color-primary--nightmode: hsl(
@@ -101,7 +101,7 @@
   --input-bg--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 10%)
+    calc(var(--brand-color-l) + 15%)
   );
   --notes-bg--nightmode: hsl(
     var(--brand-color-h),
@@ -111,6 +111,6 @@
   --pre-bg--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 10%)
+    calc(var(--brand-color-l) - 5%)
   );
 }
