@@ -1,0 +1,116 @@
+@import url('_global.css');
+
+:root {
+  /* COMMAND LINE BRAND COLOR #f0db4f */
+  --brand-color-h: 0;
+  --brand-color-s: 0%;
+  --brand-color-l: 14%;
+
+  /* DEFAULT VARIABLES */
+  --bg-primary: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 60%)
+  );
+  --bg-secondary: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 20%)
+  );
+  --bg-tertiary: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 40%)
+  );
+  --bg-quaternary: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 10%)
+  );
+
+  --color-primary: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 10%)
+  );
+  --color-secondary: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 5%)
+  );
+  --color-tertiary: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 20%)
+  );
+
+  --input-bg: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 50%)
+  );
+  --notes-bg: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 45%)
+  );
+  --pre-bg: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 6%)
+  );
+
+  /* NIGHTMODE VARIABLES */
+  --bg-primary--nightmode: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 0%)
+  );
+  --bg-secondary--nightmode: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 50%)
+  );
+  --bg-tertiary--nightmode: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 15%)
+  );
+  --bg-quaternary--nightmode: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 40%)
+  );
+
+  --color-primary--nightmode: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 40%)
+  );
+  --color-secondary--nightmode: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 45%)
+  );
+  --color-tertiary--nightmode: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 35%)
+  );
+
+  --input-bg--nightmode: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 10%)
+  );
+  --notes-bg--nightmode: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 5%)
+  );
+  --pre-bg--nightmode: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) - 10%)
+  );
+}
