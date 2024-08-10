@@ -5,8 +5,8 @@ This project adds advanced features to your Anki cards. You can add these featur
 | Table of Contents |
 | --- |
 | [About Anki](#about-anki) |
-| [Advanced Typed Inputs](#adding-advanced-typed-inputs) |
-| [Global Card Styles](#adding-global-card-styles) |
+| [Advanced Typed Inputs](#advanced-typed-inputs) |
+| [Global Card Styles](#global-card-styles) |
 | [Installation](#installation) |
 | [Usage](#usage) |
 | [FAQ](#faq) |
@@ -89,9 +89,9 @@ The only files required are in the [collection.media](https://github.com/jacobca
 
 | File | Purpose |
 | -- | -- |
-| [\_global.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.js) | Creates the Advanced Typed Inputs feature and shows/hides card details based on individual card data. |
-| [\_global.css](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.css) | Sets the card styles shared between all cards. Can be overridden with specific card styles.|
-| [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js) | Provides the global answer comparison algorithm |
+| [\_global.js](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_global.js) | Creates the Advanced Typed Inputs feature and shows/hides card details based on individual card data. |
+| [\_global.css](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_global.css) | Sets the card styles shared between all cards. Can be overridden with specific card styles.|
+| [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_diff_match_patch.js) | Provides the global answer comparison algorithm |
 | [_styles_for_syntax_highlighting.css](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_styles_for_syntax_highlighting.css) | __Optional__: Styles for the [Syntax Highlighting (NG) addon](https://ankiweb.net/shared/info/566351439)  |
 | [_mesloLGL-NF.woff2](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_mesloLGL-NF.woff2) | __Optional__: Mono font file for code display. |
 
