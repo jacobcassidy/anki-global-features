@@ -1,19 +1,12 @@
-const hasMyCustomScript = true,
-  isAnkiPC = typeof pycmd !== 'undefined',
-  isAnkiWeb = typeof study !== 'undefined',
-  isAnkiDroid = typeof AnkiDroidJS !== 'undefined';
+const hasMyCustomScript = true;
+const isAnkiPC = typeof pycmd !== 'undefined';
+const isAnkiWeb = typeof study !== 'undefined';
+const isAnkiDroid = typeof AnkiDroidJS !== 'undefined';
 let outputDataArr;
 
 (function watchQA() {
   // Run functions on first load
-  showInputs();
-  showPrimaryTitle();
-  showTypeHint();
-  focusFirstInput();
-  returnInputs();
-  showOutputs();
-  showNotes();
-  modifyAnkiWeb();
+  runFunctions();
   // Run functions again when changes are made to the DOM
   let targetNode;
   if (isAnkiDroid) {
@@ -25,14 +18,7 @@ let outputDataArr;
     callback = function (mutationsList, observer) {
       for (const mutation of mutationsList) {
         if (mutation.type === 'childList') {
-          showInputs();
-          showPrimaryTitle();
-          showTypeHint();
-          focusFirstInput();
-          returnInputs();
-          showOutputs();
-          showNotes();
-          modifyAnkiWeb();
+          runFunctions();
         }
         break; // Don't run functions again when changes made to the DOM are created by the functions
       }
@@ -40,6 +26,17 @@ let outputDataArr;
   const observer = new MutationObserver(callback);
   observer.observe(targetNode, config);
 })();
+
+function runFunctions() {
+  showInputs();
+  showPrimaryTitle();
+  showTypeHint();
+  focusFirstInput();
+  returnInputs();
+  showOutputs();
+  showNotes();
+  modifyAnkiWeb();
+}
 
 function showInputs() {
   const inputWrapList = document.querySelectorAll('.input-wrap');
@@ -52,8 +49,8 @@ function showInputs() {
       // Show input if the faux textarea placeholder contains content
       const inputPlaceholder = inputWrap.querySelector('.input-faux-placeholder');
       if (inputPlaceholder !== null && inputPlaceholder.innerText !== '') {
-        const inputTitle = inputWrap.querySelector('.input-title'),
-          inputTextarea = inputWrap.querySelector('textarea');
+        const inputTitle = inputWrap.querySelector('.input-title');
+        const inputTextarea = inputWrap.querySelector('textarea');
         inputWrap.classList.add('active');
         if (inputTitle !== null) {
           // For comparison inputs, show a forward slash
@@ -87,8 +84,8 @@ function showPrimaryTitle() {
   const primaryList = document.querySelectorAll('.is-primary');
   if (primaryList.length !== 0) {
     primaryList.forEach((primary) => {
-      const primaryTitle = primary.querySelector('.input-title'),
-        primaryTextarea = primary.querySelector('textarea');
+      const primaryTitle = primary.querySelector('.input-title');
+      const primaryTextarea = primary.querySelector('textarea');
       if (primaryTitle !== null) {
         const hasCompare = primaryTitle.getAttribute('data-compare');
         if (hasCompare === null || hasCompare === '') {
@@ -161,9 +158,10 @@ function showOutputs() {
   const outputWrapList = document.querySelectorAll('.output-wrap');
   if (outputWrapList.length !== 0) {
     outputWrapList.forEach((outputWrap, outputIndex) => {
-      const outputAnswer = outputWrap.querySelector('.output-answer'),
-        outputClozeList = outputWrap.querySelectorAll('.cloze');
-      (outputData = outputWrap.querySelector('.output-data')), (hasCompare = outputData.getAttribute('data-compare'));
+      const outputAnswer = outputWrap.querySelector('.output-answer');
+      const outputClozeList = outputWrap.querySelectorAll('.cloze');
+      const outputData = outputWrap.querySelector('.output-data');
+      const hasCompare = outputData.getAttribute('data-compare');
       // Show output-wrap if it contains an answer
       if (outputAnswer !== null && outputAnswer.innerHTML !== '') {
         outputWrap.classList.add('active');
@@ -189,8 +187,8 @@ function showOutputs() {
         const preEl = document.createElement('pre');
         preEl.classList.add('output-comparison');
         // Hide output-wrap inner elements not wanted during comparison
-        const outputTitleInnerList = outputWrap.querySelectorAll('.output-title.is-inner'),
-          outputTitleSpanList = outputWrap.querySelectorAll('.output-title span');
+        const outputTitleInnerList = outputWrap.querySelectorAll('.output-title.is-inner');
+        const outputTitleSpanList = outputWrap.querySelectorAll('.output-title span');
         if (outputWrap.classList.contains('is-primary')) {
           outputWrap.querySelector('.output-title').classList.add('inactive');
         }
@@ -213,8 +211,8 @@ function showOutputs() {
           (!isAnkiDroid && outputDataArr === undefined) ||
           (!isAnkiDroid && outputDataArr[outputIndex] === undefined)
         ) {
-          const cardAnswerCharArr = outputAnswer.innerText.split(''),
-            cardAnswerComparisonArr = [];
+          const cardAnswerCharArr = outputAnswer.innerText.split('');
+          const cardAnswerComparisonArr = [];
           cardAnswerCharArr.forEach((cardAnswerChar) => {
             cardAnswerComparisonArr.push('<span class="typeMissed">' + cardAnswerChar + '</span>');
           });
@@ -232,18 +230,18 @@ function showOutputs() {
           } else {
             typedAnswer = outputDataArr[outputIndex];
           }
-          const cardAnswer = outputAnswer.textContent,
-            dmp = new diff_match_patch(),
-            dmpArr = dmp.diff_main(cardAnswer, typedAnswer),
-            dmpMatchTypeAndCharArr = [],
-            typedComparisonArr = [],
-            cardComparisonArr = [];
+          const cardAnswer = outputAnswer.textContent;
+          const dmp = new diff_match_patch();
+          const dmpArr = dmp.diff_main(cardAnswer, typedAnswer);
+          const dmpMatchTypeAndCharArr = [];
+          const typedComparisonArr = [];
+          const cardComparisonArr = [];
           let lastCorrectMatchIndex = 0;
           // Create array of individual characters and their match type
           for (let i = 0; i < dmpArr.length; i++) {
-            const dmpMatchType = dmpArr[i][0], // -1, 0, or 1
-              dmpStr = dmpArr[i][1], // example: 'plus'
-              dmpCharArr = dmpStr.split(''); // example: ['p', 'l', 'u', 's']
+            const dmpMatchType = dmpArr[i][0]; // -1, 0, or 1
+            const dmpStr = dmpArr[i][1]; // example: 'plus'
+            const dmpCharArr = dmpStr.split(''); // example: ['p', 'l', 'u', 's']
             dmpCharArr.forEach((dmpChar) => {
               const dmpMatchTypeAndChar = [dmpMatchType, dmpChar]; // example: [-1, 'p']
               dmpMatchTypeAndCharArr.push(dmpMatchTypeAndChar);
@@ -251,15 +249,15 @@ function showOutputs() {
           }
           // Wrap characters depending on their match type and add to respective comparison array.
           for (let i = 0; i < dmpMatchTypeAndCharArr.length; i++) {
-            const char = dmpMatchTypeAndCharArr[i][1], // 'p'
-              charMatchType = dmpMatchTypeAndCharArr[i][0]; // -1, 0, or 1
+            const char = dmpMatchTypeAndCharArr[i][1]; // 'p'
+            const charMatchType = dmpMatchTypeAndCharArr[i][0]; // -1, 0, or 1
             let wrapTypedChar, wrapCardChar;
             // Wrap characters missed (for card answer)
             if (charMatchType === -1) {
               // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
-              const nextIndex = i + 1,
-                regex = /\u00A0/, // unicode for &nbsp;
-                isNBSP = regex.test(char);
+              const nextIndex = i + 1;
+              const regex = /\u00A0/; // unicode for &nbsp;
+              const isNBSP = regex.test(char);
               let nextChar;
 
               if (dmpMatchTypeAndCharArr[nextIndex] !== undefined) {
@@ -275,8 +273,8 @@ function showOutputs() {
               // Insert dashes in typed answer if needed to align correct matches to card answer
               if (typedComparisonArr.length < cardComparisonArr.length) {
                 const dashesStr = '<span class="typeBad">-</span>';
-                let dashesNeeded = cardComparisonArr.length - typedComparisonArr.length,
-                  dashesAdded = 0;
+                let dashesNeeded = cardComparisonArr.length - typedComparisonArr.length;
+                let dashesAdded = 0;
                 while (dashesNeeded > dashesAdded) {
                   typedComparisonArr.splice(lastCorrectMatchIndex + 1, 0, dashesStr);
                   dashesAdded++;
@@ -288,8 +286,8 @@ function showOutputs() {
               // Wrap characters wrong (for typed answer)
             } else if (charMatchType === 1) {
               // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
-              const previousIndex = i - 1,
-                regex = /\u00A0/; // unicode for &nbsp;
+              const previousIndex = i - 1;
+              const regex = /\u00A0/; // unicode for &nbsp;
               let previousChar;
               if (dmpMatchTypeAndCharArr[previousIndex] !== undefined) {
                 previousChar = dmpMatchTypeAndCharArr[previousIndex][1];
@@ -350,13 +348,13 @@ function showNotes() {
 
 function modifyAnkiWeb() {
   if (isAnkiWeb) {
-    const leftStudyMenu = document.getElementById('leftStudyMenu'),
-      rightStudyMenu = document.getElementById('rightStudyMenu'),
-      studyMenuWrap = document.getElementById('study-menu-wrap');
+    const leftStudyMenu = document.getElementById('leftStudyMenu');
+    const rightStudyMenu = document.getElementById('rightStudyMenu');
+    const studyMenuWrap = document.getElementById('study-menu-wrap');
     // Create and add study-menu-wrap element if it doesn't already exist
     if (leftStudyMenu !== null && studyMenuWrap === null) {
-      const studyMenuParent = leftStudyMenu.parentNode,
-        menuWrap = document.createElement('div');
+      const studyMenuParent = leftStudyMenu.parentNode;
+      const menuWrap = document.createElement('div');
       menuWrap.id = 'study-menu-wrap';
       menuWrap.append(leftStudyMenu);
       menuWrap.append(rightStudyMenu);
