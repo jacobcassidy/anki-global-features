@@ -76,10 +76,6 @@ You have three options for downloading the files:
 
 #### Downloading Individual Files
 
-![Download Button Screenshot](https://github.com/jacobcassidy/anki-global-features/blob/main/assets/screenshots/download-file-button.png?raw=true)
-
-![download-file-button](https://github.com/user-attachments/assets/837ba54a-35d6-440d-bb91-4b8edd2cb02e)
-
 ![Download Button Screenshot](/assets/screenshots/download-file-button.png)
 
 > Figure 1: You can download individual files by going to the file's page and clicking the small download button.
