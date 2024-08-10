@@ -1,4 +1,4 @@
-# Changelog - Anki Advance Typed Cards
+# Changelog - Anki Global Features
 
 All notable changes to this project are documented in this file.
 
@@ -13,6 +13,12 @@ All notable changes to this project are documented in this file.
 - Moved Move Syntax Highlighting Addon styles to their own stylesheet.
 - Added `@import url('_styles_for_syntax_highlighting.css')` to card stylesheets.
 - Updated `.gitignore` to allow all `/assets` files to be committed.
+
+### Updated
+
+- Updated `CHANGELOG.md` title
+- Updated `README.md` content.
+- Updated `_global.js` main function as an IIFE.
 
 ## [0.1.2] - 2024-05-08
 
