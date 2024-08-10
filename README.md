@@ -8,9 +8,10 @@ This project adds advanced features to your Anki cards. You can add these featur
 | [Advanced Typed Inputs](#adding-advanced-typed-inputs) |
 | [Global Card Styles](#adding-global-card-styles) |
 | [Installation](#installation) |
+| [Usage](#usage) |
 | [FAQ](#faq) |
-| [Getting Updates](#updates)   |
-| [Reporting Issues](#issues) |
+| [Updates](#updates)   |
+| [Issues](#issues) |
 
 ## About Anki
 
@@ -52,21 +53,25 @@ __Unlimited Comparison Answers__ - Like the input fields themselves, Anki limits
 
 ## Global Card Styles
 
+Anki cards are plain vanilla without any customization. Global Card Styles allows you to set custom default styles for all your cards and then have CSS variable overrides to change specific styles (such as the color) for different card topics.
+
 ## Installation
 
 The initial setup for Anki Global Features requires the use of the free [AnkiPC](https://apps.ankiweb.net/) app. This means you'll need to use a device running Windows, macOS, or Linux. Once set up, you can use the features on any Anki app.
 
+<!--
 > __Note__: If you only want to add a specific feature, follow the instructions for that feature:
 > - [Advanced Typed Inputs - Installation Instructions]()
 > - [Global Card Styles - Installation Instructions]()
 >
-> Otherwise, continue on for the full installation...
+> Otherwise, continue for the complete installation...
+-->
 
 ### Step 1: Install AnkiPC
 
 If you don't already have AnkiPC installed, install it now by visiting [Anki](https://apps.ankiweb.net/) and clicking the download button (_available for macOS, Windows, and Linux_).
 
-### Step 2: Download the _Anki Global Feature_ files
+### Step 2: Download the _Anki Global Features_ files
 
 You have three options for downloading the files:
 
@@ -76,21 +81,19 @@ You have three options for downloading the files:
 
 #### Downloading Individual Files
 
+You can download individual files by going to the file's GitHub page and clicking the small download button...
+
 ![Download Button Screenshot](/assets/screenshots/download-file-button.png)
 
-> Figure 1: You can download individual files by going to the file's page and clicking the small download button.
+The only files required are in the [collection.media](https://github.com/jacobcassidy/anki-global-features/tree/main/collection.media) directory:
 
-#### The Files You Need
-
-The files you need are contained in the [collection.media](https://github.com/jacobcassidy/anki-advance-typed-cards/tree/main/collection.media) directory.
-
-| Files                                                                                                                                         |
-| --------------------------------------------------------------------------------------------------------------------------------------------- |
-| [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js)             |
-| [\_global.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.js)                                 |
-| [\_inconsolata-regular.woff](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_inconsolata-regular.woff)   |
-| [\_inconsolata-regular.woff2](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_inconsolata-regular.woff2) |
-
+| File | Purpose |
+| -- | -- |
+| [\_global.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.js) | Creates the Advanced Typed Inputs feature and shows/hides card details based on individual card data. |
+| [\_global.css](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_global.css) | Sets the card styles shared between all cards. Can be overridden with specific card styles.|
+| [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_diff_match_patch.js) | Provides the global answer comparison algorithm |
+| [_styles_for_syntax_highlighting.css](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_styles_for_syntax_highlighting.css) | __Optional__: Styles for the [Syntax Highlighting (NG) addon](https://ankiweb.net/shared/info/566351439)  |
+| [_mesloLGL-NF.woff2](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_mesloLGL-NF.woff2) | __Optional__: Mono font file for code display. |
 
 ### Step 3: Move the files to your local _collection.media_ directory
 
@@ -104,30 +107,65 @@ After you download the above files, you will need to move them to your local Ank
 
 > _Note: `[username]` is your Anki profile name. The default profile name is `User 1`._
 
+<!--
 ### Step 4: Sync the files to use on all devices
-
-**You are now ready to start using _Anki Advance Typed Cards_!**
+-->
 
 ## Usage
 
-### Overview
+### Advanced Typed Inputs
 
-<!--
-Create your note types:
+For the Advanced Typed Inputs to work, you must add two things inside the Anki app:
+
+1. You must add the card __fields__ you want to use. For example, I use the following fields:
+
+    ```markdown
+    Question
+    Answer
+    Type Hint
+    Compare
+    Bonus Question
+    Bonus Type Hint
+    Bonus Compare
+    Notes
+    ```
+
+2. You need to add HTML (templates provided) to your __Note Types__ created under the `Anki > Tools > Manage Note Types` menu. The field names must match what you created above and you must include the script to calls the `_global.js` file.
+
+You can use the default template files found below if you are using the fields above. Otherwise, you will need to make modifications to those templates.
+
+| HTML Template Files | Purpose |
+| -- | -- |
+| [/assets/note-types/*.html](https://github.com/jacobcassidy/anki-global-features/tree/main/assets/note-types) | Use in the Anki app under the `Anki > Tools > Mangage Note Types` menu. |
+
+### Global Card Styles
+
+For the Global Card Styles to work, you must add two things inside the Anki app:
+
+1. In the card's styling section, you need to the stylesheet imports for the global files.
+2. In the same section, you need to add any overrides you want for that specific card type (aka note type).
+
+You can use the default CSS templates I use and customize them however you see fit...
+
+| CSS Template Files | Purpose |
+| -- | -- |
+| [/assets/card-styles/*.css](https://github.com/jacobcassidy/anki-global-features/tree/main/assets/card-styles) | Use for card styling Note Types. |
+
+<!-- TODO: ADD...
 
 - Advance type [PHP Example]
-- Cloze type [JavaScript Example] -->
+- Cloze type [JavaScript Example]
 
 ### How to Use The Advance Typed Inputs
 
 ### How to Use the Advance Comparison Answers
 
-<!-- ### How to Use The Global Card Designs
+ ### How to Use The Global Card Designs
 
 - CSS, Git, HTML, JavaScript, NodeJS, PHP, Python, React, Ruby, WordPress
 
-- Using nightmode? Here's how to style your cards: -->
-
+- Using nightmode? Here's how to style your cards
+-->
 
 ## FAQ
 
