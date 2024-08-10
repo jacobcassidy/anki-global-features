@@ -4,9 +4,7 @@ const hasMyCustomScript = true,
   isAnkiDroid = typeof AnkiDroidJS !== 'undefined';
 let outputDataArr;
 
-watchQA();
-
-function watchQA() {
+(function watchQA() {
   // Run functions on first load
   showInputs();
   showPrimaryTitle();
@@ -41,7 +39,7 @@ function watchQA() {
     };
   const observer = new MutationObserver(callback);
   observer.observe(targetNode, config);
-}
+})();
 
 function showInputs() {
   const inputWrapList = document.querySelectorAll('.input-wrap');
@@ -241,7 +239,7 @@ function showOutputs() {
             typedComparisonArr = [],
             cardComparisonArr = [];
           let lastCorrectMatchIndex = 0;
-          // Create array of indiviual characters and their match type
+          // Create array of individual characters and their match type
           for (let i = 0; i < dmpArr.length; i++) {
             const dmpMatchType = dmpArr[i][0], // -1, 0, or 1
               dmpStr = dmpArr[i][1], // example: 'plus'
