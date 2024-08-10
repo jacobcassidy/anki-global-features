@@ -7,10 +7,7 @@
 !LICENSE
 !.gitignore
 !assets/
-!assets/card-styles/
-!assets/card-styles/*
-!assets/note-types/
-!assets/note-types/*
+!assets/**
 !collection.media/
 !_diff_match_patch.js
 !_global.css
@@ -19,5 +16,5 @@
 !_mesloLGL-NF.*
 !_styles_for_syntax_highlighting.css
 
-# EXCLUDE
+# EXCLUDE THE FOLLOWING FILES IN ALLOWED DIRECTORIES
 .DS_Store
