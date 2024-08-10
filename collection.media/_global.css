@@ -49,20 +49,6 @@
   --type-bad-bg--nightmode: hsla(0, 100%, 80%, 0.75);
   --type-good-bg--nightmode: hsla(120, 100%, 85%, 0.75);
   --type-missed-bg--nightmode: hsla(0, 0%, 82%, 0.75);
-
-  /* CASSIDY DARK SYNTAX COLORS */
-  --syntax-blue: #89c3ff;
-  --syntax-cyan: #8cd9d9;
-  --syntax-gray-dark: #707070; /* comments */
-  --syntax-gray-medium: #a3a3a3; /* punctuation */
-  --syntax-gray-white: #f5f5f5; /* text */
-  --syntax-green: #91d283;
-  --syntax-orange: #edb068;
-  --syntax-pink: #ffbbcf;
-  --syntax-purple: #cfabf9;
-  --syntax-red: #f4877f;
-  --syntax-red-error: #ff7e77;
-  --syntax-yellow: #f6e3b3;
 }
 
 /* DEFAULT STYLES */
@@ -515,85 +501,6 @@ button.navbar-toggler-right {
 /* DEFAULT ANKIDROID ELEMENTS */
 #content {
   margin: 0;
-}
-
-/* CODE SYNTAX HIGHLIGHTING ADD-ON STYLES */
-
-/* GRAY-DARK */
-.c,
-.cm,
-.c1,
-.sd {
-  color: var(--syntax-gray-dark);
-  font-style: italic;
-}
-
-/* GRAY-MEDIUM */
-.p,
-.o {
-  color: var(--syntax-gray-medium);
-}
-
-/* GRAY-WHITE */
-.ow,
-.x {
-  color: var(--syntax-gray-white);
-}
-
-/* BLUE */
-.kd,
-.kr {
-  color: var(--syntax-blue);
-}
-
-/* CYAN */
-.kc,
-.n,
-.no {
-  color: var(--syntax-cyan);
-}
-
-/* GREEN */
-.na,
-.nc,
-.nd,
-.s {
-  color: var(--syntax-green);
-}
-
-/* ORANGE */
-.cp {
-  color: var(--syntax-orange);
-}
-
-/* PINK */
-.nb,
-.nv,
-.nx {
-  color: var(--syntax-pink);
-}
-
-/* PURPLE */
-.mi,
-.kt {
-  color: var(--syntax-purple);
-}
-
-/* RED */
-.k,
-.nt {
-  color: var(--syntax-red);
-}
-
-/* RED ERROR */
-.err {
-  color: var(--syntax-red-error);
-}
-
-/* YELLOW */
-.s1,
-.s2 {
-  color: var(--syntax-yellow);
 }
 
 /* NIGHTMODE STYLES */

@@ -17,6 +17,7 @@
 !_global.js
 !_inconsolata-regular.*
 !_mesloLGL-NF.*
+!_styles_for_syntax_highlighting.css
 
 # EXCLUDE
 .DS_Store
