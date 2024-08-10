@@ -1,89 +1,92 @@
-# Anki Global Advanced Inputs
+# Anki Global Features
 
-| Information                   |     | Features                                                          |
-| :---------------------------- | --- | :---------------------------------------------------------------- |
-| [About](#about)               |     | [Mobile Typed Inputs]()                                           |
-| [Installation](#installation) |     | [Multiline Typed Inputs](#multiline-typed-inputs)                 |
-| [Usage](#usage)               |     | [Infinity Typed Inputs](#infinity-typed-inputs)                   |
-| [FAQ](#faq)                   |     | [Streamlined Comparison Answers](#streamlined-comparison-answers) |
-| [Updates](#updates)           |     | [Unlimited Comparison Answers](#unlimited-comparison-answers)     |
-| [Issues]()                    |     | **Bonus:** [Global Card Designs](#global-card-designs)            |
+This project adds advanced features to your Anki cards. You can add these features by including a few files in the Anki user directory (instructions below). You can also add these files to your Anki web account to sync them across all the devices on which you use Anki (which can't be done with addons). Hence, the name __Anki Global Features__.
 
-## About
+| Table of Contents |
+| --- |
+| [About Anki](#about-anki) |
+| [Advanced Typed Inputs](#adding-advanced-typed-inputs) |
+| [Global Card Styles](#adding-global-card-styles) |
+| [Installation](#installation) |
+| [FAQ](#faq) |
+| [Getting Updates](#updates)   |
+| [Reporting Issues](#issues) |
 
-The _Anki Advanced Typed Cards_ setup adds and syncs advanced input fields to your Anki flashcards across all Anki apps. This gives you more options for typing answers when answering a card question (see [features](#features) below). This setup was developed specifically for programming reviews but can be used for any topic you're studying.
+## About Anki
 
-If you're unfamiliar with [Anki](https://apps.ankiweb.net/), in a nutshell, it's an open-source digital flashcard system that uses [spaced-repetition](https://en.wikipedia.org/wiki/Spaced_repetition) to help you retain knowledge in your long-term memory.
+If you're unfamiliar with [Anki](https://apps.ankiweb.net/), in a nutshell, it's an open-source digital flashcard system that uses [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) to help you retain knowledge in your long-term memory.
 
-Anki apps are available for the following devices:
+Anki apps are available for the following:
 
-- [AnkiPC](https://apps.ankiweb.net/) (Windows, Mac, or Linux - Free)
-- [AnkiWeb](https://ankiweb.net) (Web - Free)
-- [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) (iOS & iPadOS - Paid)
-- [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) (Android - Free)
+| Device | OS | Type |
+| --- | --- |  --- |
+| [AnkiPC](https://apps.ankiweb.net/) | Windows, Mac, or Linux | _Free_ |
+| [AnkiWeb](https://ankiweb.net) | Web | _Free_ |
+| [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) | iOS & iPadOS | _Paid_ |
+| [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) | Android | _Free_ |
 
-## Features
 
-<!-- ### The Main Features
-1. The ability to quickly modify the design of your cards globally with CSS and have the styles sync across all Anki apps.
-2. The ability to add multiline typed inputs to your cards that work on all Anki apps.
-3. The ability to have as many multiline inputs as you want in a single card.
-4. Streamlined comparison answers that work with multiline inputs across all Anki apps.
-5. No limit to how many comparison answers you can have per card. -->
+## Advanced Typed Inputs
 
-### Multiline Typed Inputs
+Anki has a default input field you can use on the AnkiPC app to type an answer to a card's question. However, it has many limitations and is not available across all apps. Adding the _Advanced Typed Inputs_ setup improves on the default and allows you to use typed answers on all devices. I initially developed this setup specifically for programming reviews, but it can be used for any topic you study.
 
-**Example:**
+### Features include:
 
-<!-- [ADD GIF SCREENSHOT EXAMPLE] -->
-
-### Infinity Typed Inputs
-
-> Note: While the _Infinity Typed Inputs_ feature gives you the ability to add as many inputs as you want on a single card, you'll get the most benefit from your reviews by keeping your cards simple. For me, that means having only one extra optional input per card which can be used for a quick follow-up question.
-
-**Example:**
+__Multiline Typed Inputs__ - Anki's default input field only allows a single input line. Advanced Typed Inputs allow you the freedom of adding multiple lines (perfect for code blocks).
 
 <!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
-### Streamlined Comparison Answers
+__Infinity Typed Inputs__ - Anki's default input field can only be used once per card. Advanced Typed Inputs allow you the freedom to add additional input fields (perfect for when you have a 2-part question).
 
-Anki currently uses different comparison algorithms for its different Anki apps. This gives you different results depending on which device you're using. _Anki Advance \_Typed Cards_ streamlines this by using a single comparison algorithm which is synced across all Anki apps to produce the same comparison results no matter which device you are using.
-
-**Example:**
+> Note: While the _Infinity Typed Inputs_ feature gives you the ability to add as many inputs as you want on a single card, you'll get the most benefit from your reviews by keeping your cards simple. For me, that means having only one extra optional input per card which can be used for a quick follow-up question or typed code example.
 
 <!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
-### Unlimited Comparison Answers
-
-Anki limits the comparison answers to just one per card, even if you have multiple inputs for which you would like comparison answers for. _Anki Advance Typed Cards_ allows you to have unlimited comparison answers per card so you can compare all your multiline typed inputs.
-
-**Example:**
+__Streamlined Comparison Answers__ - Anki currently uses different comparison algorithms for its different Anki apps. This gives you different results depending on which device you're using. _Advanced Typed Inputs_ streamlines this by using a single comparison algorithm, synced across all Anki apps to produce the same comparison results no matter which device you are using.
 
 <!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
-### Global Card Designs
-
-**Example:**
+__Unlimited Comparison Answers__ - Like the input fields themselves, Anki limits the comparison answers to just one per card, even if you have multiple inputs for which you would like comparison answers. _Advanced Typed Inputs_ allow you to have unlimited comparison answers per card so you can compare all your multiline typed inputs.
 
 <!-- [ADD GIF SCREENSHOT EXAMPLE] -->
+
+## Global Card Styles
 
 ## Installation
 
->_Note: The Anki Advance Typed Cards setup requires the use of the free [AnkiPC](https://apps.ankiweb.net/) app to set up the advanced input features. This means you'll need to use a PC or Mac for the initial setup. Once you're set up, you can use the features on any of the Anki apps across all devices._
+The initial setup for Anki Global Features requires the use of the free [AnkiPC](https://apps.ankiweb.net/) app. This means you'll need to use a device running Windows, macOS, or Linux. Once set up, you can use the features on any Anki app.
+
+> __Note__: If you only want to add a specific feature, follow the instructions for that feature:
+> - [Advanced Typed Inputs - Installation Instructions]()
+> - [Global Card Styles - Installation Instructions]()
+>
+> Otherwise, continue on for the full installation...
 
 ### Step 1: Install AnkiPC
 
-If you don't already have AnkiPC installed, install it now by visiting [Anki](https://apps.ankiweb.net/) and clicking the download button (for macOS, Windows, or Linux).
+If you don't already have AnkiPC installed, install it now by visiting [Anki](https://apps.ankiweb.net/) and clicking the download button (_available for macOS, Windows, and Linux_).
 
-### Step 2: Download the _Anki Advance Typed Cards_ files
+### Step 2: Download the _Anki Global Feature_ files
 
-You can either download the files you need individually or clone the entire repo (which includes files you do not need, such as CHANGELOG.md and README.md).
+You have three options for downloading the files:
 
-To download the entire repo, [click here for the zip](https://github.com/jacobcassidy/anki-advance-typed-cards/archive/refs/heads/main.zip). If you prefer to download the files you need individually, grab the files contained in the [collection.media](https://github.com/jacobcassidy/anki-advance-typed-cards/tree/main/collection.media) directory.
+1. You can download the files you want individually (see below).
+2. You can download the entire repository as a zip file: [Download Zip](https://github.com/jacobcassidy/anki-global-features/archive/refs/heads/main.zip)
+3. You can clone the repository to your local computer with: `git clone git@github.com:jacobcassidy/anki-global-features.git`
 
-You can download individual files by going to the file's page and clicking the small download button that looks like this:
+#### Downloading Individual Files
 
-![Download Button Screenshot](https://raw.githubusercontent.com/jacobcassidy/anki-advance-typed-cards/main/assets/screenshots/download-file-button.png?token=GHSAT0AAAAAAB2NXSC3MMNS4M3IWZOKXWTWZCNKL2A)
+![Download Button Screenshot](https://github.com/jacobcassidy/anki-global-features/blob/main/assets/screenshots/download-file-button.png?raw=true)
+
+![download-file-button](https://github.com/user-attachments/assets/837ba54a-35d6-440d-bb91-4b8edd2cb02e)
+
+![Download Button Screenshot](/assets/screenshots/download-file-button.png)
+
+> Figure 1: You can download individual files by going to the file's page and clicking the small download button.
+
+#### The Files You Need
+
+The files you need are contained in the [collection.media](https://github.com/jacobcassidy/anki-advance-typed-cards/tree/main/collection.media) directory.
 
 | Files                                                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -92,9 +95,10 @@ You can download individual files by going to the file's page and clicking the s
 | [\_inconsolata-regular.woff](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_inconsolata-regular.woff)   |
 | [\_inconsolata-regular.woff2](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/collection.media/_inconsolata-regular.woff2) |
 
+
 ### Step 3: Move the files to your local _collection.media_ directory
 
-After you download the above files, you will need to move them to your [local Anki _collection.media_ directory](https://docs.ankiweb.net/files.html#file-locations):
+After you download the above files, you will need to move them to your local Anki `collection.media` directory [[ref](https://docs.ankiweb.net/files.html#file-locations)]:
 
 | OS          | Location                                                           |
 | ----------- | ------------------------------------------------------------------ |
@@ -102,7 +106,7 @@ After you download the above files, you will need to move them to your [local An
 | **Windows** | `APPDATA\Anki2\[username]\collection.media\`                                                    |
 | **Linux**   | `~/.local/share/Anki2/[username]/collection.media/`                |
 
-_Note: `[username]` is your Anki profile name. The default profile name is `User 1`._
+> _Note: `[username]` is your Anki profile name. The default profile name is `User 1`._
 
 ### Step 4: Sync the files to use on all devices
 
@@ -128,11 +132,12 @@ Create your note types:
 
 - Using nightmode? Here's how to style your cards: -->
 
+
 ## FAQ
 
 ### Why not create an Anki plugin to release these features?
 
-Anki plugins only work with the AnkiPC app and are incompatible across other devices such as mobile. If that changes, please let me know by opening an [issue](https://github.com/jacobcassidy/anki-advance-typed-cards/issues).
+Anki plugins only work with the AnkiPC app and are incompatible across other devices such as mobile. If that changes, please let me know by opening an [issue](https://github.com/jacobcassidy/anki-global-features/issues).
 
 ### Why are the files in the collection.media directory prefixed with an underscore?
 
@@ -140,8 +145,8 @@ Anki has a [Check Media](https://docs.ankiweb.net/media.html#checking-media) fea
 
 ## Updates
 
-View the [Changelog](https://github.com/jacobcassidy/anki-advance-typed-cards/blob/main/CHANGELOG.md) to see the latest updates.
+View the [Changelog](https://github.com/jacobcassidy/anki-global-features/blob/main/CHANGELOG.md) to see the latest updates. Currently, you will need to manually copy/paste any changes you want to your local Anki files, then start, or restart the AnkiPC app if you have it open, so the updates can be synced.
 
 ## Issues
 
-If you come across any issues, please report them [here](https://github.com/jacobcassidy/anki-advance-typed-cards/issues).
+If you come across any issues, please report them [here](https://github.com/jacobcassidy/anki-global-features/issues).
