@@ -3,18 +3,18 @@
 :root {
   /* CASSIDY DARK SYNTAX COLORS */
   --syntax-blue: #92c1fd;           /* types */
-  --syntax-cyan: #90e1e8;           /* functions */
-  --syntax-gray-dark: #707070;      /* comments */
-  --syntax-gray-medium: #a3a3a3;    /* punctuation */
-  --syntax-gray-white: #f5f5f5;     /* builtin */
-  --syntax-green: #9bce90;          /* properties */
-  --syntax-orange: #ebb077;         /* parameters */
-  --syntax-pink: #febccf;           /* variables */
-  --syntax-purple: #cfadf0;         /* constants */
-  --syntax-purple-bright: #d4a6ff;  /* namespaces */
-  --syntax-red: #ed8c81;            /* keywords */
-  --syntax-red-bright: #ff7f72;     /* errors */
-  --syntax-yellow: #f4e4b8;         /* strings */
+  --syntax-cyan: #89dfdf;           /* functions */
+  --syntax-gray-dark: #7a7a7a;      /* comments */
+  --syntax-gray-medium: #929292;    /* punctuation */
+  --syntax-gray-white: #f8f8f8;     /* builtin */
+  --syntax-green: #a2cd8b;          /* properties */
+  --syntax-orange: #eeae7b;         /* parameters */
+  --syntax-pink: #fcb7cb;           /* variables */
+  --syntax-purple: #d6aaea;         /* constants */
+  --syntax-purple-deep: #bd84d7;    /* namespaces */
+  --syntax-red: #ef9182;            /* keywords */
+  --syntax-red-deep: #db6656;       /* errors */
+  --syntax-yellow: #efddac;         /* strings */
 }
 
 /* SYNTAX HIGHLIGHTING ADDON WITH CLASSES */
@@ -105,7 +105,7 @@
 /* PURPLE BRIGHT */
 .highlight .nn /* Name.Namespace */
 {
-  color: var(--syntax-purple-bright);
+  color: var(--syntax-purple-deep);
 }
 
 /* RED */
@@ -121,7 +121,7 @@
 /* RED BRIGHT - BORDER */
 .highlight .err /* Error */
 {
-  border: 1px solid var(--syntax-red-bright);
+  border: 1px solid var(--syntax-red-deep);
 }
 
 /* YELLOW */
