@@ -9,12 +9,10 @@
 !assets/
 !assets/**
 !collection.media/
-!_diff_match_patch.js
-!_global.css
-!_global.js
-!_inconsolata-regular.*
-!_mesloLGL-NF.*
-!_styles_for_syntax_highlighting.css
+!collection.media/_*.css
+!collection.media/_*.woff
+!collection.media/_*.woff2
+!collection.media/_*.js
 
 # EXCLUDE THE FOLLOWING FILES IN ALLOWED DIRECTORIES
 .DS_Store
