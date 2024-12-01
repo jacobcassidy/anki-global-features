@@ -1,13 +1,14 @@
 :root {
   /* PHP8 BRAND COLOR #4f5b93 */
-  --brand-color-h: 229;
-  --brand-color-s: 30%;
-  --brand-color-l: 44%;
+  --brand-color-l: 48%;
+  --brand-color-c: 0.09;
+  --brand-color-h: 274;
+
 
   /* DEFAULT VARIABLES */
-  --input-bg: hsl(
+  --input-bg: oklch(
+    calc(var(--brand-color-l) + 50%)
+    var(--brand-color-c),
     var(--brand-color-h),
-    var(--brand-color-s),
-    calc(var(--brand-color-l) + 55%)
   );
 }
