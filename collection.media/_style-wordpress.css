@@ -1,64 +1,61 @@
-@import url('_global.css');
-@import url('_styles_for_syntax_highlighting.css');
-
 :root {
-  /* GSAP BRAND COLOR #88ce02 */
-  --brand-color-h: 81;
-  --brand-color-s: 98%;
-  --brand-color-l: 41%;
+  /* WORDPRESS BRAND COLOR #0073AA */
+  --brand-color-h: 199;
+  --brand-color-s: 100%;
+  --brand-color-l: 33%;
 
   /* DEFAULT VARIABLES */
   --bg-primary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 54%)
+    calc(var(--brand-color-l) + 62.5%)
   );
   --bg-secondary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 44%)
+    calc(var(--brand-color-l) + 57.5%)
   );
   --bg-tertiary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 0%)
+    calc(var(--brand-color-l) + 50%)
   );
   --bg-quaternary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 24%)
+    calc(var(--brand-color-l) + 42.5%)
   );
 
   --color-primary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 21%)
+    calc(var(--brand-color-l) - 20%)
   );
   --color-secondary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 16%)
+    calc(var(--brand-color-l) - 15%)
   );
   --color-tertiary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 21%)
+    calc(var(--brand-color-l) - 0%)
   );
 
   --input-bg: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 59%)
+    calc(var(--brand-color-l) + 66%)
   );
   --notes-bg: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 44%)
+    calc(var(--brand-color-l) + 60%)
   );
   --pre-bg: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 36%)
+    calc(var(--brand-color-l) - 25%)
   );
 
   /* NIGHTMODE VARIABLES */

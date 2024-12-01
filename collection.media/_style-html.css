@@ -1,13 +1,15 @@
-@import url('_global.css');
-@import url('_styles_for_syntax_highlighting.css');
-
 :root {
-  /* RUBY BRAND COLOR #cc342d */
-  --brand-color-h: 3;
-  --brand-color-s: 64%;
-  --brand-color-l: 49%;
+  /* HTML5 BRAND COLOR #e34f26 */
+  --brand-color-h: 13;
+  --brand-color-s: 77%;
+  --brand-color-l: 52%;
 
   /* DEFAULT VARIABLES */
+  --input-bg: hsl(
+    var(--brand-color-h),
+    var(--brand-color-s),
+    calc(var(--brand-color-l) + 48%)
+  );
   --pre-bg: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
@@ -65,6 +67,6 @@
   --pre-bg--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 45%)
+    calc(var(--brand-color-l) - 47%)
   );
 }

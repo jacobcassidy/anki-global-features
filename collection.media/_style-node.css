@@ -1,86 +1,83 @@
-@import url('_global.css');
-@import url('_styles_for_syntax_highlighting.css');
-
 :root {
-  /* PYTHON BRAND COLOR #4583B5 */
-  --brand-color-h: 207;
-  --brand-color-s: 45%;
-  --brand-color-l: 49%;
+  /* NODEJS BRAND COLOR #336633 */
+  --brand-color-h: 120;
+  --brand-color-s: 33%;
+  --brand-color-l: 30%;
 
   /* DEFAULT VARIABLES */
   --bg-primary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 35%)
+    calc(var(--brand-color-l) + 65%)
   );
   --bg-secondary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 30%)
+    calc(var(--brand-color-l) + 60%)
   );
   --bg-tertiary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 25%)
+    calc(var(--brand-color-l) + 55%)
   );
   --bg-quaternary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 10%)
+    calc(var(--brand-color-l) + 45%)
   );
 
   --color-primary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 25%)
+    calc(var(--brand-color-l) - 20%)
   );
   --color-secondary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 20%)
+    calc(var(--brand-color-l) - 10%)
   );
   --color-tertiary: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 10%)
+    calc(var(--brand-color-l) + 10%)
   );
 
   --input-bg: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 45%)
+    calc(var(--brand-color-l) + 69%)
   );
   --notes-bg: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 25%)
+    calc(var(--brand-color-l) + 62.5%)
   );
   --pre-bg: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 35%)
+    calc(var(--brand-color-l) - 25%)
   );
 
   /* NIGHTMODE VARIABLES */
   --bg-primary--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 35%)
+    calc(var(--brand-color-l) - 20%)
   );
   --bg-secondary--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 30%)
+    calc(var(--brand-color-l) - 15%)
   );
   --bg-tertiary--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 25%)
+    calc(var(--brand-color-l) - 10%)
   );
   --bg-quaternary--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 10%)
+    calc(var(--brand-color-l) - 5%)
   );
 
   --color-primary--nightmode: hsl(
@@ -91,27 +88,27 @@
   --color-secondary--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 20%)
+    calc(var(--brand-color-l) + 15%)
   );
   --color-tertiary--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) + 10%)
+    calc(var(--brand-color-l) + 15%)
   );
 
   --input-bg--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 30%)
+    calc(var(--brand-color-l) - 5%)
   );
   --notes-bg--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 30%)
+    calc(var(--brand-color-l) - 17.5%)
   );
   --pre-bg--nightmode: hsl(
     var(--brand-color-h),
     var(--brand-color-s),
-    calc(var(--brand-color-l) - 45%)
+    calc(var(--brand-color-l) - 25%)
   );
 }
