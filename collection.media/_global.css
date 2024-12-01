@@ -1,54 +1,54 @@
 :root {
-  --brand-color-h: 0;
-  --brand-color-s: 0%;
   --brand-color-l: 50%;
+  --brand-color-c: 0;
+  --brand-color-h: 0;
 
   /* DEFAULT VARIABLES */
-  --bg-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 45%));
-  --bg-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 40%));
-  --bg-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 35%));
-  --bg-quaternary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 30%));
+  --bg-primary: oklch( calc( var(--brand-color-1) + 45%) var(--brand-color-c) var(--brand-color-h) );
+  --bg-secondary: oklch( calc( var(--brand-color-1) + 40%) var(--brand-color-c) var(--brand-color-h) );
+  --bg-tertiary: oklch( calc( var(--brand-color-1) + 35%) var(--brand-color-c) var(--brand-color-h) );
+  --bg-quaternary: oklch( calc( var(--brand-color-1) + 30%) var(--brand-color-c) var(--brand-color-h) );
 
-  --color-primary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20%));
-  --color-secondary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 10%));
-  --color-tertiary: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 10%));
+  --color-primary: oklch( calc( var(--brand-color-1) - 20%) var(--brand-color-c) var(--brand-color-h) );
+  --color-secondary: oklch( calc( var(--brand-color-1) - 10%) var(--brand-color-c) var(--brand-color-h) );
+  --color-tertiary: oklch( calc( var(--brand-color-1) + 10%) var(--brand-color-c) var(--brand-color-h) );
 
-  --input-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 50%));
-  --notes-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 42.5%));
-  --pre-bg: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 30%));
+  --input-bg: oklch( calc( var(--brand-color-1) + 50%) var(--brand-color-c) var(--brand-color-h) );
+  --notes-bg: oklch( calc( var(--brand-color-1) + 42.5%) var(--brand-color-c) var(--brand-color-h) );
+  --pre-bg: oklch( calc( var(--brand-color-1) - 30%) var(--brand-color-c) var(--brand-color-h) );
 
-  --pre-color: hsl(0, 0%, 75%);
-  --type-color: hsl(0, 0%, 40%);
-  --cloze-color: hsl(240, 100%, 50%);
+  --pre-color: oklch(80% 0 0);
+  --type-color: oklch(50% 0 0);
+  --cloze-color: oklch(50% 0.28 264);
 
-  --type-bad-bg: hsl(0, 100%, 80%);
-  --type-good-bg: hsl(120, 100%, 85%);
-  --type-missed-bg: hsl(0, 0%, 82%);
+  --type-bad-bg: oklch(80% 0.114 20);
+  --type-good-bg: oklch(80% 0.114 144);
+  --type-missed-bg: oklch(80% 0 0);
 
   --font-family-primary: arial, sans-serif;
   --font-family-mono: 'Inconsolata', 'monospace', monospace;
 
   /* NIGHTMODE VARIABLES */
-  --bg-primary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 35%));
-  --bg-secondary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 27.5%));
-  --bg-tertiary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 20%));
-  --bg-quaternary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 12.5%));
+  --bg-primary--nightmode: oklch( calc( var(--brand-color-1) - 35%) var(--brand-color-c) var(--brand-color-h) );
+  --bg-secondary--nightmode: oklch( calc( var(--brand-color-1) - 27.5%) var(--brand-color-c) var(--brand-color-h) );
+  --bg-tertiary--nightmode: oklch( calc( var(--brand-color-1) - 20%) var(--brand-color-c) var(--brand-color-h) );
+  --bg-quaternary--nightmode: oklch( calc( var(--brand-color-1) - 12.5%) var(--brand-color-c) var(--brand-color-h) );
 
-  --color-primary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 25%));
-  --color-secondary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 20%));
-  --color-tertiary--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) + 15%));
+  --color-primary--nightmode: oklch( calc( var(--brand-color-1) + 25%) var(--brand-color-c) var(--brand-color-h) );
+  --color-secondary--nightmode: oklch( calc( var(--brand-color-1) + 20%%) var(--brand-color-c) var(--brand-color-h) );
+  --color-tertiary--nightmode: oklch( calc( var(--brand-color-1) + 15%) var(--brand-color-c) var(--brand-color-h) );
 
-  --input-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 12.5%));
-  --notes-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 31.25%));
-  --pre-bg--nightmode: hsl(var(--brand-color-h), var(--brand-color-s), calc(var(--brand-color-l) - 40%));
+  --input-bg--nightmode: oklch( calc( var(--brand-color-1) - 12.5%) var(--brand-color-c) var(--brand-color-h) );
+  --notes-bg--nightmode: oklch( calc( var(--brand-color-1) - 3125%) var(--brand-color-c) var(--brand-color-h) );
+  --pre-bg--nightmode: oklch( calc( var(--brand-color-1) - 40%) var(--brand-color-c) var(--brand-color-h) );
 
-  --pre-color--nightmode: hsla(0, 0%, 75%, 0.75);
-  --type-color--nightmode: hsl(0, 0%, 30%);
-  --cloze-color--nightmode: hsl(240, 100%, 30%);
+  --pre-color--nightmode: oklch(80% 0 0 / 75%);
+  --type-color--nightmode: oklch(40% 0 0);
+  --cloze-color--nightmode: oklch(60% 0.2 264 / 90%);
 
-  --type-bad-bg--nightmode: hsla(0, 100%, 80%, 0.75);
-  --type-good-bg--nightmode: hsla(120, 100%, 85%, 0.75);
-  --type-missed-bg--nightmode: hsla(0, 0%, 82%, 0.75);
+  --type-bad-bg--nightmode: oklch(80% 0.114 20 / 75%);
+  --type-good-bg--nightmode: oklch(80% 0.114 144 / 75%);
+  --type-missed-bg--nightmode: oklch(80% 0 0 / 75%);
 }
 
 /* DEFAULT STYLES */
@@ -489,7 +489,7 @@ div#ansarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid oklch(90% 0 0);
   z-index: 2;
 }
 button.navbar-toggler-right {
