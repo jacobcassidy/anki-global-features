@@ -44,7 +44,7 @@ function showInputs() {
   if (inputContainerList.length !== 0) {
     inputContainerList.forEach((inputContainer) => {
       // Show input if it is not a bonus input
-      if (! inputContainer.classList.contains('is-bonus')) {
+      if (inputContainer.classList.contains('is-primary')) {
         inputContainer.classList.add('active');
       }
       // Show input if the faux textarea placeholder contains content (bonus inputs)
