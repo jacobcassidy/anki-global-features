@@ -6,6 +6,7 @@
   --syntax-cyan: #89dfdf;           /* functions */
   --syntax-gray-dark: #7a7a7a;      /* comments */
   --syntax-gray-medium: #929292;    /* punctuation */
+  --syntax-gray-light: #c4c4c4;     /* source */
   --syntax-gray-white: #f8f8f8;     /* builtin */
   --syntax-green: #a2cd8b;          /* properties */
   --syntax-orange: #eeae7b;         /* parameters */
@@ -15,13 +16,15 @@
   --syntax-red: #ef9182;            /* keywords */
   --syntax-red-deep: #db6656;       /* errors */
   --syntax-yellow: #efddac;         /* strings */
+
+  --theme-bg: #242424;
 }
 
 /* SYNTAX HIGHLIGHTING ADDON WITH CLASSES */
 
 /* HIGHLIGHT OVERRIDES */
 .highlight pre {
-  background-color: #242424;
+  background-color: var(--theme-bg);
 }
 
 /* GRAY-DARK */
@@ -39,6 +42,12 @@
 .highlight .p /* Punctuation */
 {
   color: var(--syntax-gray-medium);
+}
+
+/* GRAY-LIGHT */
+.highlight .x  /* base source */
+{
+  color: var(--syntax-gray-light);
 }
 
 /* GRAY-WHITE */
@@ -96,6 +105,7 @@
 .highlight .mh, /* Literal.Number.Hex */
 .highlight .mi, /* Literal.Number.Integer */
 .highlight .mo, /* Literal.Number.Oct */
+.highlight .no, /* Name.Constant */
 .highlight .se, /* Literal.String.Escape */
 .highlight .sr  /* Literal.String.Regex */
 {
@@ -134,7 +144,6 @@
   color: var(--syntax-yellow);
 }
 
-
 /* MISSING SYNTAX CHECKS */
 .highlight .cs,  /* Comment.Special */
 .highlight .gd, /* Generic.Deleted */
@@ -151,14 +160,13 @@
 .highlight .il, /* Literal.Number.Integer.Long */
 .highlight .kp, /* Keyword.Pseudo */
 .highlight .nd, /* Name.Decorator */
-.highlight .no, /* Name.Constant */
 .highlight .sh, /* Literal.String.Heredoc */
 .highlight .sx, /* Literal.String.Other */
 .highlight .ss, /* Literal.String.Symbol */
 .highlight .vc, /* Name.Variable.Class */
 .highlight .vg, /* Name.Variable.Global */
 .highlight .vi, /* Name.Variable.Instance */
-.highlight .w, /* Text.Whitespace */
-.highlight .x {
+.highlight .w   /* Text.Whitespace */
+{
   color: #00f;
 }
