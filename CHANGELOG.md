@@ -8,6 +8,7 @@ All notable changes to this project are documented in this file.
 
 ## [0.2.0] - 2024-12-01
 
+- Added note-types stylings CSS.
 - Updated HTML/JS to create side-by-side answer comparisons.
 - Updated CSS design system to use a simple hue value to change colors between programming languages:
 
