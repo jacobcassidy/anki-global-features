@@ -147,9 +147,11 @@ For the Global Card Styles to work, you must add two things inside the Anki app:
 
 You can use the default CSS templates I use and customize them however you see fit...
 
-| CSS Template Files | Purpose |
+TO BE UPDATED
+
+<!-- | CSS Template Files | Purpose |
 | -- | -- |
-| [/assets/card-styles/*.css](https://github.com/jacobcassidy/anki-global-features/tree/main/assets/card-styles) | Use for card styling Note Types. |
+| [/assets/card-styles/*.css](https://github.com/jacobcassidy/anki-global-features/tree/main/assets/card-styles) | Use for card styling Note Types. | -->
 
 <!-- TODO: ADD...
 
