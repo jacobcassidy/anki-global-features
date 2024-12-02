@@ -6,6 +6,27 @@ All notable changes to this project are documented in this file.
 
 - Full instructions on how to set up and use Anki Global Features.
 
+## [0.2.0] - 2024-12-01
+
+- Updated HTML/JS to create side-by-side answer comparisons.
+- Updated CSS design system to use a simple hue value to change colors between programming languages:
+
+| Language     | Hue Value |
+| ------------ | --------- |
+| RUBY         | 28        |
+| GIT          | 33        |
+| HTML         | 46        |
+| JAVASCRIPT   | 100       |
+| Command Line | 130       |
+| NODE         | 140       |
+| GSAP         | 146       |
+| REACT        | 218       |
+| PYTHON       | 245       |
+| TYPESCRIPT   | 258       |
+| WORDPRESS    | 268       |
+| PHP          | 273       |
+| CSS          | 299       |
+
 ## [0.1.3] - 2024-08-10
 
 ### Added
