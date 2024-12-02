@@ -7,6 +7,7 @@ let outputDataArr;
 (function watchQA() {
   // Run functions on first load
   runFunctions();
+
   // Run functions again when changes are made to the DOM
   let targetNode;
   if (isAnkiDroid) {
@@ -39,19 +40,19 @@ function runFunctions() {
 }
 
 function showInputs() {
-  const inputWrapList = document.querySelectorAll('.input-wrap');
-  if (inputWrapList.length !== 0) {
-    inputWrapList.forEach((inputWrap) => {
-      // Show input if it contains .is-primary
-      if (inputWrap.classList.contains('is-primary')) {
-        inputWrap.classList.add('active');
+  const inputContainerList = document.querySelectorAll('.input-container');
+  if (inputContainerList.length !== 0) {
+    inputContainerList.forEach((inputContainer) => {
+      // Show input if it is not a bonus input
+      if (! inputContainer.classList.contains('is-bonus')) {
+        inputContainer.classList.add('active');
       }
-      // Show input if the faux textarea placeholder contains content
-      const inputPlaceholder = inputWrap.querySelector('.input-faux-placeholder');
+      // Show input if the faux textarea placeholder contains content (bonus inputs)
+      const inputPlaceholder = inputContainer.querySelector('.input-faux-placeholder');
       if (inputPlaceholder !== null && inputPlaceholder.innerText !== '') {
-        const inputTitle = inputWrap.querySelector('.input-title');
-        const inputTextarea = inputWrap.querySelector('textarea');
-        inputWrap.classList.add('active');
+        const inputTitle = inputContainer.querySelector('.input-title');
+        const inputTextarea = inputContainer.querySelector('textarea');
+        inputContainer.classList.add('active');
         if (inputTitle !== null) {
           // For comparison inputs, show a forward slash
           const hasDataCompare = inputTitle.getAttribute('data-compare');
@@ -155,17 +156,20 @@ function returnInputs() {
 }
 
 function showOutputs() {
-  const outputWrapList = document.querySelectorAll('.output-wrap');
-  if (outputWrapList.length !== 0) {
-    outputWrapList.forEach((outputWrap, outputIndex) => {
-      const outputAnswer = outputWrap.querySelector('.output-answer');
-      const outputClozeList = outputWrap.querySelectorAll('.cloze');
-      const outputData = outputWrap.querySelector('.output-data');
+  const outputContainerList = document.querySelectorAll('.output-container');
+
+  if (outputContainerList.length !== 0) {
+    outputContainerList.forEach((outputContainer, outputIndex) => {
+      const outputAnswer = outputContainer.querySelector('.output-answer');
+      const outputClozeList = outputContainer.querySelectorAll('.cloze');
+      const outputData = outputContainer.querySelector('.output-data');
       const hasCompare = outputData.getAttribute('data-compare');
-      // Show output-wrap if it contains an answer
+
+      // Show output-container if it contains an answer
       if (outputAnswer !== null && outputAnswer.innerHTML !== '') {
-        outputWrap.classList.add('active');
+        outputContainer.classList.add('active');
       }
+
       // For cloze answers, remove all text except the active cloze(s)
       if (outputClozeList.length !== 0) {
         let clozeArr = [];
@@ -174,29 +178,27 @@ function showOutputs() {
         });
         outputAnswer.innerText = clozeArr.join(', ');
       }
+
       // Run comparison when compare field is active
       if (hasCompare !== null && hasCompare !== '') {
-        // Create <pre> element to add comparison answer to
+
+        // Hide output-cols when comparison is active
+        outputContainer.classList.add('is-comparison');
+
+        // Create comparison element
+        const divContainer = document.createElement('div');
+        const divTitle = document.createElement('div');
         const preEl = document.createElement('pre');
-        preEl.classList.add('output-comparison');
-        // Hide output-wrap inner elements not wanted during comparison
-        const outputTitleInnerList = outputWrap.querySelectorAll('.output-title.is-inner');
-        const outputTitleSpanList = outputWrap.querySelectorAll('.output-title span');
-        if (outputWrap.classList.contains('is-primary')) {
-          outputWrap.querySelector('.output-title').classList.add('inactive');
+        divContainer.classList.add('output-comparison');
+        divTitle.classList.add('output-comparison-title');
+        preEl.classList.add('output-comparison-pre');
+
+        if (outputContainer.classList.contains('is-primary')) {
+          divTitle.innerHTML = 'Answer Comparison';
+        } else {
+          divTitle.innerHTML = 'Bonus Answer Comparison';
         }
-        if (outputAnswer !== null) {
-          outputAnswer.classList.add('inactive');
-        }
-        if (outputData !== null) {
-          outputData.classList.add('inactive');
-        }
-        if (outputTitleInnerList !== 0) {
-          outputTitleInnerList.forEach((outputTitleInner) => outputTitleInner.classList.add('inactive'));
-        }
-        if (outputTitleSpanList !== 0) {
-          outputTitleSpanList.forEach((outputTitleSpan) => outputTitleSpan.classList.add('inactive'));
-        }
+
         // Don't compare user's answer to card's answer if the user did NOT input an answer
         if (
           (isAnkiDroid && sessionStorage === undefined) ||
@@ -210,8 +212,12 @@ function showOutputs() {
             cardAnswerComparisonArr.push('<span class="typeMissed">' + cardAnswerChar + '</span>');
           });
           preEl.innerHTML = '\n&darr;\n' + cardAnswerComparisonArr.join('');
-          outputWrap.append(preEl);
-          // Compare user's answer to card's answer when user did input an answer
+
+          divContainer.append(divTitle);
+          divContainer.append(preEl);
+          outputContainer.append(divContainer);
+
+        // Compare user's answer to card's answer when user did input an answer
         } else {
           let typedAnswer;
           // Get typedAnswer value for AnkiDroid
@@ -240,12 +246,12 @@ function showOutputs() {
               dmpMatchTypeAndCharArr.push(dmpMatchTypeAndChar);
             });
           }
-          // Wrap characters depending on their match type and add to respective comparison array.
+          // Container characters depending on their match type and add to respective comparison array.
           for (let i = 0; i < dmpMatchTypeAndCharArr.length; i++) {
             const char = dmpMatchTypeAndCharArr[i][1]; // 'p'
             const charMatchType = dmpMatchTypeAndCharArr[i][0]; // -1, 0, or 1
-            let wrapTypedChar, wrapCardChar;
-            // Wrap characters missed (for card answer)
+            let containerTypedChar, containerCardChar;
+            // Container characters missed (for card answer)
             if (charMatchType === -1) {
               // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
               const nextIndex = i + 1;
@@ -257,11 +263,11 @@ function showOutputs() {
                 nextChar = dmpMatchTypeAndCharArr[nextIndex][1];
               }
               if (isNBSP && nextChar === ' ') {
-                wrapCardChar = '<span class="typeGood">' + char + '</span>';
+                containerCardChar = '<span class="typeGood">' + char + '</span>';
               } else {
-                wrapCardChar = '<span class="typeMissed">' + char + '</span>';
+                containerCardChar = '<span class="typeMissed">' + char + '</span>';
               }
-              // Wrap characters correct (for both typed and card answers)
+              // Container characters correct (for both typed and card answers)
             } else if (charMatchType === 0) {
               // Insert dashes in typed answer if needed to align correct matches to card answer
               if (typedComparisonArr.length < cardComparisonArr.length) {
@@ -273,10 +279,10 @@ function showOutputs() {
                   dashesAdded++;
                 }
               }
-              wrapTypedChar = '<span class="typeGood">' + char + '</span>';
-              wrapCardChar = '<span class="typeGood">' + char + '</span>';
+              containerTypedChar = '<span class="typeGood">' + char + '</span>';
+              containerCardChar = '<span class="typeGood">' + char + '</span>';
               lastCorrectMatchIndex = typedComparisonArr.length;
-              // Wrap characters wrong (for typed answer)
+              // Container characters wrong (for typed answer)
             } else if (charMatchType === 1) {
               // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
               const previousIndex = i - 1;
@@ -287,21 +293,21 @@ function showOutputs() {
               }
               const isNBSP = regex.test(previousChar);
               if (isNBSP && char === ' ') {
-                wrapTypedChar = '<span class="typeGood">' + char + '</span>';
+                containerTypedChar = '<span class="typeGood">' + char + '</span>';
               } else {
-                wrapTypedChar = '<span class="typeBad">' + char + '</span>';
+                containerTypedChar = '<span class="typeBad">' + char + '</span>';
               }
             }
             // Add characters to comparison arrays
-            if (wrapTypedChar !== undefined) {
-              typedComparisonArr.push(wrapTypedChar);
+            if (containerTypedChar !== undefined) {
+              typedComparisonArr.push(containerTypedChar);
             }
-            if (wrapCardChar !== undefined) {
-              cardComparisonArr.push(wrapCardChar);
+            if (containerCardChar !== undefined) {
+              cardComparisonArr.push(containerCardChar);
             }
             // Transform comparison arrays into strings and add them to the <pre> element
             preEl.innerHTML = typedComparisonArr.join('') + '\n&darr;\n' + cardComparisonArr.join('');
-            outputWrap.append(preEl);
+            outputContainer.append(preEl);
           }
         }
         // Directly output user's answer if comparison is NOT active,
@@ -323,13 +329,13 @@ function showOutputs() {
 }
 
 function showNotes() {
-  const notesWrapList = document.querySelectorAll('.notes-wrap');
-  if (notesWrapList.length !== 0) {
-    notesWrapList.forEach((notesWrap) => {
+  const notesContainerList = document.querySelectorAll('.notes-container');
+  if (notesContainerList.length !== 0) {
+    notesContainerList.forEach((notesContainer) => {
       const hasNotes = document.querySelector('.notes-content');
       // Show notes if there is note content
       if (hasNotes != null && hasNotes.innerText) {
-        notesWrap.classList.add('active');
+        notesContainer.classList.add('active');
       }
     });
   }
