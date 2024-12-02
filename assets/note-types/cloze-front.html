@@ -1,16 +1,16 @@
-<div class="topic">TOPIC</div>
+<div class="topic">Topic</div>
 
 <div class="card-inner card-front">
   <div class="question">{{cloze:Cloze Question}}</div>
   <div class="type-hint">{{Type Hint}}</div>
-  <div class="input-wrap is-primary">
+  <div class="input-container is-primary">
     <div class="input-title" data-compare="true">Cloze</div>
     <textarea class="input-data tappable" type="text"></textarea>
   </div>
 
-  <div class="input-wrap">
+  <div class="input-container">
     <div class="input-title" data-compare="{{Bonus Compare}}" data-type-hint="{{Bonus Type Hint}}">Bonus</div>
-    <div class="input-textarea-wrap">
+    <div class="input-textarea-container">
       <textarea class="input-data tappable has-title" type="text"></textarea>
       <!-- Placeholders cannot parse html, so a faux placeholder overlaid on the textarea is used instead -->
       <div class="input-faux-placeholder">{{Bonus Question}}</div>

@@ -1,23 +1,32 @@
-<div class="topic">TOPIC</div>
+<div class="topic">Topic</div>
 
 <div class="card-inner card-back">
   <div class="question">{{cloze:Cloze Question}}</div>
   <div class="type-hint">{{Type Hint}}</div>
-  <div class="output-wrap is-primary">
-    <div class="output-title">Your Answer</div>
-    <div class="output-data" data-compare="true"></div>
-    <div class="output-title is-inner">Card's Answer</div>
-    <div class="output-answer">{{cloze:Cloze Question}}</div>
+  <div class="output-container is-primary">
+    <div class="output-col">
+      <div class="output-title">Your Answer</div>
+      <div class="output-data" data-compare="true"></div>
+    </div>
+
+    <div class="output-col">
+      <div class="output-title is-inner">Card's Answer</div>
+      <div class="output-answer">{{cloze:Cloze Question}}</div>
+    </div>
   </div>
 
-  <div class="output-wrap">
-    <div class="output-title"><span>Your</span> Bonus <span>Answer</span></div>
-    <div class="output-data" data-compare="{{Bonus Compare}}"></div>
-    <div class="output-title is-inner">Card's Bonus Answer</div>
-    <div class="output-answer">{{Bonus Answer}}</div>
+  <div class="output-container">
+    <div class="output-col">
+      <div class="output-title"><span>Your</span> Bonus <span>Answer</span></div>
+      <div class="output-data" data-compare="{{Bonus Compare}}"></div>
+    </div>
+    <div class="output-col">
+      <div class="output-title is-inner">Card's Bonus Answer</div>
+      <div class="output-answer">{{Bonus Answer}}</div>
+    </div>
   </div>
 
-  <div class="notes-wrap">
+  <div class="notes-container">
     <div class="notes-title">Notes</div>
     <div class="notes-content">{{Notes}}</div>
   </div>
