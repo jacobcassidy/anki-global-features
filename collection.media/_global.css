@@ -16,7 +16,7 @@
   --type-missed-bg: oklch(80% 0 0);
 
   --font-family-primary: arial, sans-serif;
-  --font-family-mono: 'Inconsolata', 'monospace', monospace;
+  --font-family-mono: 'MesloLGL NF', Menlo, monospace;
 
   --bg-primary: oklch(calc(var(--brand-color-l) + 46%) calc(var(--brand-color-c) - 0.0828) var(--brand-color-h));
   --bg-secondary: oklch(calc(var(--brand-color-l) + 42%) calc(var(--brand-color-c) - 0.0756) var(--brand-color-h));
@@ -92,7 +92,7 @@ pre,
 textarea {
   border-radius: 6px;
   font-family: var(--font-family-mono);
-  font-size: 20px;
+  font-size: 16px;
 }
 
 input,
@@ -125,7 +125,8 @@ textarea {
 code {
   background-color: var(--bg-secondary);
   border: 1px solid var(--bg-tertiary);
-  padding: 1px 4px 2px;
+  padding: 0 4px;
+  line-height: 1;
 
   .question & {
     color: var(--color-secondary);
@@ -133,7 +134,7 @@ code {
 
   .type-hint &,
   .input-title & {
-    font-size: 12px;
+    font-size: 10px;
   }
 
   .input-title & {
