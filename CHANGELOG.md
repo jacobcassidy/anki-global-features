@@ -6,6 +6,10 @@ All notable changes to this project are documented in this file.
 
 - Full instructions on how to set up and use Anki Global Features.
 
+## [0.3.0] - 2024-12-04
+
+- Added bonus question title and type hint to card back.
+
 ## [0.2.0] - 2024-12-01
 
 - Added note-types stylings CSS.
