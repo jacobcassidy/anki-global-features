@@ -164,6 +164,16 @@ function showOutputs() {
       const outputClozeList = outputContainer.querySelectorAll('.cloze');
       const outputData = outputContainer.querySelector('.output-data');
       const hasCompare = outputData.getAttribute('data-compare');
+      const bonusQuestion = document.querySelector('.bonus-question');
+      const bonusTypeHint = document.querySelector('.bonus-type-hint');
+
+      // Show bonus question and type hint if they contain content
+      if ( bonusQuestion !== null && bonusQuestion.innerText !== '') {
+        bonusQuestion.classList.add('active');
+      }
+      if ( bonusTypeHint !== null && bonusTypeHint.innerText !== '') {
+        bonusTypeHint.classList.add('active');
+      }
 
       // Show output-container if it contains an answer
       if (outputAnswer !== null && outputAnswer.innerHTML !== '') {

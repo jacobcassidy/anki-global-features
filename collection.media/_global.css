@@ -239,15 +239,23 @@ body.nightMode,
   font-weight: bold;
 }
 
-.question {
-  padding-bottom: 12px;
+.question,
+.bonus-question {
+  padding-bottom: 6px;
 }
 
-.type-hint {
+.bonus-question {
+	color: var(--color-secondary);
+	font-size: 18px;
+}
+
+.type-hint,
+.bonus-type-hint {
   color: var(--color-tertiary);
   font-size: 12px;
   font-style: italic;
-  padding-bottom: 6px;
+  padding-top: 6px;
+  padding-bottom: 4px;
 }
 
 /* TITLE STYLES */
@@ -393,8 +401,10 @@ body.nightMode,
 
 /* TOGGLE VIEWS */
 .type-hint,
+.bonus-type-hint,
 .input-container,
 .is-primary .input-title,
+.bonus-question,
 .output-container,
 .notes-container,
 .input-faux-placeholder.inactive,
@@ -406,6 +416,8 @@ body.nightMode,
 }
 
 .type-hint.active,
+.bonus-type-hint.active,
+.bonus-question.active,
 .input-container.active,
 .is-primary .input-title.active,
 .notes-container.active {
