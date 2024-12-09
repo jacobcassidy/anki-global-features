@@ -6,6 +6,11 @@ All notable changes to this project are documented in this file.
 
 - Full instructions on how to set up and use Anki Global Features.
 
+## [0.4.0] - 2024-12-09
+
+- Updated global style max widths.
+- Updated global style link color.
+
 ## [0.3.0] - 2024-12-04
 
 - Added bonus question title and type hint to card back.
