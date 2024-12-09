@@ -83,7 +83,16 @@ div {
 }
 
 a {
+  color: currentColor;
   text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  transition: all 250ms;
+
+  &:hover {
+    color: var(--cloze-color);
+  }
 }
 
 code,
@@ -114,7 +123,6 @@ textarea {
   background-color: var(--input-bg);
   border: 1px solid var(--bg-tertiary);
   color: var(--color-secondary);
-  max-width: 600px;
 }
 
 pre,
@@ -184,6 +192,7 @@ textarea {
     padding: 16px 24px;
   }
 }
+
 textarea::placeholder {
   color: var(--color-tertiary);
   font-family: var(--font-family-primary);
@@ -192,7 +201,6 @@ textarea::placeholder {
 }
 
 table {
-  max-width: 680px;
   width: 100% !important;
 
   & pre {
@@ -227,9 +235,9 @@ body.nightMode,
 }
 
 .card-inner {
-  padding: 32px calc(50% - 360px);
+  padding: 32px calc(50% - 320px);
 
-  @media only screen and (max-width: 784px) {
+  @media only screen and (max-width: 688px) {
     padding: 32px 24px;
   }
 }
@@ -287,7 +295,6 @@ body.nightMode,
 /* INPUT STYLES */
 .input-container {
   margin: 0 auto 48px;
-  max-width: 600px;
 }
 
 .input-textarea-container {
@@ -320,6 +327,24 @@ body.nightMode,
 /* STYLE: OUTPUT  */
 .output-container {
   margin: 12px auto 48px;
+
+  &:not(.is-comparison) {
+    --side-by-side-width: 960px;
+    --margin-offset: calc( (100% - var(--side-by-side-width)) / 2 );
+
+    width: var(--side-by-side-width);
+    margin-inline-start: var(--margin-offset);
+
+    @media only screen and (max-width: 1024px) {
+      --side-by-side-width: calc(100vw - 64px);
+      --margin-offset: calc( (var(--side-by-side-width) - 100%) / -2);
+    }
+
+    @media only screen and (max-width: 688px) {
+      margin-inline: auto;
+      width: 100%;
+    }
+  }
 
   &.is-comparison {
     border: none;
