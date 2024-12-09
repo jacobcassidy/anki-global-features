@@ -222,11 +222,6 @@ function showOutputs() {
             cardAnswerComparisonArr.push('<span class="typeMissed">' + cardAnswerChar + '</span>');
           });
           preEl.innerHTML = '\n&darr;\n' + cardAnswerComparisonArr.join('');
-
-          divContainer.append(divTitle);
-          divContainer.append(preEl);
-          outputContainer.append(divContainer);
-
         // Compare user's answer to card's answer when user did input an answer
         } else {
           let typedAnswer;
@@ -317,10 +312,13 @@ function showOutputs() {
             }
             // Transform comparison arrays into strings and add them to the <pre> element
             preEl.innerHTML = typedComparisonArr.join('') + '\n&darr;\n' + cardComparisonArr.join('');
-            outputContainer.append(preEl);
           }
         }
-        // Directly output user's answer if comparison is NOT active,
+        divContainer.append(divTitle);
+        divContainer.append(preEl);
+        outputContainer.append(divContainer);
+
+      // Directly output user's answer if comparison is NOT active,
       } else {
         if (outputData !== null) {
           if (isAnkiDroid && sessionStorage !== undefined) {
