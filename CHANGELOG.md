@@ -8,8 +8,9 @@ All notable changes to this project are documented in this file.
 
 ## [0.4.0] - 2024-12-09
 
-- Updated global style max widths.
+- Fixed DOM div creation for comparison answers.
 - Updated global style link color.
+- Updated global style max widths.
 
 ## [0.3.0] - 2024-12-04
 
