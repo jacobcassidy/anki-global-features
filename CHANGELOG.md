@@ -6,6 +6,10 @@ All notable changes to this project are documented in this file.
 
 - Full instructions on how to set up and use Anki Global Features.
 
+## [0.5.0] - 2024-12-10
+
+- Simplified `pre` and `code` colors
+
 ## [0.4.0] - 2024-12-09
 
 - Fixed DOM div creation for comparison answers.
