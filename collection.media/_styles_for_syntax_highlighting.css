@@ -16,16 +16,9 @@
   --syntax-red: #ef9182;            /* keywords */
   --syntax-red-deep: #db6656;       /* errors */
   --syntax-yellow: #efddac;         /* strings */
-
-  --theme-bg: #242424;
 }
 
 /* SYNTAX HIGHLIGHTING ADDON WITH CLASSES */
-
-/* HIGHLIGHT OVERRIDES */
-.highlight pre {
-  background-color: var(--theme-bg);
-}
 
 /* GRAY-DARK */
 .highlight .c,  /* Comment */
