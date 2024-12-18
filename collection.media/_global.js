@@ -29,6 +29,7 @@ let outputDataArr;
 })();
 
 function runFunctions() {
+  balanceQuestionLines();
   showInputs();
   showPrimaryTitle();
   showTypeHint();
@@ -168,10 +169,10 @@ function showOutputs() {
       const bonusTypeHint = document.querySelector('.bonus-type-hint');
 
       // Show bonus question and type hint if they contain content
-      if ( bonusQuestion !== null && bonusQuestion.innerText !== '') {
+      if (bonusQuestion !== null && bonusQuestion.innerText !== '') {
         bonusQuestion.classList.add('active');
       }
-      if ( bonusTypeHint !== null && bonusTypeHint.innerText !== '') {
+      if (bonusTypeHint !== null && bonusTypeHint.innerText !== '') {
         bonusTypeHint.classList.add('active');
       }
 
@@ -191,7 +192,6 @@ function showOutputs() {
 
       // Run comparison when compare field is active
       if (hasCompare !== null && hasCompare !== '') {
-
         // Hide output-cols when comparison is active
         outputContainer.classList.add('is-comparison');
 
@@ -222,7 +222,7 @@ function showOutputs() {
             cardAnswerComparisonArr.push('<span class="typeMissed">' + cardAnswerChar + '</span>');
           });
           preEl.innerHTML = '\n&darr;\n' + cardAnswerComparisonArr.join('');
-        // Compare user's answer to card's answer when user did input an answer
+          // Compare user's answer to card's answer when user did input an answer
         } else {
           let typedAnswer;
           // Get typedAnswer value for AnkiDroid
@@ -318,7 +318,7 @@ function showOutputs() {
         divContainer.append(preEl);
         outputContainer.append(divContainer);
 
-      // Directly output user's answer if comparison is NOT active,
+        // Directly output user's answer if comparison is NOT active,
       } else {
         if (outputData !== null) {
           if (isAnkiDroid && sessionStorage !== undefined) {
@@ -364,4 +364,107 @@ function modifyAnkiWeb() {
       studyMenuParent.prepend(menuWrap);
     }
   }
+}
+
+function balanceQuestionLines() {
+  const question = document.querySelector('.question');
+  const text = question.innerHTML;
+  const maxLineLength = getMaxCharPerLine();
+  const wordPattern = /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]*|[^\s]*<[^>]*>[^\s]*|\s|(&nbsp;)|((&#?)\b\w+\b(;)\w*)|(\w*(?!&nbsp;)(&#?)\b\w+\b(;))|((?!&nbsp;)[^\w\s]+\w*|\w+)+/g;
+
+  const htmlEntryPattern = /(&#?)\b\w+\b(;)/g;
+
+  const words = text.match(wordPattern);
+
+  function getMaxCharPerLine() {
+    const cardInner = document.querySelector('.card-inner');
+    const tempSpan = document.createElement('span');
+    const questionWidth = question.clientWidth;
+    tempSpan.style.visibility = 'hidden';
+    tempSpan.style.whiteSpace = 'nowrap';
+    tempSpan.innerHTML = 'c';
+    cardInner.appendChild(tempSpan);
+    const charWidth = tempSpan.offsetWidth;
+    cardInner.removeChild(tempSpan);
+
+    return Math.floor(questionWidth / charWidth);
+  }
+
+  // text.split(' ');
+
+  // const nbspReplacedText = text.replace(nbspPattern, ' ');
+  // const nonCountPattern = /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>|<\/[^>]*>|&[^;]+;/g;
+  // const chars = nbspReplacedText.replace(nonCountPattern, '');
+  // const charCount = chars.length;
+  // const lineCount = Math.ceil(charCount / maxLineLength);
+  // const charPerLine = Math.ceil(charCount / lineCount);
+
+  // let modifiedText = '';
+  // let lineBreaks = [];
+  // let wordIndex = 0;
+
+  // const nonCountPattern = /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>|<\/[^>]*>|&[^;]+;/g;
+  // const nonCountPattern = /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>|<\/[^>]*>|&\w+;/g;
+  // const startTagPattern = /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]*/;
+  // const endTagPattern = /\s[^<\s]*<\/[^>]*>[^\s]*/;
+  // const otherPattern = /[\w]*/;
+  // Other HTML tag without inner HTML tags: [^\s]*<[^>]*>[^\s]*
+  // All other words, not including words in HTML entries such as &nbsp;: (?<!&)\b\w+\b(?!;)
+  // <[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]* | [^\s]*<[^>]*>[^\s]* | (?<!&)\b\w+[^\w\s]*\b(?!;) | \W
+  // <[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]* |[^<\s]*<\/[^>]*>[^\s]*|(?<!&)\b\w+\b(?!;)
+  // <[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]*
+  // <[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]*
+  // const wordPattern = /\s|(&nbsp;)|((&#?)\b\w+\b(;)\w*)|(\w*(?!&nbsp;)(&#?)\b\w+\b(;))|((?!&nbsp;)[^\w\s]+\w*|\w+)+/g;
+  // const wordPattern = /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]*|[^\s]*<[^>]*>[^\s]*|\s|(&nbsp;)|((&#?)\b\w+\b(;)\w*)|(\w*(?!&nbsp;)(&#?)\b\w+\b(;))|((?!&nbsp;)[^\w\s]+\w*|\w+)+/g;
+
+  // For debugging:
+  console.log(text);
+  console.log(words);
+  // console.log(
+  //   '%c' + 'Chars:' + charCount +
+  //   ', Words:' + words.length +
+  //   ', Max:' + maxLineLength +
+  //   ', Lines:' + lineCount +
+  //   ', charsPerLine:' + charPerLine,
+  //   'color: #f80; font-weight: bold;'
+  // );
+  // console.log(text.match(nonCountPattern ));
+
+
+
+  // for (let i = 0; i <= lineCount; i++) {
+  //   let currentLineLength = 0;
+
+  //   for (wordIndex; wordIndex < words.length; wordIndex++) {
+  //     const currentWordLength = words[wordIndex].replace(htmlEntriesRegex, '').length;
+
+  //     // console.warn('lineLength:', currentLineLength, 'wordLength:', currentWordLength, 'word:', words[wordIndex]);
+
+  //     if (currentLineLength + currentWordLength <= charPerLine) {
+  //       currentLineLength += currentWordLength;
+  //       // console.info('Continue...');
+  //       continue;
+  //     } else if (currentLineLength + currentWordLength <= maxLineLength) {
+  //       currentLineLength += currentWordLength;
+  //       lineBreaks.push(wordIndex);
+  //       wordIndex += 1;
+  //       // console.error('BREAK... <br> after:', words[wordIndex]);
+  //       break;
+  //     } else if (currentLineLength + currentWordLength > maxLineLength) {
+  //       lineBreaks.push(wordIndex - 1);
+  //       // console.log('ELSE... <br> after:', words[wordIndex - 1]);
+  //       break;
+  //     }
+  //   }
+  // }
+
+  // lineBreaks.forEach((lineBreak) => {
+  //   words[lineBreak] += '<br>';
+  // });
+
+  // modifiedText = words.join(' ');
+  // question.innerHTML = modifiedText;
+
+  // console.log(modifiedText);
+
 }
