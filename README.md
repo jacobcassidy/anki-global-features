@@ -38,8 +38,8 @@ Advanced Typed Inputs features included:
 
 - **Infinity Typed Inputs** - Anki's default input field can only be used once per card. Advanced Typed Inputs allow you the freedom to add additional input fields (perfect for when you have a 2-part question).
 
-  > [!NOTE]
-  > While the _Infinity Typed Inputs_ feature gives you the ability to add as many inputs as you want on a single card, you'll get the most benefit from your reviews by keeping your cards simple. For me, that means having only one extra optional input per card which can be used for a quick follow-up question or typed code example.
+> [!NOTE]
+> While the _Infinity Typed Inputs_ feature gives you the ability to add as many inputs as you want on a single card, you'll get the most benefit from your reviews by keeping your cards simple. For me, that means having only one extra optional input per card which can be used for a quick follow-up question or typed code example.
 
 <!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
