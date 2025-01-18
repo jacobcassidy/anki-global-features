@@ -73,7 +73,7 @@
   box-sizing: border-box;
 }
 
-div {
+div:not(.float-start, .float-end, #ansarea, .justify-content-center, .d-flex > div) {
   margin: 0 auto;
   width: 100%;
 }
@@ -160,13 +160,6 @@ code {
     background-color: var(--bg-tertiary);
     border-color: var(--bg-quaternary);
   }
-
-  pre & {
-    background: transparent;
-    border: none;
-    color: var(--pre-color);
-    padding: 0;
-  }
 }
 
 input {
@@ -180,6 +173,13 @@ pre {
   text-align: left;
   white-space: pre-wrap;
 }
+
+/* pre code {
+  background: transparent;
+  border: none;
+  color: var(--pre-color);
+  padding: 0;
+} */
 
 textarea {
   display: block;
@@ -212,14 +212,13 @@ table {
   zoom: 1 !important;
 }
 
-body.nightMode,
-.card {
-  background-color: var(--bg-primary);
-  color: var(--color-primary);
-  flex-grow: 1;
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--color-primary) !important;
   font-family: var(--font-family-primary);
   font-size: 20px;
   line-height: 1.4;
+  height: 100vh;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -234,11 +233,15 @@ body.nightMode,
   justify-content: center;
 }
 
+.card {
+  background-color: var(--bg-primary);
+}
+
 .card-inner {
   padding: 32px calc(50% - 320px);
 
-  @media only screen and (max-width: 688px) {
-    padding: 32px 24px;
+  @media only screen and (max-width: 704px) {
+    padding: 32px;
   }
 }
 
@@ -249,12 +252,22 @@ body.nightMode,
 
 .question,
 .bonus-question {
-  padding-bottom: 6px;
+  padding-bottom: 12px;
 }
 
+/* .card-front .question {
+  margin: 0 -60px;
+  width: calc(100% + 120px);
+
+  @media only screen and (max-width: 704px) {
+    margin: 0 ;
+    width: 100%;
+  }
+} */
+
 .bonus-question {
-	color: var(--color-secondary);
-	font-size: 18px;
+  color: var(--color-secondary);
+  font-size: 18px;
 }
 
 .type-hint,
@@ -262,7 +275,7 @@ body.nightMode,
   color: var(--color-tertiary);
   font-size: 12px;
   font-style: italic;
-  padding-top: 6px;
+  /* padding-top: 6px; */
   padding-bottom: 4px;
 }
 
@@ -330,14 +343,14 @@ body.nightMode,
 
   &:not(.is-comparison) {
     --side-by-side-width: 960px;
-    --margin-offset: calc( (100% - var(--side-by-side-width)) / 2 );
+    --margin-offset: calc((100% - var(--side-by-side-width)) / 2);
 
     width: var(--side-by-side-width);
     margin-inline-start: var(--margin-offset);
 
     @media only screen and (max-width: 1024px) {
       --side-by-side-width: calc(100vw - 64px);
-      --margin-offset: calc( (var(--side-by-side-width) - 100%) / -2);
+      --margin-offset: calc((var(--side-by-side-width) - 100%) / -2);
     }
 
     @media only screen and (max-width: 688px) {
@@ -379,7 +392,7 @@ body.nightMode,
 .output-data,
 .output-answer,
 .notes-content {
-  white-space: pre-line;
+  /* white-space: pre-line; */
   text-align: left;
 }
 
@@ -500,94 +513,57 @@ hr#answer {
 }
 
 /* DEFAULT ANKIWEB ELEMENTS */
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
+body > div:not(#qa) {
+  nav.navbar {
+    margin-bottom: 0 !important;
+  }
 
-div#qa-box {
-  height: 100%;
-}
+  main.container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 
-nav.navbar {
-  margin: 0;
-  padding: 12px 24px;
+    #quiz {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #eee;
+      border-top: 1px solid #ddd;
 
-  & .container {
-    @media (min-width: 1200px) {
-      width: 1200px;
-      padding: 0;
+      .float-start,
+      .float-end,
+      #ansarea-pad,
+      #ansarea {
+        padding: 1rem;
+      }
+
+      .pt-1,
+      .pt-3 {
+        display: none;
+      }
+
+      #ansarea-pad {
+        background-color: var(--bg-primary);
+      }
+
+      #qa_box {
+        #qa {
+          margin: 0;
+        }
+      }
+
+      #ansarea {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .form-group {
+      margin: 0;
     }
   }
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  text-decoration: none;
-
-  & span {
-    margin-right: 4px;
-  }
-}
-
-main.container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-div#quiz {
-  display: flex !important;
-  flex-direction: column;
-  flex-grow: 1;
-  height: 100vh;
-}
-
-div#study-menu-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px calc(50% - 600px);
-
-  @media (max-width: 1240px) {
-    padding: 12px 24px;
-  }
-}
-
-span#leftStudyMenu,
-span#rightStudyMenu {
-  float: none;
-}
-
-div.pt-1,
-div.pt-3 {
-  padding: 0 !important;
-}
-
-div#qa {
-  margin: 0;
-}
-
-div.form-group {
-  margin: 0;
-}
-
-div#ansarea {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 4px solid oklch(90% 0 0);
-  z-index: 2;
-}
-
-button.navbar-toggler-right {
-  right: 0;
 }
 
 /* DEFAULT ANKIDROID ELEMENTS */
