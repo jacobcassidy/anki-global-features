@@ -1,17 +1,19 @@
+<!-- TODO: Update README with new design system of using --brand-color-h: xxx; or --brand-color-c: 0; -->
+
 # Anki Global Features
 
-This project adds advanced features to your Anki cards. You can add these features by including a few files in the Anki user directory (instructions below). You can also add these files to your Anki web account to sync them across all the devices on which you use Anki (which can't be done with addons). Hence, the name __Anki Global Features__.
+This project adds advanced features to your Anki cards. You can add these features by including a few files in the Anki user directory (instructions below). You can also add these files to your Anki web account to sync them across all the devices on which you use Anki (which can't be done with addons). Hence, the name **Anki Global Features**.
 
-| Table of Contents |
-| --- |
-| [About Anki](#about-anki) |
+| Table of Contents                               |
+| ----------------------------------------------- |
+| [About Anki](#about-anki)                       |
 | [Advanced Typed Inputs](#advanced-typed-inputs) |
-| [Global Card Styles](#global-card-styles) |
-| [Installation](#installation) |
-| [Usage](#usage) |
-| [FAQ](#faq) |
-| [Updates](#updates)   |
-| [Issues](#issues) |
+| [Global Card Styles](#global-card-styles)       |
+| [Installation](#installation)                   |
+| [Usage](#usage)                                 |
+| [FAQ](#faq)                                     |
+| [Updates](#updates)                             |
+| [Issues](#issues)                               |
 
 ## About Anki
 
@@ -19,35 +21,34 @@ If you're unfamiliar with [Anki](https://apps.ankiweb.net/), in a nutshell, it's
 
 Anki apps are available for the following:
 
-| Device | OS | Type |
-| --- | --- |  --- |
-| [AnkiPC](https://apps.ankiweb.net/) | Windows, Mac, or Linux | _Free_ |
-| [AnkiWeb](https://ankiweb.net) | Web | _Free_ |
-| [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) | iOS & iPadOS | _Paid_ |
-| [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki) | Android | _Free_ |
-
+| Device                                                                          | OS                     | Type   |
+| ------------------------------------------------------------------------------- | ---------------------- | ------ |
+| [AnkiPC](https://apps.ankiweb.net/)                                             | Windows, Mac, or Linux | _Free_ |
+| [AnkiWeb](https://ankiweb.net)                                                  | Web                    | _Free_ |
+| [AnkiMobile](https://itunes.apple.com/us/app/ankimobile-flashcards/id373493387) | iOS & iPadOS           | _Paid_ |
+| [AnkiDroid](https://play.google.com/store/apps/details?id=com.ichi2.anki)       | Android                | _Free_ |
 
 ## Advanced Typed Inputs
 
 Anki has a default input field you can use on the AnkiPC app to type an answer to a card's question. However, it has many limitations and is not available across all apps. Adding the _Advanced Typed Inputs_ setup improves on the default and allows you to use typed answers on all devices. I initially developed this setup specifically for programming reviews, but it can be used for any topic you study.
 
-### Features include:
+### Features Included
 
-__Multiline Typed Inputs__ - Anki's default input field only allows a single input line. Advanced Typed Inputs allow you the freedom of adding multiple lines (perfect for code blocks).
+**Multiline Typed Inputs** - Anki's default input field only allows a single input line. Advanced Typed Inputs allow you the freedom of adding multiple lines (perfect for code blocks).
 
 <!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
-__Infinity Typed Inputs__ - Anki's default input field can only be used once per card. Advanced Typed Inputs allow you the freedom to add additional input fields (perfect for when you have a 2-part question).
+**Infinity Typed Inputs** - Anki's default input field can only be used once per card. Advanced Typed Inputs allow you the freedom to add additional input fields (perfect for when you have a 2-part question).
 
 > Note: While the _Infinity Typed Inputs_ feature gives you the ability to add as many inputs as you want on a single card, you'll get the most benefit from your reviews by keeping your cards simple. For me, that means having only one extra optional input per card which can be used for a quick follow-up question or typed code example.
 
 <!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
-__Streamlined Comparison Answers__ - Anki currently uses different comparison algorithms for its different Anki apps. This gives you different results depending on which device you're using. _Advanced Typed Inputs_ streamlines this by using a single comparison algorithm, synced across all Anki apps to produce the same comparison results no matter which device you are using.
+**Streamlined Comparison Answers** - Anki currently uses different comparison algorithms for its different Anki apps. This gives you different results depending on which device you're using. _Advanced Typed Inputs_ streamlines this by using a single comparison algorithm, synced across all Anki apps to produce the same comparison results no matter which device you are using.
 
 <!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
-__Unlimited Comparison Answers__ - Like the input fields themselves, Anki limits the comparison answers to just one per card, even if you have multiple inputs for which you would like comparison answers. _Advanced Typed Inputs_ allow you to have unlimited comparison answers per card so you can compare all your multiline typed inputs.
+**Unlimited Comparison Answers** - Like the input fields themselves, Anki limits the comparison answers to just one per card, even if you have multiple inputs for which you would like comparison answers. _Advanced Typed Inputs_ allow you to have unlimited comparison answers per card so you can compare all your multiline typed inputs.
 
 <!-- [ADD GIF SCREENSHOT EXAMPLE] -->
 
@@ -87,13 +88,13 @@ You can download individual files by going to the file's GitHub page and clickin
 
 The only files required are in the [collection.media](https://github.com/jacobcassidy/anki-global-features/tree/main/collection.media) directory:
 
-| File | Purpose |
-| -- | -- |
-| [\_global.js](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_global.js) | Creates the Advanced Typed Inputs feature and shows/hides card details based on individual card data. |
-| [\_global.css](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_global.css) | Sets the card styles shared between all cards. Can be overridden with specific card styles.|
-| [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_diff_match_patch.js) | Provides the global answer comparison algorithm |
-| [_styles_for_syntax_highlighting.css](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_styles_for_syntax_highlighting.css) | __Optional__: Styles for the [Syntax Highlighting (NG) addon](https://ankiweb.net/shared/info/566351439)  |
-| [_mesloLGL-NF.woff2](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_mesloLGL-NF.woff2) | __Optional__: Mono font file for code display. |
+| File                                                                                                                                                        | Purpose                                                                                                  |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [\_global.js](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_global.js)                                                   | Creates the Advanced Typed Inputs feature and shows/hides card details based on individual card data.    |
+| [\_global.css](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_global.css)                                                 | Sets the card styles shared between all cards. Can be overridden with specific card styles.              |
+| [\_diff_match_patch.js](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_diff_match_patch.js)                               | Provides the global answer comparison algorithm                                                          |
+| [\_styles_for_syntax_highlighting.css](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_styles_for_syntax_highlighting.css) | **Optional**: Styles for the [Syntax Highlighting (NG) addon](https://ankiweb.net/shared/info/566351439) |
+| [\_mesloLGL-NF.woff2](https://github.com/jacobcassidy/anki-global-features/blob/main/collection.media/_mesloLGL-NF.woff2)                                   | **Optional**: Mono font file for code display.                                                           |
 
 ### Step 3: Move the files to your local _collection.media_ directory
 
@@ -102,7 +103,7 @@ After you download the above files, you will need to move them to your local Ank
 | OS          | Location                                                           |
 | ----------- | ------------------------------------------------------------------ |
 | **macOS**   | `~/Library/Application Support/Anki2/[username]/collection.media/` |
-| **Windows** | `APPDATA\Anki2\[username]\collection.media\`                                                    |
+| **Windows** | `APPDATA\Anki2\[username]\collection.media\`                       |
 | **Linux**   | `~/.local/share/Anki2/[username]/collection.media/`                |
 
 > _Note: `[username]` is your Anki profile name. The default profile name is `User 1`._
@@ -117,26 +118,26 @@ After you download the above files, you will need to move them to your local Ank
 
 For the Advanced Typed Inputs to work, you must add two things inside the Anki app:
 
-1. You must add the card __fields__ you want to use. For example, I use the following fields:
+1. You must add the card **fields** you want to use. For example, I use the following fields:
 
-    ```markdown
-    Question
-    Answer
-    Type Hint
-    Compare
-    Bonus Question
-    Bonus Type Hint
-    Bonus Compare
-    Notes
-    ```
+   ```markdown
+   Question
+   Answer
+   Type Hint
+   Compare
+   Bonus Question
+   Bonus Type Hint
+   Bonus Compare
+   Notes
+   ```
 
-2. You need to add HTML (templates provided) to your __Note Types__ created under the `Anki > Tools > Manage Note Types` menu. The field names must match what you created above and you must include the script to calls the `_global.js` file.
+2. You need to add HTML (templates provided) to your **Note Types** created under the `Anki > Tools > Manage Note Types` menu. The field names must match what you created above and you must include the script to calls the `_global.js` file.
 
 You can use the default template files found below if you are using the fields above. Otherwise, you will need to make modifications to those templates.
 
-| HTML Template Files | Purpose |
-| -- | -- |
-| [/assets/note-types/*.html](https://github.com/jacobcassidy/anki-global-features/tree/main/assets/note-types) | Use in the Anki app under the `Anki > Tools > Mangage Note Types` menu. |
+| HTML Template Files                                                                                            | Purpose                                                                |
+| -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [/assets/note-types/\*.html](https://github.com/jacobcassidy/anki-global-features/tree/main/assets/note-types) | Use in the Anki app under the `Anki > Tools > Manage Note Types` menu. |
 
 ### Global Card Styles
 
@@ -186,3 +187,30 @@ View the [Changelog](https://github.com/jacobcassidy/anki-global-features/blob/m
 ## Issues
 
 If you come across any issues, please report them [here](https://github.com/jacobcassidy/anki-global-features/issues).
+
+## UNRELEASED
+
+| Language     | Hue Value |
+| ------------ | --------- |
+| RUBY         | 25        |
+| GIT          | 30        |
+| SWIFT        | 35        |
+| HTML         | 40        |
+| RUST         | 45        |
+| SQL          | 50        |
+| JAVASCRIPT   | 100       |
+| COMMAND LINE | 130       |
+| NODE         | 140       |
+| GSAP         | 145       |
+| REACT        | 215       |
+| GO           | 225       |
+| PERL         | 235       |
+| PYTHON       | 245       |
+| C            | 250       |
+| C++          | 255       |
+| TYPESCRIPT   | 260       |
+| WORDPRESS    | 270       |
+| PHP          | 275       |
+| C#           | 280       |
+| CSS          | 300       |
+| REGEX        | 315       |
