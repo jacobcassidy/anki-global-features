@@ -5,6 +5,7 @@ All notable changes to this project are documented in this file.
 ## [Unreleased]
 
 - Full instructions on how to set up and use Anki Global Features.
+- Added `balanceQuestionLines()` function
 
 ## [0.5.0] - 2024-12-10
 
