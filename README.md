@@ -2,7 +2,7 @@
 
 # Anki Global Features
 
-This project adds advanced features to your Anki cards that sync across all devices (PC, Web, and Mobile). Hence, the name **Anki Global Features**.
+This project adds advanced features to your [Anki](https://apps.ankiweb.net/) cards that sync across all devices (PC, Web, and Mobile). Hence, the name **Anki Global Features**.
 
 | Table of Contents             |
 | ----------------------------- |
