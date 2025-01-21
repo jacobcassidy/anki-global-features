@@ -386,9 +386,8 @@ function balanceQuestionLines() {
       words[lineBreak] += '<br>';
     });
 
-    return question.innerHTML = words.join('');
+    return (question.innerHTML = words.join(''));
   })();
-
 
   function getCharCountString() {
     const htmlEntryPattern = /(&#?)\b\w+\b(;)/g;
@@ -403,7 +402,7 @@ function balanceQuestionLines() {
     let updatedLineBreaks = [...new Set(dirtyLineBreaks)];
 
     // If the break is after last word in the string, remove the value.
-    updatedLineBreaks = updatedLineBreaks.filter(item => item <= words.length - 1);
+    updatedLineBreaks = updatedLineBreaks.filter((item) => item <= words.length - 1);
 
     return updatedLineBreaks;
   }
@@ -435,7 +434,6 @@ function balanceQuestionLines() {
       let currentLineLength = 0;
 
       for (wordIndex; wordIndex < words.length; wordIndex++) {
-
         // console.log(charCountWords[wordIndex]);
 
         const currentWordLength = charCountWords[wordIndex].length;
@@ -446,13 +444,16 @@ function balanceQuestionLines() {
           currentLineLength += currentWordLength;
           // console.log('Continue...', currentLineLength, words[wordIndex], `[${wordIndex}]`);
           continue;
-        } else if (currentLineLength + currentWordLength <= (charPerLine + 6) && currentLineLength + currentWordLength <= maxLineLength) {
+        } else if (
+          currentLineLength + currentWordLength <= charPerLine + 6 &&
+          currentLineLength + currentWordLength <= maxLineLength
+        ) {
           currentLineLength += currentWordLength;
           dirtyLineBreaks.push(wordIndex);
           // console.log('BREAK... <br> after:', currentLineLength, words[wordIndex], `[${wordIndex}]`);
           wordIndex += 1;
           break;
-        } else if (currentLineLength + currentWordLength > (charPerLine + 6) ) {
+        } else if (currentLineLength + currentWordLength > charPerLine + 6) {
           dirtyLineBreaks.push(wordIndex - 1);
           // console.log('ELSE... <br> after:', currentLineLength, words[wordIndex - 1], `[${wordIndex - 1}]`);
           break;
