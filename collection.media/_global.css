@@ -73,7 +73,7 @@
   box-sizing: border-box;
 }
 
-div:not(.float-start, .float-end, #ansarea, .justify-content-center, .d-flex > div) {
+div:not(.float-start, .float-end, #ansarea, .justify-content-center, .d-flex > div, .output-container) {
   margin: 0 auto;
   width: 100%;
 }
