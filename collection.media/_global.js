@@ -98,9 +98,6 @@ function balanceQuestionLines() {
     }
   });
 
-  // Create new HTML text with line breaks.
-  const newHtmlText = htmlLines.map((line) => line.join('')).join('<br>');
-
   function getMaxCharPerLine() {
     const cardInner = document.querySelector('.card-inner');
     const tempSpan = document.createElement('span');
@@ -121,6 +118,9 @@ function balanceQuestionLines() {
     plainTextStr = plainTextStr.replace(htmlTagPattern, '');
     return plainTextStr;
   }
+
+  // Create new HTML text with added line breaks.
+  const newHtmlText = htmlLines.map((line) => line.join('')).join('<br>');
 
   return (questionEl.innerHTML = newHtmlText);
 }
