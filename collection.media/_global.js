@@ -40,6 +40,91 @@ function runFunctions() {
   modifyAnkiWeb();
 }
 
+function balanceQuestionLines() {
+  const wordPattern =
+    /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]*|<code>.*?<\/code>[^\s]*|[^\s]*<[^>]*>[^\s]*|\s|(&nbsp;)|((&#?)\b\w+\b(;)\w*)|(\w*(?!&nbsp;)(&#?)\b\w+\b(;))|((?!&nbsp;)[^\w\s]+\w*|\w+)+/g;
+  const questionEl = document.querySelector('.question');
+  const htmlText = questionEl.innerHTML;
+  const plainText = getPlainTextStr();
+  const htmlWords = htmlText.match(wordPattern);
+  const plainWords = plainText.match(wordPattern);
+  const maxLineLength = getMaxCharPerLine();
+  const totalChars = plainText.length;
+  const totalLines = Math.ceil(totalChars / maxLineLength);
+  const avgLineLength = totalChars / totalLines;
+  const htmlLines = Array(totalLines + 1)
+    .fill(0)
+    .map(() => []);
+  const plainLines = Array(totalLines + 1)
+    .fill(0)
+    .map(() => []);
+  let lineIndex = 0;
+
+  // Loop through the words and group them into lines.
+  for (let i = 0; i < plainWords.length; i++) {
+    const plainWord = plainWords[i];
+    const htmlWord = htmlWords[i];
+    const wordLength = plainWords[i].length;
+    const lineLength = plainLines[lineIndex].map((word) => word.length).reduce((a, b) => a + b, 0);
+    const withWordDiff = Math.abs(avgLineLength - (lineLength + wordLength));
+    const withoutWordDiff = Math.abs(avgLineLength - lineLength);
+    const isLastLine = lineIndex === totalLines - 1;
+
+    if (withWordDiff <= withoutWordDiff || (isLastLine && lineLength + wordLength <= maxLineLength)) {
+      plainLines[lineIndex].push(plainWord);
+      htmlLines[lineIndex].push(htmlWord);
+    } else {
+      lineIndex++;
+      plainLines[lineIndex].push(plainWord);
+      htmlLines[lineIndex].push(htmlWord);
+    }
+  }
+
+  // Remove empty lines.
+  for (let i = 0; i < plainLines.length; i++) {
+    if (plainLines[i].length === 0) {
+      plainLines.splice(i, 1);
+      htmlLines.splice(i, 1);
+    }
+  }
+
+  // Remove spaces from the beginning and end of each HTML line.
+  htmlLines.forEach((line) => {
+    if (line[0] === ' ') {
+      line.shift();
+    }
+    if (line[line.length - 1] === ' ') {
+      line.pop();
+    }
+  });
+
+  // Create new HTML text with line breaks.
+  const newHtmlText = htmlLines.map((line) => line.join('')).join('<br>');
+
+  function getMaxCharPerLine() {
+    const cardInner = document.querySelector('.card-inner');
+    const tempSpan = document.createElement('span');
+    const questionWidth = questionEl.clientWidth;
+    tempSpan.style.visibility = 'hidden';
+    tempSpan.style.whiteSpace = 'nowrap';
+    tempSpan.innerHTML = 'c';
+    cardInner.appendChild(tempSpan);
+    const charWidth = tempSpan.offsetWidth;
+    cardInner.removeChild(tempSpan);
+    return Math.floor(questionWidth / charWidth);
+  }
+
+  function getPlainTextStr() {
+    const htmlEntryPattern = /(&#?)\b\w+\b(;)/g;
+    const htmlTagPattern = /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>|<[^>]*>/g;
+    let plainTextStr = htmlText.replace(htmlEntryPattern, ' ');
+    plainTextStr = plainTextStr.replace(htmlTagPattern, '');
+    return plainTextStr;
+  }
+
+  return (questionEl.innerHTML = newHtmlText);
+}
+
 function showInputs() {
   const inputContainerList = document.querySelectorAll('.input-container');
   if (inputContainerList.length !== 0) {
@@ -55,15 +140,10 @@ function showInputs() {
         const inputTextarea = inputContainer.querySelector('textarea');
         inputContainer.classList.add('active');
         if (inputTitle !== null) {
-          // For comparison inputs, show a forward slash
-          const hasDataCompare = inputTitle.getAttribute('data-compare');
-          if (hasDataCompare !== '') {
-            inputTitle.innerHTML += '<span class="input-comparison">&nbsp; &#47; &nbsp;</span>';
-          }
           // Show type hint text in input title if it exists
           const hasDataTypeHint = inputTitle.getAttribute('data-type-hint');
           if (hasDataTypeHint !== '') {
-            inputTitle.innerHTML += ` <span class="input-type-hint">${hasDataTypeHint}</span>`;
+            inputTitle.innerHTML += ` <span class="input-type-hint">(${hasDataTypeHint})</span>`;
           }
         }
         // Hide faux textarea placeholder content when inputting data
@@ -363,104 +443,5 @@ function modifyAnkiWeb() {
       menuWrap.append(rightStudyMenu);
       studyMenuParent.prepend(menuWrap);
     }
-  }
-}
-
-function balanceQuestionLines() {
-  const question = document.querySelector('.question');
-  const text = question.innerHTML;
-  const wordPattern =
-    /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]*|<code>.*?<\/code>[^\s]*|[^\s]*<[^>]*>[^\s]*|\s|(&nbsp;)|((&#?)\b\w+\b(;)\w*)|(\w*(?!&nbsp;)(&#?)\b\w+\b(;))|((?!&nbsp;)[^\w\s]+\w*|\w+)+/g;
-  const words = text.match(wordPattern);
-  const maxLineLength = getMaxCharPerLine();
-  const charCountString = getCharCountString();
-  const charCountWords = charCountString.match(wordPattern);
-  const charCount = charCountString.length;
-  const lineCount = Math.ceil(charCount / maxLineLength);
-  const charPerLine = Math.ceil(charCount / lineCount);
-
-  (function printNewQuestionText() {
-    const lineBreaks = setLineBreaks();
-
-    lineBreaks.forEach((lineBreak) => {
-      words[lineBreak] += '<br>';
-    });
-
-    return (question.innerHTML = words.join(''));
-  })();
-
-  function getCharCountString() {
-    const htmlEntryPattern = /(&#?)\b\w+\b(;)/g;
-    const htmlTagPattern = /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>|<[^>]*>/g;
-    let charCountString = text.replace(htmlEntryPattern, ' ');
-    charCountString = charCountString.replace(htmlTagPattern, '');
-    return charCountString;
-  }
-
-  function getCleanLineBreaks(dirtyLineBreaks) {
-    // Remove duplicate values.
-    let updatedLineBreaks = [...new Set(dirtyLineBreaks)];
-
-    // If the break is after last word in the string, remove the value.
-    updatedLineBreaks = updatedLineBreaks.filter((item) => item <= words.length - 1);
-
-    return updatedLineBreaks;
-  }
-
-  function getMaxCharPerLine() {
-    const cardInner = document.querySelector('.card-inner');
-    const tempSpan = document.createElement('span');
-    const questionWidth = question.clientWidth;
-    tempSpan.style.visibility = 'hidden';
-    tempSpan.style.whiteSpace = 'nowrap';
-    tempSpan.innerHTML = 'c';
-    cardInner.appendChild(tempSpan);
-    const charWidth = tempSpan.offsetWidth;
-    cardInner.removeChild(tempSpan);
-
-    return Math.floor(questionWidth / charWidth);
-  }
-
-  function setLineBreaks() {
-    let dirtyLineBreaks = [];
-    let wordIndex = 0;
-
-    // console.log(charCountString);
-    // console.log(charCountWords);
-    // console.log(words);
-    // console.log(lineCount, charCount, maxLineLength, charPerLine);
-
-    for (let i = 0; i <= lineCount; i++) {
-      let currentLineLength = 0;
-
-      for (wordIndex; wordIndex < words.length; wordIndex++) {
-        // console.log(charCountWords[wordIndex]);
-
-        const currentWordLength = charCountWords[wordIndex].length;
-
-        // console.log('lineLength:', currentLineLength, 'wordLength:', currentWordLength, 'word:', words[wordIndex]);
-
-        if (currentLineLength + currentWordLength <= charPerLine) {
-          currentLineLength += currentWordLength;
-          // console.log('Continue...', currentLineLength, words[wordIndex], `[${wordIndex}]`);
-          continue;
-        } else if (
-          currentLineLength + currentWordLength <= charPerLine + 6 &&
-          currentLineLength + currentWordLength <= maxLineLength
-        ) {
-          currentLineLength += currentWordLength;
-          dirtyLineBreaks.push(wordIndex);
-          // console.log('BREAK... <br> after:', currentLineLength, words[wordIndex], `[${wordIndex}]`);
-          wordIndex += 1;
-          break;
-        } else if (currentLineLength + currentWordLength > charPerLine + 6) {
-          dirtyLineBreaks.push(wordIndex - 1);
-          // console.log('ELSE... <br> after:', currentLineLength, words[wordIndex - 1], `[${wordIndex - 1}]`);
-          break;
-        }
-      }
-    }
-
-    return getCleanLineBreaks(dirtyLineBreaks);
   }
 }
