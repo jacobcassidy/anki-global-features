@@ -104,7 +104,7 @@ input,
 pre,
 textarea {
   line-height: 1.333;
-  margin: 12px auto 32px;
+  margin: 0 auto 48px;
   outline: none;
   width: 100%;
 }
@@ -252,7 +252,19 @@ body {
 
 .question,
 .bonus-question {
-  padding-bottom: 12px;
+  padding-bottom: 18px;
+}
+
+.card-inner:has(.question + .type-hint.active) {
+  .question {
+    padding-bottom: 8px;
+  }
+}
+
+.card-inner:has(.bonus-question + .bonus-type-hint.active) {
+  .bonus-question {
+    padding-bottom: 8px;
+  }
 }
 
 /* .card-front .question {
@@ -275,8 +287,7 @@ body {
   color: var(--color-tertiary);
   font-size: 12px;
   font-style: italic;
-  /* padding-top: 6px; */
-  padding-bottom: 4px;
+  padding-bottom: 12px;
 }
 
 /* TITLE STYLES */
@@ -339,7 +350,7 @@ body {
 
 /* STYLE: OUTPUT  */
 .output-container {
-  margin: 12px auto 48px;
+  margin: 0 auto 48px;
 
   &:not(.is-comparison) {
     --side-by-side-width: 960px;
