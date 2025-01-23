@@ -5,7 +5,18 @@ All notable changes to this project are documented in this file.
 ## [Unreleased]
 
 - Full instructions on how to set up and use Anki Global Features.
-- Added `balanceQuestionLines()` function
+
+## [0.6.0] - 2025-01-23
+
+### Added
+
+- Added screenshots and more details to README.
+
+### Changed
+
+- Refactored CSS styles for ankiWeb.
+- Refactored `balanceQuestionLines()` function.
+- Updated CSS margins and paddings for card styles.
 
 ## [0.5.0] - 2024-12-10
 
