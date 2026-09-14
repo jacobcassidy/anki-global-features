@@ -44,6 +44,11 @@ function balanceQuestionLines() {
   const wordPattern =
     /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]*|<code>.*?<\/code>[^\s]*|[^\s]*<[^>]*>[^\s]*|\s|(&nbsp;)|((&#?)\b\w+\b(;)\w*)|(\w*(?!&nbsp;)(&#?)\b\w+\b(;))|((?!&nbsp;)[^\w\s]+\w*|\w+)+/g;
   const questionEl = document.querySelector('.question');
+
+  if (!questionEl || questionEl.querySelector('pre, code, .shigeSyntax')) {
+    return;
+  }
+
   const htmlText = questionEl.innerHTML;
   const plainText = getPlainTextStr();
   const htmlWords = htmlText.match(wordPattern);
