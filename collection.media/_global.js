@@ -274,6 +274,10 @@ function showOutputs() {
 
   if (outputContainerList.length !== 0) {
     outputContainerList.forEach((outputContainer, outputIndex) => {
+      // Keep the existing result when initialization runs again on the same card.
+      if (outputContainer.querySelector('.output-comparison')) {
+        return;
+      }
       const outputAnswer = outputContainer.querySelector('.output-answer');
       const outputClozeList = outputContainer.querySelectorAll('.cloze');
       const outputData = outputContainer.querySelector('.output-data');
