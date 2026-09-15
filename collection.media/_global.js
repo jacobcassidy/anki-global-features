@@ -250,6 +250,22 @@ function returnInputs() {
   }
 }
 
+function getRenderedAnswerText(answerElement) {
+  // innerText preserves HTML line breaks, but only when the element has layout.
+  // Comparison mode hides the original answer, so measure an invisible copy.
+  const copy = answerElement.cloneNode(true);
+  copy.style.setProperty('display', 'block', 'important');
+  copy.style.setProperty('position', 'absolute', 'important');
+  copy.style.setProperty('visibility', 'hidden', 'important');
+  // Keep temporary child mutations below the body/#qa nodes watched by watchQA.
+  answerElement.closest('.card-inner').appendChild(copy);
+  try {
+    return copy.innerText;
+  } finally {
+    copy.remove();
+  }
+}
+
 function showOutputs() {
   const outputContainerList = document.querySelectorAll('.output-container');
 
@@ -286,6 +302,7 @@ function showOutputs() {
 
       // Run comparison when compare field is active
       if (hasCompare !== null && hasCompare !== '') {
+        const cardAnswer = getRenderedAnswerText(outputAnswer);
         // Hide output-cols when comparison is active
         outputContainer.classList.add('is-comparison');
 
@@ -310,7 +327,7 @@ function showOutputs() {
           (!isAnkiDroid && outputDataArr === undefined) ||
           (!isAnkiDroid && outputDataArr[outputIndex] === undefined)
         ) {
-          const cardAnswerCharArr = outputAnswer.innerText.split('');
+          const cardAnswerCharArr = cardAnswer.split('');
           const cardAnswerComparisonArr = [];
           cardAnswerCharArr.forEach((cardAnswerChar) => {
             cardAnswerComparisonArr.push('<span class="typeMissed">' + cardAnswerChar + '</span>');
@@ -328,7 +345,6 @@ function showOutputs() {
           } else {
             typedAnswer = outputDataArr[outputIndex];
           }
-          const cardAnswer = outputAnswer.textContent;
           const dmp = new diff_match_patch();
           const dmpArr = dmp.diff_main(cardAnswer, typedAnswer);
           const dmpMatchTypeAndCharArr = [];
