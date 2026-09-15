@@ -231,7 +231,7 @@ function showOutputs() {
       const bonusTypeHint = document.querySelector('.bonus-type-hint');
 
       // Show bonus question and type hint if they contain content
-      if (bonusQuestion !== null && bonusQuestion.innerText !== '') {
+      if (hasVisibleContent(bonusQuestion)) {
         bonusQuestion.classList.add('active');
       }
       if (bonusTypeHint !== null && bonusTypeHint.innerText !== '') {
