@@ -139,6 +139,13 @@ function balanceQuestionLines() {
   return (questionEl.innerHTML = newHtmlText);
 }
 
+function hasVisibleContent(element) {
+  return element !== null && (
+    element.innerText.trim() !== '' ||
+    element.querySelector('img, svg, canvas, video, audio, iframe, object, embed') !== null
+  );
+}
+
 function showInputs() {
   const inputContainerList = document.querySelectorAll('.input-container');
   if (inputContainerList.length !== 0) {
@@ -149,7 +156,7 @@ function showInputs() {
       }
       // Show input if the faux textarea placeholder contains content (bonus inputs)
       const inputPlaceholder = inputContainer.querySelector('.input-faux-placeholder');
-      if (inputPlaceholder !== null && inputPlaceholder.innerText !== '') {
+      if (hasVisibleContent(inputPlaceholder)) {
         const inputTitle = inputContainer.querySelector('.input-title');
         const inputTextarea = inputContainer.querySelector('textarea');
         inputContainer.classList.add('active');
