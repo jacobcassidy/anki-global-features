@@ -399,9 +399,9 @@ function showOutputs() {
             if (containerCardChar !== undefined) {
               cardComparisonArr.push(containerCardChar);
             }
-            // Transform comparison arrays into strings and add them to the <pre> element
-            preEl.innerHTML = typedComparisonArr.join('') + '\n&darr;\n' + cardComparisonArr.join('');
           }
+          // Render the completed comparison once, after processing all characters.
+          preEl.innerHTML = typedComparisonArr.join('') + '\n&darr;\n' + cardComparisonArr.join('');
         }
         divContainer.append(divTitle);
         divContainer.append(preEl);
