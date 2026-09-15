@@ -127,6 +127,12 @@ function showTypeHint() {
 }
 
 function focusFirstInput() {
+  const activeElement = document.activeElement;
+  if (activeElement && (
+    activeElement.matches('input, textarea, select') || activeElement.isContentEditable
+  )) {
+    return;
+  }
   // Add focus to first input/textarea element if the ID is not #typeans
   const inputField = document.querySelector('input, textarea');
   if (inputField !== null && inputField.id !== 'typeans') {
