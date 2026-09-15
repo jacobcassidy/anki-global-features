@@ -262,7 +262,9 @@ function getRenderedAnswerText(answerElement) {
   const copy = answerElement.cloneNode(true);
   copy.style.setProperty('display', 'block', 'important');
   copy.style.setProperty('position', 'absolute', 'important');
-  copy.style.setProperty('visibility', 'hidden', 'important');
+  copy.style.setProperty('visibility', 'visible', 'important');
+  copy.style.setProperty('opacity', '0', 'important');
+  copy.style.setProperty('pointer-events', 'none', 'important');
   // Keep temporary child mutations below the body/#qa nodes watched by watchQA.
   answerElement.closest('.card-inner').appendChild(copy);
   try {
