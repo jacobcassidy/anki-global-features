@@ -4,6 +4,7 @@ const isAnkiWeb = typeof study !== 'undefined';
 const isAnkiDroid = typeof AnkiDroidJS !== 'undefined';
 let outputDataArr;
 const boundInputElements = new WeakSet();
+const renderedPlainOutputs = new WeakSet();
 
 (function watchQA() {
   // Run functions on first load
@@ -437,11 +438,13 @@ function showOutputs() {
 
         // Directly output user's answer if comparison is NOT active,
       } else {
-        if (outputData !== null) {
+        if (outputData !== null && !renderedPlainOutputs.has(outputData)) {
           if (isAnkiDroid && sessionStorage !== undefined) {
             outputData.textContent = sessionStorage[outputIndex];
+            renderedPlainOutputs.add(outputData);
           } else if (!isAnkiDroid && outputDataArr !== undefined) {
             outputData.textContent = outputDataArr[outputIndex];
+            renderedPlainOutputs.add(outputData);
           }
         }
       }
