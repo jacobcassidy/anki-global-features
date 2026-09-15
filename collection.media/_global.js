@@ -269,6 +269,27 @@ function getRenderedAnswerText(answerElement) {
   }
 }
 
+function diffAnswerCharacters(cardAnswer, typedAnswer) {
+  // Give each Unicode code point one BMP token so the diff cannot split a pair.
+  const characters = Array.from(new Set([...cardAnswer, ...typedAnswer]));
+  // Exclude surrogate code units from the token alphabet.
+  if (characters.length > 0x10000 - 0x800) {
+    return [[-1, cardAnswer], [1, typedAnswer]].filter(([, text]) => text);
+  }
+  const tokens = new Map(characters.map((char, index) => [
+    char, String.fromCharCode(index < 0xd800 ? index : index + 0x800),
+  ]));
+  const encode = (text) => Array.from(text, (char) => tokens.get(char)).join('');
+  const dmp = new diff_match_patch();
+  return dmp.diff_main(encode(cardAnswer), encode(typedAnswer)).map((diff) => [
+    diff[0],
+    Array.from(diff[1], (token) => {
+      const index = token.charCodeAt(0);
+      return characters[index < 0xd800 ? index : index - 0x800];
+    }).join(''),
+  ]);
+}
+
 function showOutputs() {
   const outputContainerList = document.querySelectorAll('.output-container');
 
@@ -334,7 +355,7 @@ function showOutputs() {
           (!isAnkiDroid && outputDataArr === undefined) ||
           (!isAnkiDroid && outputDataArr[outputIndex] === undefined)
         ) {
-          const cardAnswerCharArr = cardAnswer.split('');
+          const cardAnswerCharArr = Array.from(cardAnswer);
           const cardAnswerComparisonArr = [];
           cardAnswerCharArr.forEach((cardAnswerChar) => {
             cardAnswerComparisonArr.push('<span class="typeMissed">' + cardAnswerChar + '</span>');
@@ -352,8 +373,7 @@ function showOutputs() {
           } else {
             typedAnswer = outputDataArr[outputIndex];
           }
-          const dmp = new diff_match_patch();
-          const dmpArr = dmp.diff_main(cardAnswer, typedAnswer);
+          const dmpArr = diffAnswerCharacters(cardAnswer, typedAnswer);
           const dmpMatchTypeAndCharArr = [];
           const typedComparisonArr = [];
           const cardComparisonArr = [];
@@ -362,7 +382,7 @@ function showOutputs() {
           for (let i = 0; i < dmpArr.length; i++) {
             const dmpMatchType = dmpArr[i][0]; // -1, 0, or 1
             const dmpStr = dmpArr[i][1]; // example: 'plus'
-            const dmpCharArr = dmpStr.split(''); // example: ['p', 'l', 'u', 's']
+            const dmpCharArr = Array.from(dmpStr); // example: ['p', 'l', 'u', 's']
             dmpCharArr.forEach((dmpChar) => {
               const dmpMatchTypeAndChar = [dmpMatchType, dmpChar]; // example: [-1, 'p']
               dmpMatchTypeAndCharArr.push(dmpMatchTypeAndChar);
