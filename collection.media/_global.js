@@ -59,6 +59,9 @@ function balanceQuestionLines() {
     return;
   }
   const maxLineLength = getMaxCharPerLine();
+  if (!Number.isFinite(maxLineLength) || maxLineLength < 1) {
+    return;
+  }
   const totalChars = plainText.length;
   const totalLines = Math.ceil(totalChars / maxLineLength);
   const avgLineLength = totalChars / totalLines;
