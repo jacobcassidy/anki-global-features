@@ -129,7 +129,7 @@ textarea {
 code {
   background-color: var(--bg-secondary);
   border: 1px solid var(--bg-tertiary);
-  padding: 0 4px;
+  padding: 2px 5px;
   line-height: 1;
 
   :not(.nightMode) .question & {
@@ -405,6 +405,22 @@ body {
 .notes-content {
   /* white-space: pre-line; */
   text-align: left;
+}
+
+
+.output-answer {
+  /* If a <ul> element is the first element in .output-answer > div, have no top margin */
+  & > ul:first-child,
+  & > div > ul:first-child {
+    margin-top: 0;
+  }
+
+  /* If a <ul> element is the last element in .output-answer > div, have no bottom margin */
+  & > ul:last-child,
+  & > div > ul:last-child {
+    margin-bottom: 0;
+  }
+
 }
 
 /* STYLE: COMPARISON OUTPUT  */
