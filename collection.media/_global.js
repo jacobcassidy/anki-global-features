@@ -54,6 +54,9 @@ function balanceQuestionLines() {
   const plainText = getPlainTextStr();
   const htmlWords = htmlText.match(wordPattern);
   const plainWords = plainText.match(wordPattern);
+  if (!plainWords || !htmlWords) {
+    return;
+  }
   const maxLineLength = getMaxCharPerLine();
   const totalChars = plainText.length;
   const totalLines = Math.ceil(totalChars / maxLineLength);
