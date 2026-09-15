@@ -45,7 +45,8 @@ function balanceQuestionLines() {
     /<[^>]*\s?data-[^=]*="[^"]*(<[^>]+>[^(<\/)]*<\/[^>]+>)?[^"]*"[^>]*>[^\s]*|<code>.*?<\/code>[^\s]*|[^\s]*<[^>]*>[^\s]*|\s|(&nbsp;)|((&#?)\b\w+\b(;)\w*)|(\w*(?!&nbsp;)(&#?)\b\w+\b(;))|((?!&nbsp;)[^\w\s]+\w*|\w+)+/g;
   const questionEl = document.querySelector('.question');
 
-  if (!questionEl || questionEl.querySelector('pre, code, .shigeSyntax')) {
+  // The token-based balancer only supports plain text. Preserve rich content intact.
+  if (!questionEl || questionEl.children.length > 0) {
     return;
   }
 
