@@ -467,9 +467,9 @@ function showNotes() {
   const notesContainerList = document.querySelectorAll('.notes-container');
   if (notesContainerList.length !== 0) {
     notesContainerList.forEach((notesContainer) => {
-      const hasNotes = document.querySelector('.notes-content');
+      const notesContent = notesContainer.querySelector('.notes-content');
       // Show notes if there is note content
-      if (hasNotes != null && hasNotes.innerText) {
+      if (hasVisibleContent(notesContent)) {
         notesContainer.classList.add('active');
       }
     });
