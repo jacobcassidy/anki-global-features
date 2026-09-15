@@ -155,8 +155,11 @@ function showInputs() {
         if (inputTitle !== null) {
           // Show type hint text in input title if it exists
           const hasDataTypeHint = inputTitle.getAttribute('data-type-hint');
-          if (hasDataTypeHint !== '') {
-            inputTitle.innerHTML += ` <span class="input-type-hint">(${hasDataTypeHint})</span>`;
+          if (hasDataTypeHint && !inputTitle.querySelector('.input-type-hint')) {
+            const hint = document.createElement('span');
+            hint.classList.add('input-type-hint');
+            hint.textContent = `(${hasDataTypeHint})`;
+            inputTitle.append(' ', hint);
           }
         }
         // Hide faux textarea placeholder content when inputting data
