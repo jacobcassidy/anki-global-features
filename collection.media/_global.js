@@ -330,7 +330,7 @@ function showOutputs() {
 
       // Run comparison when compare field is active
       if (hasCompare !== null && hasCompare !== '') {
-        const cardAnswer = getRenderedAnswerText(outputAnswer);
+        const cardAnswer = getRenderedAnswerText(outputAnswer).replace(/\u00a0/g, ' ');
         // Hide output-cols when comparison is active
         outputContainer.classList.add('is-comparison');
 
@@ -373,7 +373,7 @@ function showOutputs() {
           } else {
             typedAnswer = outputDataArr[outputIndex];
           }
-          const dmpArr = diffAnswerCharacters(cardAnswer, typedAnswer);
+          const dmpArr = diffAnswerCharacters(cardAnswer, typedAnswer.replace(/\u00a0/g, ' '));
           const dmpMatchTypeAndCharArr = [];
           const typedComparisonArr = [];
           const cardComparisonArr = [];
@@ -395,20 +395,7 @@ function showOutputs() {
             let containerTypedChar, containerCardChar;
             // Container characters missed (for card answer)
             if (charMatchType === -1) {
-              // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
-              const nextIndex = i + 1;
-              const regex = /\u00A0/; // unicode for &nbsp;
-              const isNBSP = regex.test(char);
-              let nextChar;
-
-              if (dmpMatchTypeAndCharArr[nextIndex] !== undefined) {
-                nextChar = dmpMatchTypeAndCharArr[nextIndex][1];
-              }
-              if (isNBSP && nextChar === ' ') {
-                containerCardChar = '<span class="typeGood">' + char + '</span>';
-              } else {
-                containerCardChar = '<span class="typeMissed">' + char + '</span>';
-              }
+              containerCardChar = '<span class="typeMissed">' + char + '</span>';
               // Container characters correct (for both typed and card answers)
             } else if (charMatchType === 0) {
               // Insert dashes in typed answer if needed to align correct matches to card answer
@@ -426,19 +413,7 @@ function showOutputs() {
               lastCorrectMatchIndex = typedComparisonArr.length;
               // Container characters wrong (for typed answer)
             } else if (charMatchType === 1) {
-              // dmp doesn't consider &nbsp; and an empty space as a match, lets change that
-              const previousIndex = i - 1;
-              const regex = /\u00A0/; // unicode for &nbsp;
-              let previousChar;
-              if (dmpMatchTypeAndCharArr[previousIndex] !== undefined) {
-                previousChar = dmpMatchTypeAndCharArr[previousIndex][1];
-              }
-              const isNBSP = regex.test(previousChar);
-              if (isNBSP && char === ' ') {
-                containerTypedChar = '<span class="typeGood">' + char + '</span>';
-              } else {
-                containerTypedChar = '<span class="typeBad">' + char + '</span>';
-              }
+              containerTypedChar = '<span class="typeBad">' + char + '</span>';
             }
             // Add characters to comparison arrays
             if (containerTypedChar !== undefined) {
