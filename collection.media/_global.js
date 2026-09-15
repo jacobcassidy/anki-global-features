@@ -3,6 +3,7 @@ const isAnkiPC = typeof pycmd !== 'undefined';
 const isAnkiWeb = typeof study !== 'undefined';
 const isAnkiDroid = typeof AnkiDroidJS !== 'undefined';
 let outputDataArr;
+const boundInputElements = new WeakSet();
 
 (function watchQA() {
   // Run functions on first load
@@ -211,8 +212,12 @@ function focusFirstInput() {
 function returnInputs() {
   const inputDataList = document.querySelectorAll('.input-data');
   if (inputDataList.length !== 0) {
-    outputDataArr = Array(inputDataList.length);
+    outputDataArr = Array.from(inputDataList, (inputData) => inputData.value);
     inputDataList.forEach((inputData, inputIndex) => {
+      if (boundInputElements.has(inputData)) {
+        return;
+      }
+      boundInputElements.add(inputData);
       inputData.addEventListener('input', (event) => {
         const inputValue = event.currentTarget.value;
         // Store input data on AnkiDroid
