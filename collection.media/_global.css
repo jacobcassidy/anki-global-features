@@ -268,16 +268,6 @@ body {
   }
 }
 
-/* .card-front .question {
-  margin: 0 -60px;
-  width: calc(100% + 120px);
-
-  @media only screen and (max-width: 704px) {
-    margin: 0 ;
-    width: 100%;
-  }
-} */
-
 .bonus-question {
   color: var(--color-secondary);
   font-size: 18px;
@@ -404,8 +394,11 @@ body {
 .output-data,
 .output-answer,
 .notes-content {
-  /* white-space: pre-line; */
   text-align: left;
+}
+
+.output-data {
+  white-space: pre-line;
 }
 
 
