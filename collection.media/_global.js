@@ -31,7 +31,6 @@ const renderedPlainOutputs = new WeakSet();
 })();
 
 function runFunctions() {
-  balanceQuestionLines();
   showInputs();
   showPrimaryTitle();
   showTypeHint();
@@ -40,14 +39,6 @@ function runFunctions() {
   showOutputs();
   showNotes();
   modifyAnkiWeb();
-}
-
-function balanceQuestionLines() {
-  const questionEl = document.querySelector('.question');
-  if (questionEl) {
-    // Let layout balance rich text without rewriting its DOM or inserting breaks.
-    questionEl.style.setProperty('text-wrap', 'balance');
-  }
 }
 
 function hasVisibleContent(element) {

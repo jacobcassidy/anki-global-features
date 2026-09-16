@@ -253,6 +253,7 @@ body {
 .question,
 .bonus-question {
   padding-bottom: 18px;
+  text-wrap: balance;
 }
 
 .card-inner:has(.question + .type-hint.active) {
