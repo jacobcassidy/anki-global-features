@@ -1,20 +1,16 @@
 <div class="topic">Topic</div>
 
 <div class="card-inner card-front">
-  <div class="question">{{Question}}</div>
-  <div class="type-hint">{{Type Hint}}</div>
   <div class="input-container is-primary">
-    <div class="input-title" data-compare="{{Compare}}">Basic</div>
-    <textarea class="input-data tappable" type="text"></textarea>
+    <div class="question">{{Question}}</div>
+    <div class="type-hint">{{Type Hint}}</div>
+    <textarea class="input-data tappable" data-compare="{{Compare}}" type="text"></textarea>
   </div>
 
-  <div class="input-container">
-    <div class="input-title" data-compare="{{Bonus Compare}}" data-type-hint="{{Bonus Type Hint}}">Bonus</div>
-    <div class="input-textarea-container">
-      <textarea class="input-data tappable has-title" type="text"></textarea>
-      <!-- Placeholders cannot parse html, so a faux placeholder overlaid on the textarea is used instead -->
-      <div class="input-faux-placeholder">{{Bonus Question}}</div>
-    </div>
+  <div class="input-container is-bonus">
+    <div class="bonus-question">{{Bonus Question}}</div>
+    <div class="bonus-type-hint">{{Bonus Type Hint}}</div>
+    <textarea class="input-data tappable" data-compare="{{Bonus Compare}}" type="text"></textarea>
   </div>
 </div>
 
