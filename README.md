@@ -198,7 +198,7 @@ View the [Changelog](https://github.com/jacobcassidy/anki-global-features/blob/m
 
 ## Issues
 
-If you come across any issues, please report them [here](https://github.com/jacobcassidy/anki-global-features/issues).
+If you come across any issues, please [report them here](https://github.com/jacobcassidy/anki-global-features/issues).
 
 ## UNRELEASED
 
