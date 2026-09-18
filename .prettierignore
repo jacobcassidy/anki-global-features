@@ -28,5 +28,8 @@
 # IGNORE LOCK FILES
 **/package-lock.json
 
+# IGNORE ARCHIVE FILES
+**/dev/archive
+
 # IGNORE MINIFIED FILES
 **/**.min.js
