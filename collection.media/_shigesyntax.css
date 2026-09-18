@@ -23,6 +23,10 @@
 /* td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 15px; padding-right: 15px; } */
 /* span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 15px; padding-right: 15px; } */
 
+.shigeSyntax {
+  padding: 0 !important;
+}
+
 /* BOLD */
 .shigeSyntax .ges, /* Generic.EmStrong */
 .shigeSyntax .gs /* Generic.Strong */
