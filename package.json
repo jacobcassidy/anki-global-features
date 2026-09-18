@@ -1,0 +1,45 @@
+{
+  "name": "anki-global-kit",
+  "displayName": "Anki Global Kit",
+  "version": "1.0.0",
+  "description": "A Anki kit with features that work on all Anki apps/devices.",
+  "publisher": "jacobcassidy",
+  "author": {
+    "name": "Jacob Cassidy",
+    "email": "hello@jacobcassidy.com",
+    "url": "https://jacobcassidy.com"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jacobcassidy/anki-global-features"
+  },
+  "bugs": {
+    "url": "https://github.com/jacobcassidy/anki-global-features/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/compat": "^2.1.1",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.10.0",
+    "eslint-plugin-import-x": "^4.17.1",
+    "globals": "^17.12.0",
+    "lefthook": "^2.1.14",
+    "markdownlint-cli2": "^0.23.2",
+    "prettier": "^3.9.8",
+    "prettier-plugin-multiline-arrays": "^4.1.11"
+  },
+  "allowScripts": {
+    "lefthook@2.1.12": true,
+    "unrs-resolver@1.12.2": true
+  },
+  "scripts": {
+    "check": "npx prettier . --check",
+    "format": "npx prettier . --write",
+    "lint:docs": "npx markdownlint-cli2 \"**/*.md\"",
+    "lint:docs:fix": "npx markdownlint-cli2 \"**/*.md\" --fix",
+    "lint:scripts": "npx eslint",
+    "lint:scripts:fix": "npx eslint --fix"
+
+  }
+}

@@ -5,7 +5,6 @@
 !README.md
 !CHANGELOG.md
 !LICENSE
-!.gitignore
 !assets/
 !assets/**
 !collection.media/
@@ -22,3 +21,13 @@
 # EXCLUDE THE FOLLOWING FILES IN ALLOWED DIRECTORIES
 .DS_Store
 assets/audio
+
+
+# EXCLUDE DEV CONFIG FILES
+!.gitignore
+!.markdownlint-cli2.jsonc
+!.prettierignore
+!eslint-config.js
+!lefthook.yml
+!package.json
+!prettier.config.js
