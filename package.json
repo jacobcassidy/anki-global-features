@@ -2,7 +2,7 @@
   "name": "anki-global-kit",
   "displayName": "Anki Global Kit",
   "version": "1.0.0",
-  "description": "A Anki kit with features that work on all Anki apps/devices.",
+  "description": "A global kit for Anki with features that work across all Anki apps.",
   "publisher": "jacobcassidy",
   "author": {
     "name": "Jacob Cassidy",
@@ -12,10 +12,10 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jacobcassidy/anki-global-features"
+    "url": "https://github.com/jacobcassidy/anki-global-kit"
   },
   "bugs": {
-    "url": "https://github.com/jacobcassidy/anki-global-features/issues"
+    "url": "https://github.com/jacobcassidy/anki-global-kit/issues"
   },
   "license": "MIT",
   "devDependencies": {
