@@ -13,6 +13,11 @@
 !collection.media/_*.woff
 !collection.media/_*.woff2
 !collection.media/_*.js
+!dev/
+!dev/archive/
+!dev/archive/**
+!dev/screenshots/
+!dev/screenshots/**
 
 # EXCLUDE THE FOLLOWING FILES IN ALLOWED DIRECTORIES
 .DS_Store
