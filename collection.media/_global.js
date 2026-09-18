@@ -230,7 +230,7 @@ function showOutputContainers() {
     if (outputContainer.querySelector('.output-comparison-container')) return;
 
     const outputAnswer = outputContainer.querySelector('.output-answer');
-    const outputClozes = outputContainer.querySelectorAll('.cloze');
+    const outputClozes = outputAnswer.querySelectorAll('.cloze');
     const outputData = outputContainer.querySelector('.output-data');
     const hasCompare = outputData.getAttribute('data-compare');
     const bonusQuestion = outputContainer.querySelector('.bonus-question');
