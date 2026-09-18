@@ -1,3 +1,4 @@
+/* exported hasMyCustomScript */
 const hasMyCustomScript = true;
 const isAnkiPC = typeof pycmd !== 'undefined';
 const isAnkiWeb = typeof study !== 'undefined';
@@ -19,7 +20,7 @@ const renderedPlainOutputs = new WeakSet();
   else targetNode = document.getElementById('qa');
 
   const config = { childList: true },
-    callback = function (mutationsList, observer) {
+    callback = function (mutationsList) {
       for (const mutation of mutationsList) {
         if (mutation.type === 'childList') runFunctions();
         break; // Don't run functions again when changes made to the DOM are created by the functions.
