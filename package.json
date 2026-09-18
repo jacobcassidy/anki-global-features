@@ -40,6 +40,5 @@
     "lint:docs:fix": "npx markdownlint-cli2 \"**/*.md\" --fix",
     "lint:scripts": "npx eslint",
     "lint:scripts:fix": "npx eslint --fix"
-
   }
 }

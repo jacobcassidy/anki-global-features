@@ -16,7 +16,7 @@
   --type-missed-bg: oklch(80% 0 0);
 
   --font-family-primary: arial, sans-serif;
-  --font-family-mono: 'MesloLGL NF', Menlo, monospace;
+  --font-family-mono: "MesloLGL NF", Menlo, monospace;
 
   --bg-primary: oklch(calc(var(--brand-color-l) + 46%) calc(var(--brand-color-c) - 0.0828) var(--brand-color-h));
   --bg-secondary: oklch(calc(var(--brand-color-l) + 42%) calc(var(--brand-color-c) - 0.0756) var(--brand-color-h));
@@ -62,8 +62,10 @@
 
 /* DEFAULT STYLES */
 @font-face {
-  font-family: 'Inconsolata';
-  src: url('_inconsolata-regular.woff2') format('woff2'), url('_inconsolata-regular.woff') format('woff');
+  font-family: "Inconsolata";
+  src:
+    url("_inconsolata-regular.woff2") format("woff2"),
+    url("_inconsolata-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -263,7 +265,7 @@ li + li {
 }
 
 .question {
-   padding-bottom: 18px;
+  padding-bottom: 18px;
 }
 
 .bonus-question {

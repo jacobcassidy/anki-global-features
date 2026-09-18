@@ -33,3 +33,6 @@
 
 # IGNORE MINIFIED FILES
 **/**.min.js
+
+
+collection.media/_diff_match_patch.js

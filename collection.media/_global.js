@@ -46,9 +46,10 @@ function runFunctions() {
  * Check if an element contains visible content.
  */
 function hasVisibleContent(element) {
-  return element !== null && (
-    element.innerText.trim() !== '' ||
-    element.querySelector('img, svg, canvas, video, audio, iframe, object, embed') !== null
+  return (
+    element !== null &&
+    (element.innerText.trim() !== '' ||
+      element.querySelector('img, svg, canvas, video, audio, iframe, object, embed') !== null)
   );
 }
 
@@ -106,9 +107,7 @@ function showTypeHint(typeHint) {
 function focusFirstInput() {
   // Do nothing if an input or textarea is already active.
   const activeElement = document.activeElement;
-  if (activeElement && (
-    activeElement.matches('input, textarea') || activeElement.isContentEditable
-  )) return;
+  if (activeElement && (activeElement.matches('input, textarea') || activeElement.isContentEditable)) return;
 
   // Otherwise, add focus to first input or textarea if the ID is not #typeans.
   const inputField = document.querySelector('input, textarea');
@@ -194,12 +193,18 @@ function diffAnswerCharacters(cardAnswer, typedAnswer) {
 
   // Exclude surrogate code units from the token alphabet.
   if (characters.length > 0x10000 - 0x800) {
-    return [[-1, cardAnswer], [1, typedAnswer]].filter(([, text]) => text);
+    return [
+      [-1, cardAnswer],
+      [1, typedAnswer],
+    ].filter(([, text]) => text);
   }
 
-  const tokens = new Map(characters.map((char, index) => [
-    char, String.fromCharCode(index < 0xd800 ? index : index + 0x800),
-  ]));
+  const tokens = new Map(
+    characters.map((char, index) => [
+      char,
+      String.fromCharCode(index < 0xd800 ? index : index + 0x800),
+    ]),
+  );
   const encode = (text) => Array.from(text, (char) => tokens.get(char)).join('');
   const dmp = new diff_match_patch();
 
@@ -330,7 +335,6 @@ function showOutputContainers() {
 
             // Container characters correct (for both typed and card answers).
           } else if (charMatchType === 0) {
-
             // Insert dashes in typed answer if needed to align correct matches to card answer.
             if (typedComparisonArr.length < cardComparisonArr.length) {
               const dashesStr = '<span class="typeBad">-</span>';
