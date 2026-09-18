@@ -24,10 +24,11 @@ assets/audio
 
 
 # EXCLUDE DEV CONFIG FILES
+!.editorconfig
 !.gitignore
 !.markdownlint-cli2.jsonc
 !.prettierignore
-!eslint-config.js
+!eslint.config.js
 !lefthook.yml
 !package.json
 !prettier.config.js
