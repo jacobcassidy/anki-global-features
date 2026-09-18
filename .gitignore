@@ -24,6 +24,8 @@ assets/audio
 
 
 # EXCLUDE DEV CONFIG FILES
+!.vscode
+!.vscode/**
 !.editorconfig
 !.gitignore
 !.markdownlint-cli2.jsonc
